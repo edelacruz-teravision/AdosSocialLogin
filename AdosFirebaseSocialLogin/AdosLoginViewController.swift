@@ -30,11 +30,15 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
     
     override func viewDidLoad()
     {
+        // Login button config
+        
         super.viewDidLoad()
         
         self.loginButton.layer.borderColor = UIColor.white.cgColor
         self.loginButton.layer.borderWidth = 1
         self.loginButton.layer.cornerRadius = 20
+        
+        // Textfields config
         
         if let placeholder = passwordTextField.placeholder
         {
@@ -46,7 +50,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
             emailTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
         }
         
-        // Custom Facebook button
+        // Custom Facebook button config
         
         customFBButton.delegate = self
         customFBButton.readPermissions = ["email", "public_profile"]
@@ -153,14 +157,11 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         } // Brings your user profile
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let profileViewControllerSegue : ProfileViewController =  segue.destination as! ProfileViewController
-        
-        /*if let picture = dict.["picture"] as? NSDictionary, let data = picture["data"] as? NSDictionary, let url = data["url"] as? String
-         {
-         
-         }*/
         
         profileViewControllerSegue.email = self.email
         profileViewControllerSegue.name = self.name

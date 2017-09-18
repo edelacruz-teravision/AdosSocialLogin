@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController
 {
-    // MARK: - Otlets
+    // MARK: - Outlets
     
     @IBOutlet var profilePictureImageView: UIImageView!
     @IBOutlet var profileNameLabel: UILabel!
@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController
         let url = NSURL(string: imageUrl)
         let data = NSData(contentsOf:url! as URL)
         
-        // It is the best way to manage nil issue.
+        // nil issue manage.
         if (data?.length)! > 0
         {
             self.profilePictureImageView.image = UIImage(data:data! as Data)
@@ -47,10 +47,6 @@ class ProfileViewController: UIViewController
             print("Error nil image")
             return
         }
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -63,17 +59,5 @@ class ProfileViewController: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

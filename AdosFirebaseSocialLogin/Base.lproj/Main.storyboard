@@ -38,14 +38,14 @@
                                 </state>
                             </button>
                             <button opaque="NO" alpha="0.60999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-HL-cPB">
-                                <rect key="frame" x="137" y="486" width="100" height="27"/>
+                                <rect key="frame" x="137.5" y="486" width="100" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-QD-Vbc">
-                                <rect key="frame" x="130.5" y="396" width="113" height="40"/>
+                                <rect key="frame" x="131" y="396" width="113" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="keS-cZ-usU"/>
                                     <constraint firstAttribute="height" constant="40" id="ueU-vk-zLZ"/>
@@ -73,15 +73,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="mwf-ez-svb">
-                                <rect key="frame" x="84" y="122" width="206" height="50"/>
+                                <rect key="frame" x="84.5" y="122" width="206" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mwf-ez-svb" secondAttribute="height" multiplier="207:50" id="kkp-7o-Wi9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-ef-1j7" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="185" y="563" width="190" height="52"/>
+                                <rect key="frame" x="187.5" y="565.5" width="187.5" height="49.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="Zhs-XR-PfX"/>
+                                    <constraint firstAttribute="width" secondItem="bAB-ef-1j7" secondAttribute="height" multiplier="187.5 : 50" constant="1" id="Hh0-7g-TWm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -101,9 +101,9 @@
                             <constraint firstItem="mwf-ez-svb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oxp-cO-3zl"/>
                             <constraint firstAttribute="trailing" secondItem="dRA-qn-odh" secondAttribute="trailing" id="Thj-or-ejt"/>
                             <constraint firstItem="SgA-QD-Vbc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y9H-k5-hPO"/>
+                            <constraint firstItem="dRA-qn-odh" firstAttribute="top" secondItem="bTU-HL-cPB" secondAttribute="bottom" constant="102" id="aBI-V7-qhS"/>
                             <constraint firstItem="DAQ-n8-W39" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWS-AT-4hF"/>
-                            <constraint firstItem="bAB-ef-1j7" firstAttribute="leading" secondItem="DAQ-n8-W39" secondAttribute="leading" constant="185" id="eJ5-Ee-b8b"/>
-                            <constraint firstItem="bAB-ef-1j7" firstAttribute="top" secondItem="bTU-HL-cPB" secondAttribute="bottom" constant="50" id="fl4-RR-5YS"/>
+                            <constraint firstItem="bAB-ef-1j7" firstAttribute="leading" secondItem="DAQ-n8-W39" secondAttribute="leading" constant="187" id="eJ5-Ee-b8b"/>
                             <constraint firstAttribute="trailing" secondItem="bAB-ef-1j7" secondAttribute="trailing" id="g3v-x1-wfb"/>
                             <constraint firstItem="dRA-qn-odh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lw7-im-tGa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dRA-qn-odh" secondAttribute="bottom" id="oHI-RF-EVo"/>
@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2n-eD-zfM">
-                                <rect key="frame" x="112" y="250" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="250" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="AwG-Bt-9mN"/>
                                     <constraint firstAttribute="height" constant="150" id="KjF-YQ-oNT"/>
@@ -172,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="fVu-oR-Ytb">
-                                <rect key="frame" x="83.5" y="122" width="207" height="50"/>
+                                <rect key="frame" x="84" y="122" width="207" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fVu-oR-Ytb" secondAttribute="height" multiplier="207:50" id="dXk-vW-Jdt"/>
                                     <constraint firstAttribute="width" constant="207" id="g8Z-Tm-2mh"/>

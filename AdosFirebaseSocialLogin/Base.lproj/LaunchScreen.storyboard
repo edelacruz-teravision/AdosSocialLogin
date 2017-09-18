@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,10 +26,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Gzz-xG-R9P">
-                                <rect key="frame" x="105" y="313" width="164" height="40"/>
+                                <rect key="frame" x="105" y="313" width="165" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3fS-nm-5wc"/>
-                                    <constraint firstAttribute="width" constant="164" id="ndX-gA-XxI"/>
+                                    <constraint firstAttribute="width" secondItem="Gzz-xG-R9P" secondAttribute="height" multiplier="41:10" id="xzR-Fe-Ich"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -39,6 +39,7 @@
                             <constraint firstItem="EGY-Fw-2tu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="IY7-gx-r83"/>
                             <constraint firstItem="Gzz-xG-R9P" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jpc-X0-ciA"/>
                             <constraint firstAttribute="trailing" secondItem="EGY-Fw-2tu" secondAttribute="trailing" id="OP3-OZ-ajm"/>
+                            <constraint firstItem="EGY-Fw-2tu" firstAttribute="leading" secondItem="Gzz-xG-R9P" secondAttribute="leading" constant="-105" id="qUv-PJ-ppX"/>
                             <constraint firstItem="EGY-Fw-2tu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rUp-VW-T3T"/>
                         </constraints>
                     </view>

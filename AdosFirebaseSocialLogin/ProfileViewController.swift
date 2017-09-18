@@ -34,6 +34,8 @@ class ProfileViewController: UIViewController
         self.emailProfileLabel.text = self.email
         self.tokenProfileLabel.text = self.token
         
+        print(self.token)
+        
         let url = NSURL(string: imageUrl)
         let data = NSData(contentsOf:url! as URL)
         

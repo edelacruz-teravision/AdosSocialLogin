@@ -18,13 +18,14 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
     var name : String = ""
     var token : String = ""
     var imageUrl : String = ""
+    var loginButtonHeight : CGFloat = 0
     
     // MARK: - Outlets
     
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var customFBButton: FBSDKLoginButton!    
+    @IBOutlet var customFBButton: FBSDKLoginButton!
     
     // MARK: - AdosLoginViewController Load
     
@@ -36,7 +37,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         
         self.loginButton.layer.borderColor = UIColor.white.cgColor
         self.loginButton.layer.borderWidth = 1
-        self.loginButton.layer.cornerRadius = 20
+        
         
         // Textfields config
         
@@ -73,6 +74,15 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super .viewDidAppear(animated)
+        
+        self.loginButtonHeight = loginButton.frame.height
+        print(self.loginButtonHeight)
+        self.loginButton.layer.cornerRadius = self.loginButtonHeight / 2.0
     }
     
     // MARK: - Custom FB Button functions

@@ -46,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				2D66E26D1F6DA429001D015E /* AdosFirebaseSocialLogin */,
-				2D66E26C1F6DA429001D015E /* Products */,
 				8372CDF395FC19D0B0BC6A95 /* Pods */,
 				6BBC450BEB2377923F22B3C8 /* Frameworks */,
 			);
@@ -58,6 +57,7 @@
 				2D66E26B1F6DA429001D015E /* AdosFirebaseSocialLogin.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2D66E26D1F6DA429001D015E /* AdosFirebaseSocialLogin */ = {
@@ -70,6 +70,7 @@
 				2D66E2721F6DA429001D015E /* Main.storyboard */,
 				2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */,
 				2D66E27A1F6DA429001D015E /* Info.plist */,
+				2D66E26C1F6DA429001D015E /* Products */,
 			);
 			path = AdosFirebaseSocialLogin;
 			sourceTree = "<group>";

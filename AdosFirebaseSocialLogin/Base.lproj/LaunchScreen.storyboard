@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo" translatesAutoresizingMaskIntoConstraints="NO" id="EGY-Fw-2tu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Gzz-xG-R9P">
+                                <rect key="frame" x="105" y="313" width="164" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3fS-nm-5wc"/>
+                                    <constraint firstAttribute="width" constant="164" id="ndX-gA-XxI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="EGY-Fw-2tu" secondAttribute="bottom" id="1U1-GV-jaE"/>
+                            <constraint firstItem="Gzz-xG-R9P" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="I7R-l0-HPX"/>
+                            <constraint firstItem="EGY-Fw-2tu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="IY7-gx-r83"/>
+                            <constraint firstItem="Gzz-xG-R9P" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jpc-X0-ciA"/>
+                            <constraint firstAttribute="trailing" secondItem="EGY-Fw-2tu" secondAttribute="trailing" id="OP3-OZ-ajm"/>
+                            <constraint firstItem="EGY-Fw-2tu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rUp-VW-T3T"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fondo" width="320" height="568"/>
+        <image name="page1" width="206" height="49"/>
+    </resources>
+</document>

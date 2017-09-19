@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
 
-class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
+class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate
 {
     // MARK: - Global Variables
     
@@ -28,35 +28,19 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var customFBButton: FBSDKLoginButton!
+    @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var customGoogleButton: UIButton!
     
     // MARK: - AdosLoginViewController Load
     
     override func viewDidLoad()
     {
-        // MARK: - Login button config
-        
         super.viewDidLoad()
         
-        self.loginButton.layer.borderColor = UIColor.white.cgColor
-        self.loginButton.layer.borderWidth = 1
-        
-        
-        // MARK: - Textfields config
-        
-        if let placeholder = passwordTextField.placeholder
-        {
-            passwordTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
-        }
-        
-        if let placeholder = emailTextField.placeholder
-        {
-            emailTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
-        }
-        
-        // MARK: - Custom Facebook button config
-        
-        customFBButton.delegate = self
-        customFBButton.readPermissions = ["email", "public_profile"]
+        setupFacebookButtons()
+        setupLoginButton()
+        setupTextFields()
+        setupGoogleButton()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -74,17 +58,43 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         self.loginButton.layer.cornerRadius = self.loginButtonHeight / 2.0
     }
     
-    // MARK: - Custom FB Button functions
-    
-    func handleCustomFBLogin()
+    // MARK: - Google Sign in Button
+
+    fileprivate func setupGoogleButton()
     {
-        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
-            if err != nil
-            {
-                print("FB login Failed", err as Any)
-            }
-            
-            self.showEmailAdress()
+        customGoogleButton.addTarget(self, action: #selector (handleCustomGoogleSign), for: .touchUpInside)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    // MARK: - Custom Facebook button config
+    
+    fileprivate func setupFacebookButtons()
+    {
+        customFBButton.delegate = self
+        customFBButton.readPermissions = ["email", "public_profile"]
+    }
+    
+    // MARK: - Login Button config
+    
+    fileprivate func setupLoginButton()
+    {
+        self.loginButton.layer.borderColor = UIColor.white.cgColor
+        self.loginButton.layer.borderWidth = 1
+    }
+    
+    // MARK: - Textfields config
+    
+    fileprivate func setupTextFields()
+    {
+        if let placeholder = passwordTextField.placeholder
+        {
+            passwordTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
+        }
+        
+        if let placeholder = emailTextField.placeholder
+        {
+            emailTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
         }
     }
     
@@ -105,15 +115,13 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
             return
         }
         
-        self.showEmailAdress()
+        self.facebookLoginAction()
     }
     
-    // MARK: - Custom Functions
+    // MARK: - Facebook Login Action
     
-    func showEmailAdress()
+    func facebookLoginAction()
     {
-        // MARK: - Firebase login
-        
         let accessTokenFB = FBSDKAccessToken.current()
         guard let accesTokenString = accessTokenFB?.tokenString else
         {
@@ -129,10 +137,8 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
                 return
             }
             
-            print("Successfully logged in with our user: ", user ?? "")
+            print("Successfully logged in Firebase with Facebook, our user is: ", user ?? "")
         }
-        
-        // MARK: - User data pull from FB
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields" : "id, name, email, picture.type(large)"]).start { (connection, result, err) in
             
@@ -177,6 +183,13 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
             self.performSegue(withIdentifier: "goToProfileView", sender: nil)
             
         } // Brings your user profile
+    }
+    
+    // MARK: - Google Button Login Action
+    
+    func handleCustomGoogleSign()
+    {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     // MARK: - Navigation

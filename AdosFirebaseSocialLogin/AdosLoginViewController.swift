@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import Firebase
+import GoogleSignIn
 
 class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
 {
@@ -31,7 +33,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
     
     override func viewDidLoad()
     {
-        // Login button config
+        // MARK: - Login button config
         
         super.viewDidLoad()
         
@@ -39,7 +41,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         self.loginButton.layer.borderWidth = 1
         
         
-        // Textfields config
+        // MARK: - Textfields config
         
         if let placeholder = passwordTextField.placeholder
         {
@@ -51,22 +53,10 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
             emailTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
         }
         
-        // Custom Facebook button config
+        // MARK: - Custom Facebook button config
         
         customFBButton.delegate = self
         customFBButton.readPermissions = ["email", "public_profile"]
-        
-        // Creation of FB login button
-        
-        /*let loginFBButton = FBSDKLoginButton()
-        view.addSubview(loginFBButton)
-        
-        // Frame's are obsolete, please use constraints instead becuase its 2016 afeterall
-        
-        loginFBButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-        
-        loginFBButton.delegate = self
-        loginFBButton.readPermissions = ["email", "public_profile"]*/
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -81,7 +71,6 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
         super .viewDidAppear(animated)
         
         self.loginButtonHeight = loginButton.frame.height
-        print(self.loginButtonHeight)
         self.loginButton.layer.cornerRadius = self.loginButtonHeight / 2.0
     }
     
@@ -123,11 +112,34 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate
     
     func showEmailAdress()
     {
+        // MARK: - Firebase login
+        
+        let accessTokenFB = FBSDKAccessToken.current()
+        guard let accesTokenString = accessTokenFB?.tokenString else
+        {
+            return
+        }
+        
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accesTokenString)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if error != nil
+            {
+                print("Something went wrong with our FB user: ", error ?? "")
+                return
+            }
+            
+            print("Successfully logged in with our user: ", user ?? "")
+        }
+        
+        // MARK: - User data pull from FB
+        
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields" : "id, name, email, picture.type(large)"]).start { (connection, result, err) in
             
             if err != nil
             {
-                print("Failed to start graph request:", err as Any)
+                print("Failed to start graph request:", err ?? "")
+                return
             }
             
             self.dict = result as! NSDictionary

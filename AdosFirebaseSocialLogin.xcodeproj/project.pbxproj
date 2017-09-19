@@ -13,6 +13,7 @@
 		2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */; };
 		2D66E2741F6DA429001D015E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2721F6DA429001D015E /* Main.storyboard */; };
 		2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */; };
+		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		B48B5B9A9F79E15A3B52D3E4 /* Pods_AdosFirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		2D66E27A1F6DA429001D015E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3389FB0C4A4B23A1A15CDACB /* Pods-AdosFirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF38E9CB4A22F9EB28B288A9 /* Pods-AdosFirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				2D66E2721F6DA429001D015E /* Main.storyboard */,
 				2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */,
 				2D66E27A1F6DA429001D015E /* Info.plist */,
+				A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */,
 				2D66E26C1F6DA429001D015E /* Products */,
 			);
 			path = AdosFirebaseSocialLogin;
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */,
+				A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */,
 				2D09EB201F6EBC1F0028632B /* Assets.xcassets in Resources */,
 				2D66E2741F6DA429001D015E /* Main.storyboard in Resources */,
 			);
@@ -193,6 +197,10 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -200,6 +208,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -212,9 +224,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

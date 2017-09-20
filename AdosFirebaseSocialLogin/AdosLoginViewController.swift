@@ -41,6 +41,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         setupLoginButton()
         setupTextFields()
         setupGoogleButton()
+        setupTwitterButton()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -65,6 +66,13 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         
         self.loginButtonHeight = loginButton.frame.height
         self.loginButton.layer.cornerRadius = self.loginButtonHeight / 2.0
+    }
+    
+    // MARK: - Twitter Sign In Button
+    
+    func setupTwitterButton()
+    {
+        
     }
     
     // MARK: - Google Sign in Button

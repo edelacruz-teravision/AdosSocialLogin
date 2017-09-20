@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         //GIDSignIn.sharedInstance().delegate = self
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        Twitter.sharedInstance().start(withConsumerKey:"daw24f8TI9U7GPQNWZyF5uIjQ", consumerSecret:"lnQhuDFcDzPkFm5kze3fO8EBbU43GpdrvflQGzUcytAuolzU6Y")
 
         return true
     }

@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
 
-class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate
+class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate
 {
     // MARK: - Global Variables
     
@@ -48,6 +48,15 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if GIDSignIn.sharedInstance().hasAuthInKeychain()
+        {
+            customGoogleButton.setImage(#imageLiteral(resourceName: "Sign_Out"), for: .normal)
+        }
+        else
+        {
+            customGoogleButton.setImage(#imageLiteral(resourceName: "sign_In"), for: .normal)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -62,9 +71,14 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
 
     fileprivate func setupGoogleButton()
     {
-        customGoogleButton.addTarget(self, action: #selector (handleCustomGoogleSign), for: .touchUpInside)
+        customGoogleButton.contentMode = .center
+        customGoogleButton.imageView?.contentMode = .scaleAspectFit
         
+        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
+        customGoogleButton.addTarget(self, action: #selector (handleCustomGoogleSign), for: .touchUpInside)
     }
     
     // MARK: - Custom Facebook button config
@@ -185,11 +199,71 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         } // Brings your user profile
     }
     
+    func googleButtonAction()
+    {
+        self.email = GIDSignIn.sharedInstance().currentUser.profile.email
+        self.name = GIDSignIn.sharedInstance().currentUser.profile.name
+        self.imageUrl = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 600).absoluteString
+        guard let idToken = GIDSignIn.sharedInstance().currentUser.authentication.idToken else { return }
+        self.token = idToken
+        
+        self.performSegue(withIdentifier: "goToProfileView", sender: nil)
+    }
+    
     // MARK: - Google Button Login Action
     
     func handleCustomGoogleSign()
     {
-        GIDSignIn.sharedInstance().signIn()
+        if GIDSignIn.sharedInstance().hasAuthInKeychain()
+        {
+            GIDSignIn.sharedInstance().signOut()
+            customGoogleButton.setImage(#imageLiteral(resourceName: "sign_In"), for: .normal)
+        }
+        else
+        {
+            GIDSignIn.sharedInstance().signIn()
+            
+        }
+    }
+    
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
+    {    
+        if let err = error
+        {
+            print("Failed to log in into Google", err)
+        }
+        
+        print("Successfully logged into Google", user)
+        
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if let err = error
+            {
+                print("Failed to create a Firebase User with Google Account: ", err)
+                return
+            }
+            
+            guard let uid = user?.uid else { return }
+            print("Successfully logged into Firebase with Google", uid)
+        }
+        
+        googleButtonAction()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
+    {
+        if error != nil
+        {
+            print("Failed to log out from Google ", error.localizedDescription)
+            return
+        }
+        else
+        {
+            print("Successfully logged out from Google")
+        }
     }
     
     // MARK: - Navigation

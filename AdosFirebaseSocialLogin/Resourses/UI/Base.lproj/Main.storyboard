@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1nL-pl-MDq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1nL-pl-MDq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -127,7 +127,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uY9-Zu-mVg" firstAttribute="width" secondItem="DAQ-n8-W39" secondAttribute="width" multiplier="0.5" constant="1" id="0eL-zE-Sdb"/>
+                            <constraint firstItem="uY9-Zu-mVg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="1" id="0eL-zE-Sdb"/>
                             <constraint firstAttribute="trailing" secondItem="DAQ-n8-W39" secondAttribute="trailing" id="2Iu-Ng-77N"/>
                             <constraint firstItem="SgA-QD-Vbc" firstAttribute="top" secondItem="zXg-tR-OUY" secondAttribute="bottom" constant="100" id="5NF-xb-m1T"/>
                             <constraint firstItem="uY9-Zu-mVg" firstAttribute="height" secondItem="DAQ-n8-W39" secondAttribute="height" multiplier="0.078" constant="1" id="5qM-aU-OSa"/>
@@ -156,6 +156,7 @@
                             <constraint firstItem="dRA-qn-odh" firstAttribute="top" secondItem="uY9-Zu-mVg" secondAttribute="bottom" id="eGI-TX-fh3"/>
                             <constraint firstItem="dRA-qn-odh" firstAttribute="height" secondItem="DAQ-n8-W39" secondAttribute="height" multiplier="0.078" constant="1" id="fV0-Bd-auR"/>
                             <constraint firstAttribute="trailing" secondItem="bAB-ef-1j7" secondAttribute="trailing" id="g3v-x1-wfb"/>
+                            <constraint firstItem="bAB-ef-1j7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="h6K-cQ-Wrd"/>
                             <constraint firstItem="Aqk-qU-W2l" firstAttribute="top" secondItem="mwf-ez-svb" secondAttribute="bottom" constant="100" id="ha2-xH-ZCK"/>
                             <constraint firstItem="SgA-QD-Vbc" firstAttribute="leading" secondItem="DAQ-n8-W39" secondAttribute="leading" constant="131" id="jog-k8-piq"/>
                             <constraint firstItem="bAB-ef-1j7" firstAttribute="height" secondItem="DAQ-n8-W39" secondAttribute="height" multiplier="0.078" constant="1" id="ka5-ZB-YGG"/>
@@ -163,7 +164,7 @@
                             <constraint firstAttribute="trailing" secondItem="Aqk-qU-W2l" secondAttribute="trailing" constant="20" id="mp3-i0-RrB"/>
                             <constraint firstItem="uY9-Zu-mVg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ngv-Lh-YmA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dRA-qn-odh" secondAttribute="bottom" id="oHI-RF-EVo"/>
-                            <constraint firstItem="bAB-ef-1j7" firstAttribute="width" secondItem="DAQ-n8-W39" secondAttribute="width" multiplier="0.5" constant="1" id="pLf-lu-qEj"/>
+                            <constraint firstItem="bAB-ef-1j7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="1" id="pLf-lu-qEj"/>
                             <constraint firstItem="mwf-ez-svb" firstAttribute="leading" secondItem="DAQ-n8-W39" secondAttribute="leading" constant="100" id="tCW-46-sxg"/>
                             <constraint firstItem="DAQ-n8-W39" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tww-75-KUp"/>
                             <constraint firstItem="zXg-tR-OUY" firstAttribute="bottom" secondItem="Aqk-qU-W2l" secondAttribute="bottom" constant="100" id="y0g-Pd-nrh"/>
@@ -310,12 +311,10 @@
                             <constraint firstItem="Bvx-D2-qwB" firstAttribute="top" secondItem="h2n-eD-zfM" secondAttribute="bottom" constant="40" id="7Ew-l0-5ol"/>
                             <constraint firstItem="h2n-eD-zfM" firstAttribute="centerX" secondItem="eYp-ks-nw1" secondAttribute="centerX" id="8yL-5t-f2j"/>
                             <constraint firstItem="sIr-QG-yX5" firstAttribute="top" secondItem="fVu-oR-Ytb" secondAttribute="top" constant="-100" id="Av0-Hz-12Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bvx-D2-qwB" secondAttribute="trailing" constant="20" id="BIW-bg-85u"/>
                             <constraint firstItem="fVu-oR-Ytb" firstAttribute="centerX" secondItem="eYp-ks-nw1" secondAttribute="centerX" id="CXJ-Ib-cmj"/>
                             <constraint firstItem="Xnj-fV-CNw" firstAttribute="leading" secondItem="eYp-ks-nw1" secondAttribute="leading" constant="70" id="Dti-B4-8Od"/>
                             <constraint firstItem="Qt0-GK-JBg" firstAttribute="leading" secondItem="eYp-ks-nw1" secondAttribute="leading" constant="70" id="I6a-YL-DZX"/>
                             <constraint firstItem="h2n-eD-zfM" firstAttribute="top" secondItem="fVu-oR-Ytb" secondAttribute="bottom" constant="50" id="JBE-Xv-mOB"/>
-                            <constraint firstItem="Xnj-fV-CNw" firstAttribute="leading" secondItem="eYp-ks-nw1" secondAttribute="leadingMargin" constant="20" id="KYD-mq-kIF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xnj-fV-CNw" secondAttribute="trailing" constant="20" id="LhA-d4-aXb"/>
                             <constraint firstItem="sIr-QG-yX5" firstAttribute="leading" secondItem="eYp-ks-nw1" secondAttribute="leading" id="NpF-Iv-JBd"/>
                             <constraint firstItem="Bvx-D2-qwB" firstAttribute="leading" secondItem="eYp-ks-nw1" secondAttribute="leadingMargin" constant="20" id="Nva-hj-qgd"/>
@@ -324,7 +323,6 @@
                             <constraint firstItem="4jJ-hT-pIZ" firstAttribute="top" secondItem="Qt0-GK-JBg" secondAttribute="bottom" constant="20" id="Rc3-3Y-efv"/>
                             <constraint firstItem="Xnj-fV-CNw" firstAttribute="centerX" secondItem="eYp-ks-nw1" secondAttribute="centerX" id="Rir-Vt-mnW"/>
                             <constraint firstItem="Xnj-fV-CNw" firstAttribute="top" secondItem="Bvx-D2-qwB" secondAttribute="bottom" constant="40" id="Y8a-LI-xpo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qt0-GK-JBg" secondAttribute="trailing" constant="20" id="ZbY-Sv-w9a"/>
                             <constraint firstItem="4jJ-hT-pIZ" firstAttribute="top" secondItem="sIr-QG-yX5" secondAttribute="bottom" id="aWY-7K-g8L"/>
                             <constraint firstAttribute="trailing" secondItem="Qt0-GK-JBg" secondAttribute="trailing" constant="70" id="fa5-Uq-tTg"/>
                             <constraint firstItem="Bvx-D2-qwB" firstAttribute="centerX" secondItem="eYp-ks-nw1" secondAttribute="centerX" id="h8c-2V-fcs"/>
@@ -342,15 +340,12 @@
                                 <include reference="3U5-6J-ykA"/>
                                 <exclude reference="igO-yQ-buB"/>
                                 <exclude reference="1vZ-NI-e20"/>
-                                <include reference="BIW-bg-85u"/>
                                 <include reference="Nva-hj-qgd"/>
                                 <exclude reference="kAl-DE-hpg"/>
                                 <exclude reference="Dti-B4-8Od"/>
-                                <include reference="KYD-mq-kIF"/>
                                 <include reference="LhA-d4-aXb"/>
                                 <exclude reference="n0D-qu-u4J"/>
                                 <exclude reference="I6a-YL-DZX"/>
-                                <include reference="ZbY-Sv-w9a"/>
                                 <exclude reference="fa5-Uq-tTg"/>
                                 <include reference="kQp-Nf-SJY"/>
                             </mask>
@@ -362,15 +357,12 @@
                                 <exclude reference="3U5-6J-ykA"/>
                                 <include reference="igO-yQ-buB"/>
                                 <include reference="1vZ-NI-e20"/>
-                                <exclude reference="BIW-bg-85u"/>
                                 <exclude reference="Nva-hj-qgd"/>
                                 <include reference="kAl-DE-hpg"/>
                                 <include reference="Dti-B4-8Od"/>
-                                <exclude reference="KYD-mq-kIF"/>
                                 <exclude reference="LhA-d4-aXb"/>
                                 <include reference="n0D-qu-u4J"/>
                                 <include reference="I6a-YL-DZX"/>
-                                <exclude reference="ZbY-Sv-w9a"/>
                                 <include reference="fa5-Uq-tTg"/>
                                 <exclude reference="kQp-Nf-SJY"/>
                             </mask>
@@ -393,7 +385,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1nL-pl-MDq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fbl-Mj-iml">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

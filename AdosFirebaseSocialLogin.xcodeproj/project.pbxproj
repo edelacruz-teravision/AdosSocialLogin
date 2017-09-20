@@ -69,8 +69,7 @@
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
 				2D09EB1F1F6EBC1F0028632B /* Assets.xcassets */,
-				2D66E2721F6DA429001D015E /* Main.storyboard */,
-				2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */,
+				A33DEE6D1F72A5E700FB0B3E /* Resourses */,
 				2D66E27A1F6DA429001D015E /* Info.plist */,
 				A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */,
 				2D66E26C1F6DA429001D015E /* Products */,
@@ -93,6 +92,23 @@
 				AF38E9CB4A22F9EB28B288A9 /* Pods-AdosFirebaseSocialLogin.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A33DEE6D1F72A5E700FB0B3E /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				A33DEE6E1F72A5F900FB0B3E /* UI */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		A33DEE6E1F72A5F900FB0B3E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2D66E2721F6DA429001D015E /* Main.storyboard */,
+				2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

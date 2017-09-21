@@ -15,5 +15,6 @@ pod ‘Firebase/Auth’
 pod 'GoogleSignIn'
 
 pod 'TwitterKit'
+pod 'Fabric'
 
 end

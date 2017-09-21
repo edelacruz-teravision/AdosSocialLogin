@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
+import TwitterKit
 
 class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate
 {
@@ -30,6 +31,7 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
     @IBOutlet var customFBButton: FBSDKLoginButton!
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var customGoogleButton: UIButton!
+    @IBOutlet var customTwitterButton: UIButton!
     
     // MARK: - AdosLoginViewController Load
     
@@ -41,7 +43,6 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         setupLoginButton()
         setupTextFields()
         setupGoogleButton()
-        setupTwitterButton()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -68,11 +69,38 @@ class AdosLoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSi
         self.loginButton.layer.cornerRadius = self.loginButtonHeight / 2.0
     }
     
-    // MARK: - Twitter Sign In Button
+    // MARK: - Twitter Btton Action
     
-    func setupTwitterButton()
+    @IBAction func customTwitterButtonPressed(_ sender: TWTRLogInButton)
     {
-        
+        Twitter.sharedInstance().logIn(completion: { (session, error) in
+            if let err = error
+            {
+                print("Failed to log in via Twitter", err)
+            }
+            
+            guard let token = session?.authToken else { return }
+            guard let secret = session?.authTokenSecret else { return }
+            
+            let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
+            
+            Auth.auth().signIn(with: credential, completion: { (user, error) in
+                if let err = error
+                {
+                    print("Failed to login to Firebase with Twitter: ", err)
+                    return
+                }
+                
+                print("Successfully created a Firebase-Twitter user: ", user?.uid ?? "")
+            })
+            
+            self.token = (session?.authToken)!
+            self.name = (session?.userName)!
+            self.email = "Not Provided"
+            self.imageUrl = "No Picture"
+            
+            self.performSegue(withIdentifier: "goToProfileView", sender: nil)
+        })
     }
     
     // MARK: - Google Sign in Button

@@ -11,20 +11,18 @@ import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
 import TwitterKit
+import SafariServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        //GIDSignIn.sharedInstance().delegate = self
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         Twitter.sharedInstance().start(withConsumerKey:"daw24f8TI9U7GPQNWZyF5uIjQ", consumerSecret:"lnQhuDFcDzPkFm5kze3fO8EBbU43GpdrvflQGzUcytAuolzU6Y")
@@ -32,50 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         return true
     }
     
-    /*func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
-    {
-        if let err = error
-        {
-            print("Failed to log in into Google", err)
-        }
-        
-        print("Successfully logged into Google", user)
-        
-        guard let idToken = user.authentication.idToken else { return }
-        guard let accessToken = user.authentication.accessToken else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        
-        Auth.auth().signIn(with: credentials) { (user, error) in
-            if let err = error
-            {
-                print("Failed to create a Firebase User with Google Account: ", err)
-                return
-            }
-            
-            guard let uid = user?.uid else { return }
-            print("Successfully logged into Firebase with Google", uid)
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
-    {
-        if error != nil
-        {
-            print("Failed to log out from Google ", error.localizedDescription)
-            return
-        }
-        else
-        {
-            print("Successfully logged out from Google")
-        }
-    }*/
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool
     {
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
         GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                           annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        if Twitter.sharedInstance().application(app, open: url, options: options)
+        {
+            return true
+        }
         
         return handled
     }

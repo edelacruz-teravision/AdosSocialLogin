@@ -30,25 +30,31 @@ class ProfileViewController: UIViewController
     {
         super.viewDidLoad()
         
+        if self.imageUrl == "No Picture"
+        {
+            profilePictureImageView.image = #imageLiteral(resourceName: "twitter-117595_1280")
+        }
+        else
+        {
+            let url = NSURL(string: imageUrl)
+            let data = NSData(contentsOf:url! as URL)
+            
+            // nil issue manage.
+            if (data?.length)! > 0
+            {
+                self.profilePictureImageView.image = UIImage(data:data! as Data)
+            }
+            else
+            {
+                print("Error nil image")
+                return
+            }
+        }
         self.profileNameLabel.text = self.name
         self.emailProfileLabel.text = self.email
         self.tokenProfileLabel.text = self.token
         
         print(self.token)
-        
-        let url = NSURL(string: imageUrl)
-        let data = NSData(contentsOf:url! as URL)
-        
-        // nil issue manage.
-        if (data?.length)! > 0
-        {
-            self.profilePictureImageView.image = UIImage(data:data! as Data)
-        }
-        else
-        {
-            print("Error nil image")
-            return
-        }
     }
     
     override func viewWillAppear(_ animated: Bool)

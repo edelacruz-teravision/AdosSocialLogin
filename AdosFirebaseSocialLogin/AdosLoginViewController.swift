@@ -47,6 +47,10 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
         setupLoginButton()
         setupFacebookButtons()
         setupTextFields()

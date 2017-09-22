@@ -16,5 +16,6 @@ pod 'GoogleSignIn'
 
 pod 'TwitterKit'
 pod 'Fabric'
+pod 'Alamofire', '~> 4.5'
 
 end

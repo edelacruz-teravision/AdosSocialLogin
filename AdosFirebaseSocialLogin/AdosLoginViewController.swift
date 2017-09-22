@@ -11,6 +11,7 @@ import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
 import TwitterKit
+import Alamofire
 
 class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate
 {
@@ -22,6 +23,9 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     var token : String = ""
     var imageUrl : String = ""
     var loginButtonHeight : CGFloat = 0
+    let clientId : String = "2"
+    let clientSecret : String = "Uv2Fsi9uW8qv8ueIJlGSjiOTtJRihNHKryEVvlo9"
+    let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188"
     
     // MARK: - Outlets
     
@@ -32,6 +36,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var customGoogleButton: UIButton!
     @IBOutlet var customTwitterButton: UIButton!
+    @IBOutlet var customInstagramButton: UIButton!
     
     // MARK: - AdosLoginViewController Load
     
@@ -56,6 +61,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         setupTextFields()
         setupGoogleButton()
         setupTwitterButton()
+        setupInstagramButton()
     }
     
     // MARK: - Login Button config
@@ -83,9 +89,11 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         }
     }
     
+    // MARK: - Facebook Button Setup
+    
     func setupFacebookButtons()
     {
-        let customFBButtonHeight = customFBButton.frame.height
+        let customFBButtonHeight = self.customFBButton.frame.height
         self.customFBButton.layer.cornerRadius = customFBButtonHeight / 2.0
     }
     
@@ -175,7 +183,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     fileprivate func setupGoogleButton()
     {
-        let customGoogleHeight = customGoogleButton.frame.height
+        let customGoogleHeight = self.customGoogleButton.frame.height
         self.customGoogleButton.layer.cornerRadius = customGoogleHeight / 2.0
     }
     
@@ -263,7 +271,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     func setupTwitterButton()
     {
-        let customTwitterHeight = customTwitterButton.frame.height
+        let customTwitterHeight = self.customTwitterButton.frame.height
         self.customTwitterButton.layer.cornerRadius = customTwitterHeight / 2.0
     }
     
@@ -299,6 +307,24 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             
             self.performSegue(withIdentifier: "goToProfileView", sender: nil)
         })
+    }
+    
+    // MARK: - Instagram Button Setup
+    
+    func setupInstagramButton()
+    {
+        let customInstagramHeight = self.customInstagramButton.frame.height
+        self.customTwitterButton.layer.cornerRadius = customInstagramHeight / 2.0
+    }
+    
+    // MARK: - Login Button Action
+    
+    @IBAction func logInButtonPressed(_ sender: UIButton)
+    {
+        let parameters: Parameters = ["client_id" : clientId, "client_secret": clientSecret, "username": "edelacruz@teravisiontech.com", "password" : "Qwerty123$"]
+        
+        // All three of these calls are equivalent
+        Alamofire.request(adosUrl, method: .post, parameters: parameters)
     }
     
     // MARK: - Navigation

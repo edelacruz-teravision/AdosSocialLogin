@@ -15,6 +15,8 @@
 		2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
+		A3DEF10A1F7588190080B396 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF1091F7588190080B396 /* Constant.swift */; };
+		A3DEF10C1F7589150080B396 /* InstagramLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF10B1F7589150080B396 /* InstagramLoginVC.swift */; };
 		B48B5B9A9F79E15A3B52D3E4 /* Pods_AdosFirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3DEF1091F7588190080B396 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A3DEF10B1F7589150080B396 /* InstagramLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginVC.swift; sourceTree = "<group>"; };
 		AF38E9CB4A22F9EB28B288A9 /* Pods-AdosFirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,8 @@
 			children = (
 				2D66E26E1F6DA429001D015E /* AppDelegate.swift */,
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
+				A3DEF1091F7588190080B396 /* Constant.swift */,
+				A3DEF10B1F7589150080B396 /* InstagramLoginVC.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
 				2D09EB1F1F6EBC1F0028632B /* Assets.xcassets */,
 				A33DEE6D1F72A5E700FB0B3E /* Resourses */,
@@ -213,6 +219,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -224,6 +231,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -268,6 +276,8 @@
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
+				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
+				A3DEF10C1F7589150080B396 /* InstagramLoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

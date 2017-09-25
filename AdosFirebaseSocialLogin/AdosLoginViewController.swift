@@ -327,8 +327,8 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             "client_id" : clientId,
             "client_secret": clientSecret,
             "grant_type" : grantType,
-            "username": emailTextField.text,
-            "password" : passwordTextField.text,
+            "username": emailTextField.text ?? "",
+            "password" : passwordTextField.text ?? "",
             "device_token" : deviceToken
         ]
         
@@ -358,7 +358,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     self.performSegue(withIdentifier: "goToProfileView", sender: nil)
                 
                 case .failure( _):
-                    let alertController = UIAlertController(title: "Wrong login credentials", message: "Invalid email or password", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Wrong log in credentials", message: "Invalid email or password", preferredStyle: .alert)
                 
                     let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.passwordTextField.text = ""

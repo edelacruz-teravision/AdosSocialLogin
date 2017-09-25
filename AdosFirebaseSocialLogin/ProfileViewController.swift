@@ -30,9 +30,13 @@ class ProfileViewController: UIViewController
     {
         super.viewDidLoad()
         
-        if self.imageUrl == "No Picture"
+        if self.imageUrl == "Twitter"
         {
             profilePictureImageView.image = #imageLiteral(resourceName: "twitter-117595_1280")
+        }
+        else if self.imageUrl == "Login Image"
+        {
+            profilePictureImageView.image = #imageLiteral(resourceName: "no_picture")
         }
         else
         {

@@ -26,6 +26,8 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     let clientId : String = "2"
     let clientSecret : String = "Uv2Fsi9uW8qv8ueIJlGSjiOTtJRihNHKryEVvlo9"
     let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188/oauth/token"
+    let grantType : String = "password"
+    let deviceToken : String = "device_token"
     
     // MARK: - Outlets
     
@@ -303,7 +305,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             self.token = (session?.authToken)!
             self.name = (session?.userName)!
             self.email = "Not Provided"
-            self.imageUrl = "No Picture"
+            self.imageUrl = "Twitter"
             
             self.performSegue(withIdentifier: "goToProfileView", sender: nil)
         })
@@ -324,27 +326,47 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         let parameters: Parameters = [
             "client_id" : clientId,
             "client_secret": clientSecret,
-            "grant_type" : "password",
-            "username": "edelacruz@teravisiontech.com",
-            "password" : "Qwerty123$",
-            "device_token" : "devicetoken"
+            "grant_type" : grantType,
+            "username": emailTextField.text,
+            "password" : passwordTextField.text,
+            "device_token" : deviceToken
         ]
         
-        // All three of these calls are equivalent
-        Alamofire.request(adosUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ (response) in
-            print(response.request)  // original URL request
-            //print(response.response) // URL response
-            //print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        Alamofire.request(adosUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             
-            let jsonString = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-            
-            if let JSON = response.result.value
+            switch response.result
             {
+                case .success:
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    let result = json["result"] as? [String: Any]
+                    let sigupStatus = result!["signup_status"] as! [String : Any]
+                    let data = sigupStatus["data"] as! [[String : Any]]
+                    let dataDict = data[0] as [String : Any]
+                    let email = dataDict["data"] as! [String : String]
+                    
+                    self.email = email["email"]!
+                    self.imageUrl = "Login Image"
+                    self.name = "Not Provided"
+                    self.token = result!["access_token"] as! String
                 
-
-                print("Token: )", resultDict!["result"])
-                print("Response Code: ", resultDict!["code"])
+                    self.performSegue(withIdentifier: "goToProfileView", sender: nil)
+                
+                case .failure( _):
+                    let alertController = UIAlertController(title: "Wrong login credentials", message: "Invalid email or password", preferredStyle: .alert)
+                
+                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.passwordTextField.text = ""
+                        self.emailTextField.text = ""
+                    })
+                
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
             }
         }
     }

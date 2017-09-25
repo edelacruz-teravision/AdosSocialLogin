@@ -24,7 +24,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     var imageUrl : String = ""
     var loginButtonHeight : CGFloat = 0
     
-    
     // MARK: - Outlets
     
     @IBOutlet var loginButton: UIButton!

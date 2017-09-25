@@ -24,3 +24,16 @@ struct INSTAGRAM_IDS
     
     static let INSTAGRAM_SCOPE = "likes+comments+relationships"    
 }
+
+struct ServerData
+{
+    static let clientId : String = "2"
+    
+    static let clientSecret : String = "Uv2Fsi9uW8qv8ueIJlGSjiOTtJRihNHKryEVvlo9"
+    
+    static let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188/oauth/token"
+    
+    static let grantType : String = "password"
+    
+    static let deviceToken : String = "device_token"
+}

@@ -23,11 +23,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     var token : String = ""
     var imageUrl : String = ""
     var loginButtonHeight : CGFloat = 0
-    let clientId : String = "2"
-    let clientSecret : String = "Uv2Fsi9uW8qv8ueIJlGSjiOTtJRihNHKryEVvlo9"
-    let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188/oauth/token"
-    let grantType : String = "password"
-    let deviceToken : String = "device_token"
+    
     
     // MARK: - Outlets
     
@@ -324,12 +320,12 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     @IBAction func logInButtonPressed(_ sender: UIButton)
     {
         let parameters: Parameters = [
-            "client_id" : clientId,
-            "client_secret": clientSecret,
-            "grant_type" : grantType,
+            "client_id" : ServerData.clientId,
+            "client_secret": ServerData.clientSecret,
+            "grant_type" : ServerData.grantType,
             "username": emailTextField.text ?? "",
             "password" : passwordTextField.text ?? "",
-            "device_token" : deviceToken
+            "device_token" : ServerData.deviceToken
         ]
         
         Alamofire.request(adosUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in

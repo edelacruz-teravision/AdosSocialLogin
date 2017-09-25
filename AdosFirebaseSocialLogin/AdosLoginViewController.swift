@@ -25,7 +25,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     var loginButtonHeight : CGFloat = 0
     let clientId : String = "2"
     let clientSecret : String = "Uv2Fsi9uW8qv8ueIJlGSjiOTtJRihNHKryEVvlo9"
-    let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188"
+    let adosUrl : String = "https://webbrokerbeta.teravisiontech.com:8188/oauth/token"
     
     // MARK: - Outlets
     
@@ -321,10 +321,32 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     @IBAction func logInButtonPressed(_ sender: UIButton)
     {
-        let parameters: Parameters = ["client_id" : clientId, "client_secret": clientSecret, "username": "edelacruz@teravisiontech.com", "password" : "Qwerty123$"]
+        let parameters: Parameters = [
+            "client_id" : clientId,
+            "client_secret": clientSecret,
+            "grant_type" : "password",
+            "username": "edelacruz@teravisiontech.com",
+            "password" : "Qwerty123$",
+            "device_token" : "devicetoken"
+        ]
         
         // All three of these calls are equivalent
-        Alamofire.request(adosUrl, method: .post, parameters: parameters)
+        Alamofire.request(adosUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ (response) in
+            print(response.request)  // original URL request
+            //print(response.response) // URL response
+            //print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            let jsonString = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+            
+            if let JSON = response.result.value
+            {
+                
+
+                print("Token: )", resultDict!["result"])
+                print("Response Code: ", resultDict!["code"])
+            }
+        }
     }
     
     // MARK: - Navigation

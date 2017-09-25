@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "68BB5ACC55A846C4C2242B447EB94937"
+               BlueprintIdentifier = "E626E0A7FF9867600D658CF4890BC7E9"
                BuildableName = "Pods_AdosFirebaseSocialLogin.framework"
                BlueprintName = "Pods-AdosFirebaseSocialLogin"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "68BB5ACC55A846C4C2242B447EB94937"
+            BlueprintIdentifier = "E626E0A7FF9867600D658CF4890BC7E9"
             BuildableName = "Pods_AdosFirebaseSocialLogin.framework"
             BlueprintName = "Pods-AdosFirebaseSocialLogin"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -33,7 +33,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var customGoogleButton: UIButton!
     @IBOutlet var customTwitterButton: UIButton!
-    @IBOutlet var customInstagramButton: UIButton!
     
     // MARK: - AdosLoginViewController Load
     
@@ -58,7 +57,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         setupTextFields()
         setupGoogleButton()
         setupTwitterButton()
-        setupInstagramButton()
     }
     
     // MARK: - Login Button config
@@ -304,14 +302,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             
             self.performSegue(withIdentifier: "goToProfileView", sender: nil)
         })
-    }
-    
-    // MARK: - Instagram Button Setup
-    
-    func setupInstagramButton()
-    {
-        let customInstagramHeight = self.customInstagramButton.frame.height
-        self.customTwitterButton.layer.cornerRadius = customInstagramHeight / 2.0
     }
     
     // MARK: - Login Button Action

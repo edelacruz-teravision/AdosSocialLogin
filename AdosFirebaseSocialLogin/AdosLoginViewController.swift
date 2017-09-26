@@ -382,6 +382,13 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         KVNProgress.setConfiguration(configuration)
     }
     
+    // MARK: - Status Bar Config
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle // Changes the status bar color in the specific View
+    {
+        return .lightContent
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

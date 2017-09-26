@@ -12,6 +12,7 @@ import Firebase
 import GoogleSignIn
 import TwitterKit
 import Alamofire
+import KVNProgress
 
 class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate
 {
@@ -41,6 +42,11 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         super.viewDidLoad()
         
         googleDelegateConfig()
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.hideKeyboardWhenTappingArround()
+        self.kvnConfiguration()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -308,6 +314,8 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     @IBAction func logInButtonPressed(_ sender: UIButton)
     {
+        KVNProgress.show()
+        
         let parameters: Parameters = [
             "client_id" : ServerData.clientId,
             "client_secret": ServerData.clientSecret,
@@ -339,6 +347,9 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     self.imageUrl = "Login Image"
                     self.name = "Not Provided"
                     self.token = result!["access_token"] as! String
+                    
+                    KVNProgress.showSuccess()
+                    //KVNProgress.dismiss()
                 
                     self.performSegue(withIdentifier: "goToProfileView", sender: nil)
                 
@@ -349,11 +360,26 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                         self.passwordTextField.text = ""
                         self.emailTextField.text = ""
                     })
+                    
+                    KVNProgress.showError()
+                    //KVNProgress.dismiss()
                 
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true, completion: nil)
             }
         }
+    }
+    
+    func kvnConfiguration()
+    {
+        let configuration = KVNProgressConfiguration()
+        
+        configuration.isFullScreen = true
+        configuration.errorColor = UIColor.red
+        configuration.successColor = UIColor.green
+        configuration.backgroundTintColor = UIColor(red: 52, green: 52, blue: 128, alpha: 0.4)
+        
+        KVNProgress.setConfiguration(configuration)
     }
     
     // MARK: - Navigation
@@ -366,5 +392,30 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         profileViewControllerSegue.name = self.name
         profileViewControllerSegue.token = self.token
         profileViewControllerSegue.imageUrl = self.imageUrl
+    }
+}
+
+// MARK: - Extensions
+
+extension AdosLoginViewController
+{
+    func hideKeyboardWhenTappingArround() // Hides keyboard when tap on screen
+    {
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AdosLoginViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        self.view.endEditing(true)
+    }
+}
+
+extension AdosLoginViewController : UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }

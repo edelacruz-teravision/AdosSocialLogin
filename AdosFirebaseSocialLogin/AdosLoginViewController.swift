@@ -60,7 +60,8 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     {
         setupLoginButton()
         setupFacebookButtons()
-        setupTextFields()
+        emailTextField.setupTextFields()
+        passwordTextField.setupTextFields()
         setupGoogleButton()
         setupTwitterButton()
     }
@@ -75,24 +76,9 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         self.loginButton.layer.borderWidth = 1
     }
     
-    // MARK: - Textfields config
-    
-    fileprivate func setupTextFields()
-    {
-        if let placeholder = passwordTextField.placeholder
-        {
-            passwordTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
-        }
-        
-        if let placeholder = emailTextField.placeholder
-        {
-            emailTextField.attributedPlaceholder = NSAttributedString(string:placeholder, attributes: [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(0.4)])
-        }
-    }
-    
     // MARK: - Facebook Button Setup
     
-    func setupFacebookButtons()
+    fileprivate func setupFacebookButtons()
     {
         let customFBButtonHeight = self.customFBButton.frame.height
         self.customFBButton.layer.cornerRadius = customFBButtonHeight / 2.0
@@ -270,7 +256,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     // MARK: - Twitter Button Setup
     
-    func setupTwitterButton()
+    fileprivate func setupTwitterButton()
     {
         let customTwitterHeight = self.customTwitterButton.frame.height
         self.customTwitterButton.layer.cornerRadius = customTwitterHeight / 2.0
@@ -314,7 +300,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     @IBAction func logInButtonPressed(_ sender: UIButton)
     {
-        KVNProgress.show()
+        KVNProgress.show(withStatus: "Loading, Please wait")
         
         let parameters: Parameters = [
             "client_id" : ServerData.clientId,
@@ -325,7 +311,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             "device_token" : ServerData.deviceToken
         ]
         
-        Alamofire.request(ServerData.adosUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
+        Alamofire.request(ServerData.adosUrl+ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             
             switch response.result
             {
@@ -349,37 +335,17 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     self.token = result!["access_token"] as! String
                     
                     KVNProgress.showSuccess()
-                    //KVNProgress.dismiss()
                 
                     self.performSegue(withIdentifier: "goToProfileView", sender: nil)
                 
                 case .failure( _):
-                    let alertController = UIAlertController(title: "Wrong log in credentials", message: "Invalid email or password", preferredStyle: .alert)
-                
-                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.passwordTextField.text = ""
-                        self.emailTextField.text = ""
-                    })
+                    
+                    self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "")
+                    self.passwordTextField.text = ""
                     
                     KVNProgress.showError()
-                    //KVNProgress.dismiss()
-                
-                    alertController.addAction(alertAction)
-                    self.present(alertController, animated: true, completion: nil)
             }
         }
-    }
-    
-    func kvnConfiguration()
-    {
-        let configuration = KVNProgressConfiguration()
-        
-        configuration.isFullScreen = true
-        configuration.errorColor = UIColor.red
-        configuration.successColor = UIColor.green
-        configuration.backgroundTintColor = UIColor(red: 52, green: 52, blue: 128, alpha: 0.4)
-        
-        KVNProgress.setConfiguration(configuration)
     }
     
     // MARK: - Status Bar Config
@@ -393,30 +359,28 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let profileViewControllerSegue : ProfileViewController =  segue.destination as! ProfileViewController
+        if segue.identifier == "goToProfileView"
+        {
+            if let profileViewControllerSegue = segue.destination as? ProfileViewController
+            {
+                profileViewControllerSegue.email = self.email
+                profileViewControllerSegue.name = self.name
+                profileViewControllerSegue.token = self.token
+                profileViewControllerSegue.imageUrl = self.imageUrl
+            }
+        }
         
-        profileViewControllerSegue.email = self.email
-        profileViewControllerSegue.name = self.name
-        profileViewControllerSegue.token = self.token
-        profileViewControllerSegue.imageUrl = self.imageUrl
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = ""
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
+        self.navigationController?.view.tintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = true        
     }
+    
+    @IBAction func unwindToAdosLoginViewController(segue: UIStoryboardSegue) {}
 }
 
 // MARK: - Extensions
-
-extension AdosLoginViewController
-{
-    func hideKeyboardWhenTappingArround() // Hides keyboard when tap on screen
-    {
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AdosLoginViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard()
-    {
-        self.view.endEditing(true)
-    }
-}
 
 extension AdosLoginViewController : UITextFieldDelegate
 {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import KVNProgress
 
 // MARK: - UITextField Extensions
@@ -46,9 +45,26 @@ extension UIViewController
     
     // MARK: - Alert Builder
     
-    func alertBuilder(alertControllerTitle : String, alertControllerMessage : String, alertActionTitle : String, identifier : String)
+    func alertBuilder(alertControllerTitle : String, alertControllerMessage : String, alertActionTitle : String, identifier : String, image: String)
     {
-        let alertController = UIAlertController(title: alertControllerTitle, message: alertControllerMessage, preferredStyle: .alert)
+        
+        let alertControllerTitleChanged : String = "\n" + alertControllerTitle
+        
+        let alertController = UIAlertController(title: alertControllerTitleChanged, message: alertControllerMessage, preferredStyle: .alert)
+        
+        if !image.isEmpty
+        {
+            let image = UIImage(named: image)
+            
+            let imageViewAlert = UIImageView(frame: CGRect(x: 122, y: 10, width: 25, height: 25))
+            imageViewAlert.image = image
+            
+            alertController.view.addSubview(imageViewAlert)
+        }
+        else
+        {
+            alertController.title = alertControllerTitle
+        }
         
         let alertAction = UIAlertAction(title: alertActionTitle, style: .default, handler: {
             (_)in

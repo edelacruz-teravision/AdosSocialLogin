@@ -60,9 +60,11 @@ class ProfileViewController: UIViewController
         
         print(self.token)
     }
-
-    override func didReceiveMemoryWarning()
+    
+    // MARK: - Status Bar Config
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle // Changes the status bar color in the specific View
     {
-        super.didReceiveMemoryWarning()
+        return .lightContent
     }
 }

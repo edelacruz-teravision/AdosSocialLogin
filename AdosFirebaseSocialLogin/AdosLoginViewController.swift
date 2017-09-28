@@ -377,7 +377,12 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         self.navigationController?.navigationBar.isTranslucent = true        
     }
     
-    @IBAction func unwindToAdosLoginViewController(segue: UIStoryboardSegue) {}
+    // MARK: - Unwind Action
+    
+    @IBAction func unwindToAdosLoginViewController(segue: UIStoryboardSegue)
+    {
+        
+    }
 }
 
 // MARK: - Extensions

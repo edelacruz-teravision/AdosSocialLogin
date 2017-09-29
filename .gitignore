@@ -41,6 +41,8 @@ xcuserdata
 !xcschemes
 # Xcode 4
 *.moved-aside
+xcschememanagement.plist
+Pods-AdosFirebaseSocialLogin.xcscheme
 
 ####
 # XCode 4 workspaces - more detailed

@@ -34,6 +34,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var customGoogleButton: UIButton!
     @IBOutlet var customTwitterButton: UIButton!
+    @IBOutlet var passwordLabel: UILabel!
     
     // MARK: - AdosLoginViewController Load
     
@@ -392,6 +393,22 @@ extension AdosLoginViewController : UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
     {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool // Counts characters to show 8 Digits Message
+    {
+        let newLength = (textField.text?.count)! + string.count - range.length
+        
+        if(newLength < 8)
+        {
+            self.passwordLabel.alpha = 0.61
+        }
+        else
+        {
+            self.passwordLabel.alpha = 0.0
+        }
+        
         return true
     }
 }

@@ -341,7 +341,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                 
                 case .failure( _):
                     
-                    self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: "img-error")
+                    self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                     self.passwordTextField.text = ""
                     
                     KVNProgress.showError()

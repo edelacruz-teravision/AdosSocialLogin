@@ -47,7 +47,7 @@ class ForgotPassViewController: UIViewController
             {
             case .success:
                 
-                self.alertBuilder(alertControllerTitle: "Confirmation", alertControllerMessage: "An email has been sent to you with instructions for password reset", alertActionTitle: "Ok", identifier: "unwindToAdosLoginViewController", image: "check")
+                self.alertBuilder(alertControllerTitle: "Confirmation", alertControllerMessage: "An email has been sent to you with instructions for password reset", alertActionTitle: "Ok", identifier: "unwindToAdosLoginViewController", image: AlertImages.success)
                             
                 KVNProgress.showSuccess()
                 
@@ -55,7 +55,7 @@ class ForgotPassViewController: UIViewController
                 
             case .failure( _):
                 
-                self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email", alertActionTitle: "Ok", identifier: "", image: "img-error")
+                self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                 
                 self.emailTextField.text = ""
                 

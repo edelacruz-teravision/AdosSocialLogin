@@ -48,7 +48,10 @@ extension UIViewController
     func alertBuilder(alertControllerTitle : String, alertControllerMessage : String, alertActionTitle : String, identifier : String, image: String)
     {
         
-        let alertControllerTitleChanged : String = "\n" + alertControllerTitle
+        let alertControllerTitleChanged : String = """
+                                            
+\(alertControllerTitle)
+"""
         
         let alertController = UIAlertController(title: alertControllerTitleChanged, message: alertControllerMessage, preferredStyle: .alert)
         

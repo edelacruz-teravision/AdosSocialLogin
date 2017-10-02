@@ -24,3 +24,12 @@ struct ServerData
     
     static let ForgotPasswordUrl : String = "/api/v1/forgot_password"
 }
+
+struct AlertImages
+{
+    static let success : String = "check"
+    
+    static let fail : String = "img-error"
+    
+    static let question : String = "question"
+}

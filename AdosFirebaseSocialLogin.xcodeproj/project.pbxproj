@@ -13,6 +13,7 @@
 		2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */; };
 		2D66E2741F6DA429001D015E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2721F6DA429001D015E /* Main.storyboard */; };
 		2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */; };
+		A32BDD921F829FFB002EA62F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDD911F829FFB002EA62F /* SignInViewController.swift */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
 		A391CA1E1F7C11C500C855FB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1D1F7C11C500C855FB /* Helpers.swift */; };
@@ -32,6 +33,7 @@
 		2D66E27A1F6DA429001D015E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3389FB0C4A4B23A1A15CDACB /* Pods-AdosFirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32BDD911F829FFB002EA62F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		A391CA1D1F7C11C500C855FB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				A3DEF1091F7588190080B396 /* Constant.swift */,
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
+				A32BDD911F829FFB002EA62F /* SignInViewController.swift */,
 				2D09EB1F1F6EBC1F0028632B /* Assets.xcassets */,
 				A33DEE6D1F72A5E700FB0B3E /* Resourses */,
 				2D66E27A1F6DA429001D015E /* Info.plist */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32BDD921F829FFB002EA62F /* SignInViewController.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
 				A391CA1E1F7C11C500C855FB /* Helpers.swift in Sources */,
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,

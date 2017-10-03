@@ -95,4 +95,16 @@ extension UIViewController
         
         KVNProgress.setConfiguration(configuration)
     }
+    
+    func isPasswordValid(_ password : String) -> Bool
+    {
+        let passwordTest = NSPredicate(format: RegExConditions.preCondition, RegExConditions.passwordRegEx)
+        return passwordTest.evaluate(with: password)
+    }
+    
+    func isEmailValid(_ email : String) -> Bool
+    {
+        let emailTest = NSPredicate(format:RegExConditions.preCondition, RegExConditions.emailRegEx)
+        return emailTest.evaluate(with: email)
+    }
 }

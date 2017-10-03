@@ -312,7 +312,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             "device_token" : ServerData.deviceToken
         ]
         
-        Alamofire.request(ServerData.adosUrl+ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
+        Alamofire.request(ServerData.adosUrl + ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             
             switch response.result
             {

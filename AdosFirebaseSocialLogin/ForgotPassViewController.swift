@@ -41,7 +41,7 @@ class ForgotPassViewController: UIViewController
             "email": self.emailTextField.text ?? ""
         ]
         
-        Alamofire.request(ServerData.adosUrl+ServerData.ForgotPasswordUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
+        Alamofire.request(ServerData.adosUrl + ServerData.ForgotPasswordUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             
             switch response.result
             {
@@ -49,9 +49,7 @@ class ForgotPassViewController: UIViewController
                 
                 self.alertBuilder(alertControllerTitle: "Confirmation", alertControllerMessage: "An email has been sent to you with instructions for password reset", alertActionTitle: "Ok", identifier: "unwindToAdosLoginViewController", image: AlertImages.success)
                             
-                KVNProgress.showSuccess()
-                
-                
+                KVNProgress.showSuccess()         
                 
             case .failure( _):
                 

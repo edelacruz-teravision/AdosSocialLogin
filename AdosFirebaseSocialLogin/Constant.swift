@@ -23,6 +23,8 @@ struct ServerData
     static let deviceToken : String = "device_token"
     
     static let ForgotPasswordUrl : String = "/api/v1/forgot_password"
+    
+    static let signInUrl : String = "/api/v1/sign_up"
 }
 
 struct AlertImages
@@ -32,4 +34,13 @@ struct AlertImages
     static let fail : String = "img-error"
     
     static let question : String = "question"
+}
+
+struct RegExConditions
+{
+    static let passwordRegEx = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#!%*?&])[A-Za-z$@$#!%*?&0-9]{8,}"
+    
+    static let preCondition = "SELF MATCHES %@"
+    
+    static let emailRegEx = "([\\w-+]+(?:\\.[\\w-+]+)*@(?:[\\w-]+\\.)+[a-zA-Z]{2,7})"
 }

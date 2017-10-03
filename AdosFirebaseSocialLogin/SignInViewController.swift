@@ -41,44 +41,53 @@ class SignInViewController: UIViewController
     
     @IBAction func createButtonPressed(_ sender: UIButton)
     {
-        KVNProgress.show(withStatus: "Loading, Please wait")
-        
-        let parameters: Parameters = [
-            "client_id" : ServerData.clientId,
-            "client_secret": ServerData.clientSecret,
-            "email": emailTextField.text ?? "",
-            "password" : passwordTextField.text ?? "",
-            "password_confirmation" : confirmPasswordTextField.text ?? "",
-            "device_token" : ServerData.deviceToken
-        ]
-        
-        Alamofire.request(ServerData.adosUrl+ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
+        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (confirmPasswordTextField.text?.isEmpty)!
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
+        else if confirmPasswordTextField.text != passwordTextField.text
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Password and confirm password must be identical", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
+        else if !isPasswordValid(passwordTextField.text!)
+        {
+            alertBuilder(alertControllerTitle: "Invalid Password", alertControllerMessage: "The password should be a minimum of eight (8) characters, including one (1) special character and one (1) number and combine Uppercase and Lowercase letters.", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
+        else if !isEmailValid(emailTextField.text!)
+        {
+            alertBuilder(alertControllerTitle: "Invalid email", alertControllerMessage: "Please introduce a valid email", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
+        else
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
             
-            switch response.result
-            {
-            case .success:
+            let parameters: Parameters = [
+                "client_id" : ServerData.clientId,
+                "client_secret": ServerData.clientSecret,
+                "email": emailTextField.text ?? "",
+                "password" : passwordTextField.text ?? "",
+                "password_confirmation" : confirmPasswordTextField.text ?? "",
+                "device_token" : ServerData.deviceToken
+            ]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.signInUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
                 
-                let conditions = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#!%*?&])[A-Za-z$@$#!%*?&0-9]{8,}"
-                
-                func isPasswordValid(_ password : String) -> Bool
+                switch response.result
                 {
-                    let passwordTest = NSPredicate(format: "SELF MATCHES %@", conditions)
-                    return passwordTest.evaluate(with: password)
+                    case .success:
+                    
+                        KVNProgress.showSuccess()
+                    
+                        self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
+                    
+                    case .failure( _):
+                    
+                        self.alertBuilder(alertControllerTitle: "", alertControllerMessage: "The email has already been taken.", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                        KVNProgress.showError()
                 }
-                
-                let password = "Qwerty123$"
-                
-                isPasswordValid(password)
-                
-                KVNProgress.showSuccess()
-                
-                self.performSegue(withIdentifier: "goToProfileView", sender: nil)
-                
-            case .failure( _):
-                
-                self.alertBuilder(alertControllerTitle: "Wrong sign in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
-                
-                KVNProgress.showError()
             }
         }
     }
@@ -88,13 +97,24 @@ class SignInViewController: UIViewController
         alertBuilder(alertControllerTitle: "", alertControllerMessage: "The password should be a minimum of eight (8) characters, including one (1) special character and one (1) number and combine Uppercase and Lowercase letters.", alertActionTitle: "Ok", identifier: "", image: AlertImages.question)
     }
     
-    /*
+   
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToPersonalInformation"
+        {
+            if let profileViewControllerSegue = segue.destination as? PersonalInformationViewController
+            {
+                profileViewControllerSegue.navigationController?.setNavigationBarHidden(true, animated: true)
+            }
+        }
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = ""
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
+        self.navigationController?.view.tintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = true
     }
-    */
+    
 }

@@ -92,6 +92,8 @@ class SignInViewController: UIViewController
         }
     }
     
+    // MARK: - Question Button Action
+    
     @IBAction func questionButtonPressed(_ sender: UIButton)
     {
         alertBuilder(alertControllerTitle: "", alertControllerMessage: "The password should be a minimum of eight (8) characters, including one (1) special character and one (1) number and combine Uppercase and Lowercase letters.", alertActionTitle: "Ok", identifier: "", image: AlertImages.question)
@@ -107,14 +109,11 @@ class SignInViewController: UIViewController
             if let profileViewControllerSegue = segue.destination as? PersonalInformationViewController
             {
                 profileViewControllerSegue.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.title = ""
+                self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
+                self.navigationController?.view.tintColor = UIColor.white
+                self.navigationController?.navigationBar.isTranslucent = true
             }
         }
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.title = ""
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
-        self.navigationController?.view.tintColor = UIColor.white
-        self.navigationController?.navigationBar.isTranslucent = true
     }
-    
 }

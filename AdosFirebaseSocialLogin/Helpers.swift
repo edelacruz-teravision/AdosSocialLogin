@@ -26,22 +26,22 @@ extension UITextField
 
 // MARK: - UIViewController Extensions
 
-extension UIViewController
+extension UIViewController : UITextFieldDelegate
 {
+    // MARK: - Hide Keyboard when hit Enter
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Hide When Tapping Arround
     
-    func hideKeyboardWhenTappingArround() // Hides keyboard when tap on screen
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AdosLoginViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-    }
-    
-    // MARK: - Dismiss Keyboard
-    
-    func dismissKeyboard()
-    {
-        self.view.endEditing(true)
-    }
+        view.endEditing(true)
+    }    
     
     // MARK: - Alert Builder
     
@@ -96,6 +96,8 @@ extension UIViewController
         KVNProgress.setConfiguration(configuration)
     }
     
+    // MARK: - Email and password validation
+    
     func isPasswordValid(_ password : String) -> Bool
     {
         let passwordTest = NSPredicate(format: RegExConditions.preCondition, RegExConditions.passwordRegEx)
@@ -106,5 +108,41 @@ extension UIViewController
     {
         let emailTest = NSPredicate(format:RegExConditions.preCondition, RegExConditions.emailRegEx)
         return emailTest.evaluate(with: email)
+    }
+    
+    // MARK: - Date Picker Toolbar
+    
+    func dateToolbarBuilder(sender: UIViewController) -> UIToolbar
+    {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 40))
+        
+        toolbar.barStyle = UIBarStyle.blackTranslucent
+        
+        toolbar.tintColor = UIColor.white
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.donePressed(sender:)))
+        
+        let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width/3, height: 40))
+        
+        label.font = UIFont.systemFont(ofSize: 14)
+        
+        label.textColor = UIColor.white
+        
+        label.textAlignment = NSTextAlignment.center
+        
+        label.text = "Select a Date"
+        
+        let labelButton = UIBarButtonItem(customView: label)
+        
+        toolbar.setItems([flexButton, labelButton, flexButton, doneButton], animated: true)
+        
+        return toolbar
+    }
+    
+    func donePressed(sender: UIBarButtonItem)
+    {
+        
     }
 }

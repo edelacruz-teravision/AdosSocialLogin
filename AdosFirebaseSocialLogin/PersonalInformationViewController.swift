@@ -27,11 +27,6 @@ class PersonalInformationViewController: UIViewController
         super.viewDidLoad()
         dateTextfield.delegate = self
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
     
     override func viewDidLayoutSubviews()
     {
@@ -42,6 +37,12 @@ class PersonalInformationViewController: UIViewController
         sSNTextField.setupTextFields()
         phoneTextField.setupTextFields()
         maritalTextField.setupTextFields()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // MARK: - Social Security Number Button Action
@@ -59,31 +60,21 @@ class PersonalInformationViewController: UIViewController
         datePicker.datePickerMode = UIDatePickerMode.date
         dateTextfield.inputView = datePicker
         datePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
+        
+        let toolBar = dateToolbarBuilder(sender: self)
+        
+        dateTextfield.inputAccessoryView = toolBar
     }
     
     func datePickerChanged(sender: UIDatePicker)
     {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateFormat = "MM-dd-yyyy"
         dateTextfield.text = formatter.string(from: sender.date)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-}
-
-extension PersonalInformationViewController : UITextFieldDelegate
-{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
+    override func donePressed(sender: UIBarButtonItem)
     {
-        textField.resignFirstResponder()
-        return true
+        dateTextfield.resignFirstResponder()
     }
 }

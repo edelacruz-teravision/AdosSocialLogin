@@ -17,5 +17,6 @@ pod 'GoogleSignIn'
 pod 'TwitterKit'
 pod 'Alamofire', '~> 4.5'
 pod 'KVNProgress'
+pod 'IQKeyboardManagerSwift'
 
 end

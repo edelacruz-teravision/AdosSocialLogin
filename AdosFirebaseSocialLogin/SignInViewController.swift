@@ -24,6 +24,9 @@ class SignInViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning()

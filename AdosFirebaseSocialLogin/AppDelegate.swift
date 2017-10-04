@@ -12,6 +12,7 @@ import Firebase
 import GoogleSignIn
 import TwitterKit
 import SafariServices
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         Twitter.sharedInstance().start(withConsumerKey:"daw24f8TI9U7GPQNWZyF5uIjQ", consumerSecret:"lnQhuDFcDzPkFm5kze3fO8EBbU43GpdrvflQGzUcytAuolzU6Y")
+        
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().toolbarPreviousNextAllowedClasses.append(UIStackView.self)
 
         return true
     }

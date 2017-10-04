@@ -23,7 +23,6 @@ class ForgotPassViewController: UIViewController
         super.viewDidLoad()
         
         self.emailTextField.delegate = self
-        self.hideKeyboardWhenTappingArround()
     }
     
     override func viewDidLayoutSubviews()
@@ -67,16 +66,5 @@ class ForgotPassViewController: UIViewController
     override var preferredStatusBarStyle: UIStatusBarStyle // Changes the status bar color in the specific View
     {
         return .lightContent
-    }
-}
-
-// MARK: - Extensions
-
-extension ForgotPassViewController : UITextFieldDelegate
-{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
-    {
-        textField.resignFirstResponder()
-        return true
     }
 }

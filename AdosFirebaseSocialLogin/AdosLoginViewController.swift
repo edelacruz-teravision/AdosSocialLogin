@@ -46,7 +46,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        self.hideKeyboardWhenTappingArround()
         self.kvnConfiguration()
     }
     
@@ -383,17 +382,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     @IBAction func unwindToAdosLoginViewController(segue: UIStoryboardSegue)
     {
         
-    }
-}
-
-// MARK: - Extensions
-
-extension AdosLoginViewController : UITextFieldDelegate
-{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool // Hides keyboard when tap enter
-    {
-        textField.resignFirstResponder()
-        return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool // Counts characters to show 8 Digits Message

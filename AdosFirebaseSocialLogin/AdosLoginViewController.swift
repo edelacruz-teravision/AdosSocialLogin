@@ -58,6 +58,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     override func viewDidLayoutSubviews()
     {
+        super.viewDidLayoutSubviews()
         setupLoginButton()
         setupFacebookButtons()
         emailTextField.setupTextFields()
@@ -300,6 +301,12 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     
     @IBAction func logInButtonPressed(_ sender: UIButton)
     {
+        if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField])
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
+        
         KVNProgress.show(withStatus: "Loading, Please wait")
         
         let parameters: Parameters = [
@@ -347,14 +354,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             }
         }
     }
-    
-    // MARK: - Status Bar Config
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle // Changes the status bar color in the specific View
-    {
-        return .lightContent
-    }
-    
+
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -383,6 +383,8 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     {
         
     }
+    
+    // MARK: - Hidden password conditions message
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool // Counts characters to show 8 Digits Message
     {

@@ -145,4 +145,19 @@ extension UIViewController : UITextFieldDelegate
     {
         
     }
+    
+    // MARK: - All textfields filled validation
+    
+    func allTextFieldsFilled(textFields: [UITextField]) -> Bool
+    {
+        for textfield in textFields
+        {
+            if (textfield.text?.isEmpty)!
+            {
+                return false
+            }
+        }
+        
+        return true
+    }
 }

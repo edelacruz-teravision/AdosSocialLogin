@@ -30,6 +30,7 @@ class PersonalInformationViewController: UIViewController
     
     override func viewDidLayoutSubviews()
     {
+        super.viewDidLayoutSubviews()
         dateTextfield.setupTextFields()
         firstNameTextField.setupTextFields()
         lastNameTextField.setupTextFields()
@@ -42,7 +43,7 @@ class PersonalInformationViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Social Security Number Button Action
@@ -76,5 +77,36 @@ class PersonalInformationViewController: UIViewController
     override func donePressed(sender: UIBarButtonItem)
     {
         dateTextfield.resignFirstResponder()
+    }
+    
+    // MARK: - Status Bar Config
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle // Changes the status bar color in the specific View
+    {
+        return .lightContent
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToProfileView"
+        {
+            if let profileViewControllerSegue = segue.destination as? ProfileViewController
+            {
+                profileViewControllerSegue.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.title = ""
+                self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
+                self.navigationController?.view.tintColor = UIColor.white
+                self.navigationController?.navigationBar.isTranslucent = true
+            }
+        }
+    }
+    
+    @IBAction func continueButtonPressed(_ sender: UIButton)
+    {
+        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
     }
 }

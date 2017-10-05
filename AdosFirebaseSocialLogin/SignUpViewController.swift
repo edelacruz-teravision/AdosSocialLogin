@@ -10,7 +10,7 @@ import UIKit
 import KVNProgress
 import Alamofire
 
-class SignInViewController: UIViewController
+class SignUpViewController: UIViewController
 {
     // MARK: - Outlets
     
@@ -35,6 +35,7 @@ class SignInViewController: UIViewController
     }
     override func viewDidLayoutSubviews()
     {
+        super.viewDidLayoutSubviews()
         emailTextField.setupTextFields()
         passwordTextField.setupTextFields()
         confirmPasswordTextField.setupTextFields()
@@ -44,7 +45,7 @@ class SignInViewController: UIViewController
     
     @IBAction func createButtonPressed(_ sender: UIButton)
     {
-        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (confirmPasswordTextField.text?.isEmpty)!
+        if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField, confirmPasswordTextField]) 
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
@@ -75,19 +76,36 @@ class SignInViewController: UIViewController
                 "device_token" : ServerData.deviceToken
             ]
             
-            Alamofire.request(ServerData.adosUrl + ServerData.signInUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
+            Alamofire.request(ServerData.adosUrl + ServerData.signUpUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate(statusCode: 200..<500).responseJSON{ (response) in
                 
                 switch response.result
                 {
                     case .success:
-                    
-                        KVNProgress.showSuccess()
-                    
-                        self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
+                        
+                        let code = response.response!.statusCode
+                        
+                        if code != 200
+                        {
+                            guard let json = response.result.value as? [String: Any] else
+                            {
+                                print("didn't get todo object as JSON from API")
+                                print("Error: \(String(describing: response.result.error))")
+                                return
+                            }
+                            
+                            self.alertBuilder(alertControllerTitle: "Sign In Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                            
+                            KVNProgress.showError()
+                        }
+                        else
+                        {
+                            KVNProgress.showSuccess()
+                            self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
+                        }
                     
                     case .failure( _):
-                    
-                        self.alertBuilder(alertControllerTitle: "", alertControllerMessage: "The email has already been taken.", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        self.alertBuilder(alertControllerTitle: "Sign In Error", alertControllerMessage: "Connection failure, please try again", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                     
                         KVNProgress.showError()
                 }

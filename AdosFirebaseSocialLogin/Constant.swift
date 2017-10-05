@@ -24,7 +24,7 @@ struct ServerData
     
     static let ForgotPasswordUrl : String = "/api/v1/forgot_password"
     
-    static let signInUrl : String = "/api/v1/sign_up"
+    static let signUpUrl : String = "/api/v1/sign_up"
 }
 
 struct AlertImages

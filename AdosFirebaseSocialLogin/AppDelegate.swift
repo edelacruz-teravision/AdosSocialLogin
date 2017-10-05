@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         Twitter.sharedInstance().start(withConsumerKey:"daw24f8TI9U7GPQNWZyF5uIjQ", consumerSecret:"lnQhuDFcDzPkFm5kze3fO8EBbU43GpdrvflQGzUcytAuolzU6Y")
         
         IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().toolbarPreviousNextAllowedClasses.append(UIStackView.self)
 
         return true
     }

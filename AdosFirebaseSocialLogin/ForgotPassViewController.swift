@@ -27,6 +27,7 @@ class ForgotPassViewController: UIViewController
     
     override func viewDidLayoutSubviews()
     {
+        super.viewDidLayoutSubviews()
         self.emailTextField.setupTextFields()
     }
     

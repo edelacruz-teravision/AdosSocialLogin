@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZG-BO-9tV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3516" y="119"/>
+            <point key="canvasLocation" x="3495" y="118"/>
         </scene>
         <!--Phone Confirmation View Controller-->
         <scene sceneID="FtT-O1-myE">
@@ -558,6 +558,7 @@
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="kg0-nx-xYH" id="zTM-ba-0WT"/>
+                        <segue destination="JZo-eJ-5N5" kind="show" identifier="goToAdress" id="Uka-em-iQV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NjK-Q7-XYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -582,8 +583,272 @@
             </objects>
             <point key="canvasLocation" x="2670" y="119.36619718309859"/>
         </scene>
+        <!--Adress View Controller-->
+        <scene sceneID="sXy-Wq-hXb">
+            <objects>
+                <viewController id="JZo-eJ-5N5" customClass="AdressViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AF9-Cm-e0D"/>
+                        <viewControllerLayoutGuide type="bottom" id="9dO-bt-tiw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yM4-IO-4AZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo" translatesAutoresizingMaskIntoConstraints="NO" id="32a-3f-TEJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="XI2-MI-YGT">
+                                <rect key="frame" x="90" y="80" width="140" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XI2-MI-YGT" secondAttribute="height" multiplier="41:10" id="I9E-Oi-zgI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adress" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-qM-SOY">
+                                <rect key="frame" x="139" y="129" width="42" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="2bd-j4-EK1"/>
+                                    <constraint firstAttribute="height" constant="50" id="z7O-Kn-cEZ"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="z7O-Kn-cEZ"/>
+                                        <include reference="2bd-j4-EK1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="z7O-Kn-cEZ"/>
+                                        <exclude reference="2bd-j4-EK1"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-2T-dv7">
+                                <rect key="frame" x="95.5" y="194" width="130" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                </variation>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ2-N0-qae" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
+                                <rect key="frame" x="20" y="262.5" width="280" height="180"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfV-du-zES">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="180"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YGY-eK-XVN">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street address" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eM1-d1-2q5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        </variation>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haF-c2-xfE">
+                                                        <rect key="frame" x="0.0" y="19" width="280" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="dJ5-nX-p04"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cre-on-41c">
+                                                <rect key="frame" x="0.0" y="40" width="280" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Suite or apt." clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pzg-gk-D8U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        </variation>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6T-66-vU9">
+                                                        <rect key="frame" x="0.0" y="19" width="280" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="0AN-Np-acc"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ldz-NK-X2o">
+                                                <rect key="frame" x="0.0" y="80" width="280" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m6s-9t-WeL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        </variation>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htV-ko-kwv">
+                                                        <rect key="frame" x="0.0" y="19" width="280" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="F4j-oB-NBk"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-8n-GWo">
+                                                <rect key="frame" x="0.0" y="120" width="280" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QyT-Sz-eNp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        </variation>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-Yh-JHL">
+                                                        <rect key="frame" x="0.0" y="19" width="280" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="kaF-Cp-be6"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l6d-yd-de5">
+                                                <rect key="frame" x="0.0" y="160" width="280" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="02k-WH-SKN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                        </variation>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU2-M7-tNf">
+                                                        <rect key="frame" x="0.0" y="19" width="280" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="h0e-El-I67"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" spacing="20"/>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="32"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bfV-du-zES" secondAttribute="trailing" id="QKo-S2-CPG"/>
+                                    <constraint firstItem="bfV-du-zES" firstAttribute="top" secondItem="nZ2-N0-qae" secondAttribute="top" id="YuT-nm-GJv"/>
+                                    <constraint firstAttribute="bottom" secondItem="bfV-du-zES" secondAttribute="bottom" id="fLX-jA-Btz"/>
+                                    <constraint firstItem="bfV-du-zES" firstAttribute="leading" secondItem="nZ2-N0-qae" secondAttribute="leading" id="sbt-nr-fw8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHb-nr-BNf">
+                                <rect key="frame" x="0.0" y="522.5" width="320" height="45.5"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="32a-3f-TEJ" firstAttribute="top" secondItem="yM4-IO-4AZ" secondAttribute="top" id="ED7-0x-MKi"/>
+                            <constraint firstItem="XI2-MI-YGT" firstAttribute="leading" secondItem="yM4-IO-4AZ" secondAttribute="leading" constant="90" id="EOY-CD-wJ7"/>
+                            <constraint firstItem="Qbn-qM-SOY" firstAttribute="top" secondItem="XI2-MI-YGT" secondAttribute="bottom" constant="15" id="GUe-Gx-FTl"/>
+                            <constraint firstItem="nZ2-N0-qae" firstAttribute="leading" secondItem="yM4-IO-4AZ" secondAttribute="leading" constant="20" id="LcV-e9-E1g"/>
+                            <constraint firstItem="kHb-nr-BNf" firstAttribute="height" secondItem="yM4-IO-4AZ" secondAttribute="height" multiplier="0.078" constant="1" id="Qkd-4a-dhe"/>
+                            <constraint firstAttribute="trailing" secondItem="32a-3f-TEJ" secondAttribute="trailing" id="SU4-FT-JWb"/>
+                            <constraint firstItem="9dO-bt-tiw" firstAttribute="top" secondItem="kHb-nr-BNf" secondAttribute="bottom" id="U4c-tO-8E7"/>
+                            <constraint firstAttribute="trailing" secondItem="kHb-nr-BNf" secondAttribute="trailing" id="UA5-gV-uW3"/>
+                            <constraint firstItem="XI2-MI-YGT" firstAttribute="top" secondItem="yM4-IO-4AZ" secondAttribute="top" constant="80" id="VC8-bi-CLB"/>
+                            <constraint firstAttribute="bottom" secondItem="32a-3f-TEJ" secondAttribute="bottom" id="XxW-4W-vUL"/>
+                            <constraint firstItem="kHb-nr-BNf" firstAttribute="leading" secondItem="yM4-IO-4AZ" secondAttribute="leading" id="fOi-V1-Bzf"/>
+                            <constraint firstItem="kHb-nr-BNf" firstAttribute="top" secondItem="nZ2-N0-qae" secondAttribute="bottom" constant="50" id="hMM-b1-DIP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="2Ne-2T-dv7" firstAttribute="top" secondItem="Qbn-qM-SOY" secondAttribute="bottom" constant="15" id="hft-me-yW4"/>
+                            <constraint firstItem="2Ne-2T-dv7" firstAttribute="centerX" secondItem="yM4-IO-4AZ" secondAttribute="centerX" id="kdd-eJ-Sf6"/>
+                            <constraint firstItem="Qbn-qM-SOY" firstAttribute="centerX" secondItem="yM4-IO-4AZ" secondAttribute="centerX" id="pQs-8N-kuB"/>
+                            <constraint firstItem="XI2-MI-YGT" firstAttribute="centerX" secondItem="yM4-IO-4AZ" secondAttribute="centerX" id="vRJ-eS-9Pa"/>
+                            <constraint firstItem="32a-3f-TEJ" firstAttribute="leading" secondItem="yM4-IO-4AZ" secondAttribute="leading" id="wkd-yg-zY9"/>
+                            <constraint firstAttribute="trailing" secondItem="nZ2-N0-qae" secondAttribute="trailing" constant="20" id="xIx-1a-QBE"/>
+                        </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="GUe-Gx-FTl"/>
+                                <include reference="hft-me-yW4"/>
+                                <include reference="LcV-e9-E1g"/>
+                                <include reference="xIx-1a-QBE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="GUe-Gx-FTl"/>
+                                <exclude reference="hft-me-yW4"/>
+                                <exclude reference="LcV-e9-E1g"/>
+                                <exclude reference="xIx-1a-QBE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="0aO-FR-8X8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41F-eG-bS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5108" y="119"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="adress" width="42" height="49"/>
         <image name="cell_phone" width="31" height="50"/>
         <image name="fondo" width="320" height="568"/>
         <image name="page1" width="206" height="49"/>

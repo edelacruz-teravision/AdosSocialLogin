@@ -42,7 +42,7 @@ class PhoneConfirmationViewController: UIViewController
     {
         if allTextFieldsFilled(textFields: [codeTextField])
         {
-            self.performSegue(withIdentifier: "", sender: nil)
+            self.performSegue(withIdentifier: "goToAdress", sender: nil)
         }
     }
     

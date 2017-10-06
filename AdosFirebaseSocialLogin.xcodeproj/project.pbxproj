@@ -21,6 +21,7 @@
 		A391CA1E1F7C11C500C855FB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1D1F7C11C500C855FB /* Helpers.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
+		A3DC2ABB1F88274800FA2EB5 /* AdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC2ABA1F88274800FA2EB5 /* AdressViewController.swift */; };
 		A3DEF10A1F7588190080B396 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF1091F7588190080B396 /* Constant.swift */; };
 		B48B5B9A9F79E15A3B52D3E4 /* Pods_AdosFirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		A391CA1D1F7C11C500C855FB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		A3DC2ABA1F88274800FA2EB5 /* AdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressViewController.swift; sourceTree = "<group>"; };
 		A3DEF1091F7588190080B396 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AF38E9CB4A22F9EB28B288A9 /* Pods-AdosFirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			children = (
 				2D66E26E1F6DA429001D015E /* AppDelegate.swift */,
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
+				A3DC2ABA1F88274800FA2EB5 /* AdressViewController.swift */,
 				A391CA1D1F7C11C500C855FB /* Helpers.swift */,
 				A3DEF1091F7588190080B396 /* Constant.swift */,
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
@@ -301,6 +304,7 @@
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
+				A3DC2ABB1F88274800FA2EB5 /* AdressViewController.swift in Sources */,
 				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

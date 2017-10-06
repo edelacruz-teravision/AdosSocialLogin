@@ -446,6 +446,9 @@
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 </variation>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="iZf-uD-Q3r" eventType="touchUpInside" id="B3H-vT-rby"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbD-sh-1Iv">
                                 <rect key="frame" x="0.0" y="522.5" width="161" height="45.5"/>
@@ -460,6 +463,9 @@
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 </variation>
+                                <connections>
+                                    <action selector="resendCodeButtonPressed:" destination="iZf-uD-Q3r" eventType="touchUpInside" id="xzL-nm-5Yk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code we sent you to your phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-FR-yL7">
                                 <rect key="frame" x="42" y="247" width="236" height="14.5"/>
@@ -488,9 +494,6 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="codeTextFieldEditingDidEnd:" destination="iZf-uD-Q3r" eventType="editingDidEnd" id="rtC-VS-o5Q"/>
-                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2g-Wp-XQ7">
                                         <rect key="frame" x="0.0" y="19" width="280" height="1"/>

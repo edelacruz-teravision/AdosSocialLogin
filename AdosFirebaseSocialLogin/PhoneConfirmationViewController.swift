@@ -13,7 +13,6 @@ class PhoneConfirmationViewController: UIViewController
     // MARK: - Outlets
     
     @IBOutlet var codeTextField: UITextField!
-    @IBOutlet var continueButton: UIButton!
     
     //MARK: - PhoneConfirmationViewController Load
     
@@ -28,14 +27,23 @@ class PhoneConfirmationViewController: UIViewController
     {
         super.viewDidLayoutSubviews()
         codeTextField.setupTextFields()
-        continueButton.isEnabled = false
-        continueButton.isUserInteractionEnabled = false
     }
     
-    @IBAction func codeTextFieldEditingDidEnd(_ sender: UITextField)
+    // MARK: - Resend Code Button Action
+    
+    @IBAction func resendCodeButtonPressed(_ sender: UIButton)
     {
-        continueButton.isEnabled = true
-        continueButton.isUserInteractionEnabled = true
+        alertBuilder(alertControllerTitle: "", alertControllerMessage: "A new code have been sent to your phone", alertActionTitle: "Ok", identifier: "", image: AlertImages.success)
+    }
+    
+    // MARK: - Continue Button Action
+    
+    @IBAction func continueButtonPressed(_ sender: UIButton)
+    {
+        if allTextFieldsFilled(textFields: [codeTextField])
+        {
+            self.performSegue(withIdentifier: "", sender: nil)
+        }
     }
     
     /*

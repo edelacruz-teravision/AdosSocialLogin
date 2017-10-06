@@ -108,5 +108,9 @@ class PersonalInformationViewController: UIViewController
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
         }
+        else
+        {
+            self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
+        }
     }
 }

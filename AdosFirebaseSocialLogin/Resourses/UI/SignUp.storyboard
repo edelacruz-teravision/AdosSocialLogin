@@ -27,13 +27,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Zyd-qh-bed">
-                                <rect key="frame" x="90" y="80" width="140" height="37.5"/>
+                                <rect key="frame" x="90" y="80" width="140" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Zyd-qh-bed" secondAttribute="height" multiplier="15:4" id="sx2-Cv-fHI"/>
+                                    <constraint firstAttribute="width" secondItem="Zyd-qh-bed" secondAttribute="height" multiplier="41:10" id="sx2-Cv-fHI"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_info" translatesAutoresizingMaskIntoConstraints="NO" id="h6a-Ff-mm2">
-                                <rect key="frame" x="145" y="132.5" width="30" height="49"/>
+                                <rect key="frame" x="145" y="129" width="30" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="Aqs-7X-cUn"/>
                                     <constraint firstAttribute="width" constant="30" id="cO3-K9-EVj"/>
@@ -52,7 +52,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-zv-HTp">
-                                <rect key="frame" x="93.5" y="196.5" width="133.5" height="17"/>
+                                <rect key="frame" x="93.5" y="193" width="133.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -368,7 +368,7 @@
                         <outlet property="nationalityTextField" destination="fFi-YE-aaQ" id="KZc-Ro-4Ge"/>
                         <outlet property="phoneTextField" destination="kdc-Ks-JpB" id="Prh-hp-HxU"/>
                         <outlet property="sSNTextField" destination="K7q-kz-Lp3" id="5z6-le-Rau"/>
-                        <segue destination="iZf-uD-Q3r" kind="show" id="ToT-hp-4p2"/>
+                        <segue destination="iZf-uD-Q3r" kind="show" identifier="goToPhoneConfirmation" id="ToT-hp-4p2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZG-BO-9tV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,13 +391,13 @@
                                 <rect key="frame" x="-42" y="0.0" width="362" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-7X-x6p">
-                                <rect key="frame" x="90" y="80" width="140" height="37.5"/>
+                                <rect key="frame" x="90" y="80" width="140" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8yl-7X-x6p" secondAttribute="height" multiplier="15:4" id="Ht7-Tb-BH3"/>
+                                    <constraint firstAttribute="width" secondItem="8yl-7X-x6p" secondAttribute="height" multiplier="41:10" id="Ht7-Tb-BH3"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Vyc-3r-1Bh">
-                                <rect key="frame" x="144.5" y="132.5" width="31" height="51"/>
+                                <rect key="frame" x="144.5" y="129" width="31" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="9oq-cH-HmB"/>
                                     <constraint firstAttribute="width" constant="31" id="Oem-gs-G89"/>
@@ -422,7 +422,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-CW-mhW">
-                                <rect key="frame" x="70.5" y="198.5" width="179.5" height="17"/>
+                                <rect key="frame" x="70.5" y="195" width="179.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -462,7 +462,7 @@
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code we sent you to your phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-FR-yL7">
-                                <rect key="frame" x="42" y="250.5" width="236" height="14.5"/>
+                                <rect key="frame" x="42" y="247" width="236" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -474,7 +474,7 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-LX-rGa">
-                                <rect key="frame" x="20" y="300" width="280" height="20"/>
+                                <rect key="frame" x="20" y="296.5" width="280" height="20"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmation code" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kg0-nx-xYH">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>

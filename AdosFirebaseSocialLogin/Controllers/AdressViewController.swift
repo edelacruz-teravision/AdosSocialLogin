@@ -1,5 +1,5 @@
 //
-//  AccountViewController.swift
+//  AdressViewController.swift
 //  AdosFirebaseSocialLogin
 //
 //  Created by Eduardo de la Cruz on 10/10/17.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AccountViewController: UITableViewController
+class AdressViewController: UIViewController
 {
+    // MARK: - AdressViewController Load
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

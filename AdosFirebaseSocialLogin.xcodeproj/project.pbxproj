@@ -17,10 +17,11 @@
 		A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
 		A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */; };
-		A38457371F8CF5F500191D90 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457361F8CF5F500191D90 /* AccountViewController.swift */; };
 		A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457381F8CFE6100191D90 /* AdressViewController.swift */; };
+		A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A384573A1F8D06BE00191D90 /* AccountViewController.swift */; };
+		A38457421F8D159D00191D90 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457411F8D159D00191D90 /* Extensions.swift */; };
+		A38457451F8D16CA00191D90 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457441F8D16CA00191D90 /* SignUp.swift */; };
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
-		A391CA1E1F7C11C500C855FB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1D1F7C11C500C855FB /* Helpers.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
 		A3DEF10A1F7588190080B396 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF1091F7588190080B396 /* Constant.swift */; };
@@ -39,13 +40,14 @@
 		3389FB0C4A4B23A1A15CDACB /* Pods-AdosFirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BDD911F829FFB002EA62F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
+		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/Controllers/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationViewController.swift; sourceTree = "<group>"; };
-		A38457361F8CF5F500191D90 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A38457381F8CFE6100191D90 /* AdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressViewController.swift; sourceTree = "<group>"; };
+		A384573A1F8D06BE00191D90 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A38457411F8D159D00191D90 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A38457441F8D16CA00191D90 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
-		A391CA1D1F7C11C500C855FB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A3DEF1091F7588190080B396 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -86,21 +88,12 @@
 		2D66E26D1F6DA429001D015E /* AdosFirebaseSocialLogin */ = {
 			isa = PBXGroup;
 			children = (
-				A38457361F8CF5F500191D90 /* AccountViewController.swift */,
-				A38457381F8CFE6100191D90 /* AdressViewController.swift */,
-				2D66E26E1F6DA429001D015E /* AppDelegate.swift */,
-				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
-				A391CA1D1F7C11C500C855FB /* Helpers.swift */,
-				A3DEF1091F7588190080B396 /* Constant.swift */,
-				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
-				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
-				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
-				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
-				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
-				2D09EB1F1F6EBC1F0028632B /* Assets.xcassets */,
+				A38457431F8D164E00191D90 /* Application */,
+				A384573D1F8D143100191D90 /* Controllers */,
+				A384573E1F8D14D700191D90 /* Library */,
+				A384573C1F8D13F800191D90 /* Models */,
+				A38457471F8D176500191D90 /* Supporting Files */,
 				A33DEE6D1F72A5E700FB0B3E /* Resourses */,
-				2D66E27A1F6DA429001D015E /* Info.plist */,
-				A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */,
 				2D66E26C1F6DA429001D015E /* Products */,
 			);
 			path = AdosFirebaseSocialLogin;
@@ -127,6 +120,7 @@
 		A33DEE6D1F72A5E700FB0B3E /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				A38457461F8D171900191D90 /* Media */,
 				A33DEE6E1F72A5F900FB0B3E /* UI */,
 			);
 			path = Resourses;
@@ -140,6 +134,79 @@
 				2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A384573C1F8D13F800191D90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A38457441F8D16CA00191D90 /* SignUp.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A384573D1F8D143100191D90 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A384573A1F8D06BE00191D90 /* AccountViewController.swift */,
+				A38457381F8CFE6100191D90 /* AdressViewController.swift */,
+				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
+				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
+				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
+				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
+				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
+				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A384573E1F8D14D700191D90 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A38457401F8D158100191D90 /* Extensions */,
+				A384573F1F8D154200191D90 /* Helpers */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		A384573F1F8D154200191D90 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A3DEF1091F7588190080B396 /* Constant.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A38457401F8D158100191D90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A38457411F8D159D00191D90 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A38457431F8D164E00191D90 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2D66E26E1F6DA429001D015E /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A38457461F8D171900191D90 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				2D09EB1F1F6EBC1F0028632B /* Assets.xcassets */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		A38457471F8D176500191D90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D66E27A1F6DA429001D015E /* Info.plist */,
+				A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,16 +367,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */,
+				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
-				A391CA1E1F7C11C500C855FB /* Helpers.swift in Sources */,
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,
 				A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */,
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
+				A38457421F8D159D00191D90 /* Extensions.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
 				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
-				A38457371F8CF5F500191D90 /* AccountViewController.swift in Sources */,
+				A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

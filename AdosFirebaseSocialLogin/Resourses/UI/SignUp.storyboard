@@ -35,21 +35,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_info" translatesAutoresizingMaskIntoConstraints="NO" id="h6a-Ff-mm2">
                                 <rect key="frame" x="145" y="129" width="30" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Aqs-7X-cUn"/>
-                                    <constraint firstAttribute="width" constant="30" id="cO3-K9-EVj"/>
+                                    <constraint firstAttribute="height" constant="49" id="Aqs-7X-cUn">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="49"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="49"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="30" id="cO3-K9-EVj">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                    </constraint>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Aqs-7X-cUn"/>
-                                        <include reference="cO3-K9-EVj"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="Aqs-7X-cUn"/>
-                                        <exclude reference="cO3-K9-EVj"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-zv-HTp">
                                 <rect key="frame" x="93.5" y="193" width="133.5" height="17"/>
@@ -400,24 +394,26 @@
                                 <rect key="frame" x="144.5" y="129" width="31" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="9oq-cH-HmB"/>
-                                    <constraint firstAttribute="width" constant="31" id="Oem-gs-G89"/>
+                                    <constraint firstAttribute="width" constant="31" id="Oem-gs-G89">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="31"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="31"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="50" id="T29-Zz-LBd"/>
-                                    <constraint firstAttribute="height" constant="51" id="h7n-87-b9i"/>
+                                    <constraint firstAttribute="height" constant="51" id="h7n-87-b9i">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="51"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="51"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="9oq-cH-HmB"/>
-                                        <include reference="Oem-gs-G89"/>
                                         <exclude reference="T29-Zz-LBd"/>
-                                        <include reference="h7n-87-b9i"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="9oq-cH-HmB"/>
-                                        <exclude reference="Oem-gs-G89"/>
                                         <include reference="T29-Zz-LBd"/>
-                                        <exclude reference="h7n-87-b9i"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -607,21 +603,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adress" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-qM-SOY">
                                 <rect key="frame" x="139" y="129" width="42" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="2bd-j4-EK1"/>
-                                    <constraint firstAttribute="height" constant="50" id="z7O-Kn-cEZ"/>
+                                    <constraint firstAttribute="width" constant="42" id="2bd-j4-EK1">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="42"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="z7O-Kn-cEZ">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="2bd-j4-EK1"/>
-                                        <include reference="z7O-Kn-cEZ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="2bd-j4-EK1"/>
-                                        <exclude reference="z7O-Kn-cEZ"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-2T-dv7">
                                 <rect key="frame" x="95.5" y="194" width="130" height="17"/>
@@ -841,6 +831,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="0aO-FR-8X8"/>
+                    <connections>
+                        <segue destination="xY6-zP-VHy" kind="show" id="8qA-HL-Al8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41F-eG-bS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -868,27 +861,21 @@
                                     <constraint firstAttribute="width" secondItem="QRb-zI-tnn" secondAttribute="height" multiplier="41:10" id="6Gc-F2-1g1"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_info" translatesAutoresizingMaskIntoConstraints="NO" id="ti8-X6-eSJ">
-                                <rect key="frame" x="145" y="129" width="30" height="49"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="piggy_bank" translatesAutoresizingMaskIntoConstraints="NO" id="ti8-X6-eSJ">
+                                <rect key="frame" x="125" y="129" width="70" height="58.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="ZMt-nD-KiM"/>
-                                    <constraint firstAttribute="width" constant="30" id="twP-e4-6qX"/>
+                                    <constraint firstAttribute="height" constant="49" id="ZMt-nD-KiM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="58"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="49"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="30" id="twP-e4-6qX">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                    </constraint>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="ZMt-nD-KiM"/>
-                                        <include reference="twP-e4-6qX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="ZMt-nD-KiM"/>
-                                        <exclude reference="twP-e4-6qX"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-uw-BeA">
-                                <rect key="frame" x="93.5" y="193" width="133.5" height="17"/>
+                                <rect key="frame" x="93.5" y="202.5" width="133.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -918,34 +905,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Los-45-zCD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountTypeCell" id="Los-45-zCD">
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Los-45-zCD" id="zTQ-O5-FDP">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nWH-pl-MTY">
-                                        <rect key="frame" x="0.0" y="72" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nWH-pl-MTY" id="BCg-Eu-ojX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4nI-05-6TV">
-                                        <rect key="frame" x="0.0" y="116" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nI-05-6TV" id="D1s-k5-tb2">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tah-2I-3b9">
-                                        <rect key="frame" x="0.0" y="160" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tah-2I-3b9" id="3hL-RG-oIp">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -985,6 +948,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ceN-9Y-GAA"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZQ5-Bi-V03" id="kqg-t4-PPA"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="5902.5" y="116.19718309859155"/>
@@ -996,6 +962,7 @@
         <image name="fondo" width="320" height="568"/>
         <image name="page1" width="206" height="49"/>
         <image name="personal_info" width="30" height="49"/>
+        <image name="piggy_bank" width="55" height="45"/>
         <image name="question" width="28" height="28"/>
     </resources>
 </document>

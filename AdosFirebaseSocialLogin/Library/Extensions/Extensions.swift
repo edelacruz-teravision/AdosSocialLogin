@@ -1,8 +1,8 @@
 //
-//  Helpers.swift
+//  Extensions.swift
 //  AdosFirebaseSocialLogin
 //
-//  Created by Eduardo de la Cruz on 27/9/17.
+//  Created by Eduardo de la Cruz on 10/10/17.
 //  Copyright © 2017 Eduardo De La Cruz. All rights reserved.
 //
 
@@ -41,7 +41,7 @@ extension UIViewController : UITextFieldDelegate
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         view.endEditing(true)
-    }    
+    }
     
     // MARK: - Alert Builder
     
@@ -49,9 +49,9 @@ extension UIViewController : UITextFieldDelegate
     {
         
         let alertControllerTitleChanged : String = """
-                                            
-\(alertControllerTitle)
-"""
+        
+        \(alertControllerTitle)
+        """
         
         let alertController = UIAlertController(title: alertControllerTitleChanged, message: alertControllerMessage, preferredStyle: .alert)
         

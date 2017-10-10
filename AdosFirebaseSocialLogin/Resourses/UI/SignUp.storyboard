@@ -842,7 +842,6 @@
         <!--Account View Controller-->
         <scene sceneID="naB-9H-cjQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7I-gh-l8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xY6-zP-VHy" customClass="AccountViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVG-yT-vRL"/>
@@ -952,6 +951,7 @@
                         <outlet property="tableView" destination="ZQ5-Bi-V03" id="kqg-t4-PPA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7I-gh-l8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5902.5" y="116.19718309859155"/>
         </scene>

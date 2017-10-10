@@ -21,6 +21,7 @@
 		A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A384573A1F8D06BE00191D90 /* AccountViewController.swift */; };
 		A38457421F8D159D00191D90 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457411F8D159D00191D90 /* Extensions.swift */; };
 		A38457451F8D16CA00191D90 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457441F8D16CA00191D90 /* SignUp.swift */; };
+		A38457481F8D197E00191D90 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E27A1F6DA429001D015E /* Info.plist */; };
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
@@ -274,6 +275,7 @@
 			files = (
 				2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */,
 				A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */,
+				A38457481F8D197E00191D90 /* Info.plist in Resources */,
 				2D09EB201F6EBC1F0028632B /* Assets.xcassets in Resources */,
 				2D66E2741F6DA429001D015E /* Main.storyboard in Resources */,
 				A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */,
@@ -504,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 273FZ5G5B8;
-				INFOPLIST_FILE = AdosFirebaseSocialLogin/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AdosFirebaseSocialLogin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eduardodelacruz.AdosFirebaseSocialLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,7 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 273FZ5G5B8;
-				INFOPLIST_FILE = AdosFirebaseSocialLogin/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AdosFirebaseSocialLogin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eduardodelacruz.AdosFirebaseSocialLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";

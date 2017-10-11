@@ -16,6 +16,8 @@
 		A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDD911F829FFB002EA62F /* SignUpViewController.swift */; };
 		A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
+		A37D46BB1F8E6E8E005534F2 /* AccountTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */; };
+		A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */; };
 		A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */; };
 		A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457381F8CFE6100191D90 /* AdressViewController.swift */; };
 		A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A384573A1F8D06BE00191D90 /* AccountViewController.swift */; };
@@ -43,6 +45,8 @@
 		A32BDD911F829FFB002EA62F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/Controllers/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeCell.swift; sourceTree = "<group>"; };
+		A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidenceStatusViewController.swift; sourceTree = "<group>"; };
 		A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationViewController.swift; sourceTree = "<group>"; };
 		A38457381F8CFE6100191D90 /* AdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressViewController.swift; sourceTree = "<group>"; };
 		A384573A1F8D06BE00191D90 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		A384573D1F8D143100191D90 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */,
 				A384573A1F8D06BE00191D90 /* AccountViewController.swift */,
 				A38457381F8CFE6100191D90 /* AdressViewController.swift */,
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
@@ -155,6 +160,7 @@
 				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
 				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
+				A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */,
 				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
 			);
 			path = Controllers;
@@ -369,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */,
+				A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */,
+				A37D46BB1F8E6E8E005534F2 /* AccountTypeCell.swift in Sources */,
 				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,

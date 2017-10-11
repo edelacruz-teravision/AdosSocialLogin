@@ -7,5 +7,26 @@
 //
 
 import Foundation
+import UIKit
 
+class AccountType: NSObject
+{
+    var name : String!
+    var image : UIImage!
+    
+    init(name: String)
+    {
+        self.name = name
+    }
+}
 
+class ResidenceStatus: NSObject
+{
+    var name : String!
+    var image : UIImage!
+    
+    init(name: String)
+    {
+        self.name = name
+    }
+}

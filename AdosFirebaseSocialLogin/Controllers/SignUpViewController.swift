@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController
     
     @IBAction func createButtonPressed(_ sender: UIButton)
     {
-        if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField, confirmPasswordTextField]) 
+        /*if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField, confirmPasswordTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
@@ -64,10 +64,10 @@ class SignUpViewController: UIViewController
             alertBuilder(alertControllerTitle: "Invalid email", alertControllerMessage: "Please introduce a valid email", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
         }
         else
-        {
+        {*/
             KVNProgress.show(withStatus: "Loading, Please wait")
             
-            let parameters: Parameters = [
+            /*let parameters: Parameters = [
                 "client_id" : ServerData.clientId,
                 "client_secret": ServerData.clientSecret,
                 "email": emailTextField.text ?? "",
@@ -98,10 +98,10 @@ class SignUpViewController: UIViewController
                             KVNProgress.showError()
                         }
                         else
-                        {
+                        {*/
                             KVNProgress.showSuccess()
                             self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
-                        }
+                       /* }
                     
                     case .failure( _):
                         
@@ -110,7 +110,7 @@ class SignUpViewController: UIViewController
                         KVNProgress.showError()
                 }
             }
-        }
+        }*/
     }
     
     // MARK: - Question Button Action
@@ -118,8 +118,7 @@ class SignUpViewController: UIViewController
     @IBAction func questionButtonPressed(_ sender: UIButton)
     {
         alertBuilder(alertControllerTitle: "", alertControllerMessage: "The password should be a minimum of eight (8) characters, including one (1) special character and one (1) number and combine Uppercase and Lowercase letters.", alertActionTitle: "Ok", identifier: "", image: AlertImages.question)
-    }
-    
+    }    
    
     // MARK: - Navigation
 

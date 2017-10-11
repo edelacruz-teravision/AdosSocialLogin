@@ -44,3 +44,19 @@ struct RegExConditions
     
     static let emailRegEx = "([\\w-+]+(?:\\.[\\w-+]+)*@(?:[\\w-]+\\.)+[a-zA-Z]{2,7})"
 }
+
+struct AccountTypeArray
+{
+    static var accountTypeArray : [AccountType] = [AccountType(name: "Individual"),
+                                                 AccountType(name: "Joint"),
+                                                 AccountType(name: "IRA"),
+                                                 AccountType(name: "401k")]
+}
+
+struct ResidenceStatusArray
+{
+    static var residenceStatusArray : [ResidenceStatus] = [ResidenceStatus(name: "Individual"),
+                                                         ResidenceStatus(name: "Joint"),
+                                                         ResidenceStatus(name: "IRA"),
+                                                         ResidenceStatus(name: "401k")]
+}

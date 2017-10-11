@@ -28,6 +28,12 @@ class AccountViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func continueButtonPressed(_ sender: UIButton)
+    {
+        
+    }
+    
 }
 
 extension AccountViewController: UITableViewDataSource, UITableViewDelegate
@@ -39,14 +45,31 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 4
+        return AccountTypeArray.accountTypeArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cellId = "AccountTypeCell"
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let accountType = AccountTypeArray.accountTypeArray[indexPath.row]
+        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! AccountTypeCell
+        
+        cell.cellLabel.text = accountType.name
+        cell.setSelected(false, animated: true)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let cell = tableView.cellForRow(at: indexPath) as! AccountTypeCell
+        cell.cellImge.image = #imageLiteral(resourceName: "selected")
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    {
+        let cell = tableView.cellForRow(at: indexPath) as! AccountTypeCell
+        cell.cellImge.image = nil
     }
 }

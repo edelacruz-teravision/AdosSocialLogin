@@ -20,6 +20,7 @@ class PhoneConfirmationViewController: UIViewController
     {
         super.viewDidLoad()
         codeTextField.delegate = self
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     
@@ -46,13 +47,16 @@ class PhoneConfirmationViewController: UIViewController
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToAdress"
+        {
+            if let adressControllerSegue = segue.destination as? AdressViewController
+            {
+                self.title = ""
+            }
+        }
     }
-    */
 }

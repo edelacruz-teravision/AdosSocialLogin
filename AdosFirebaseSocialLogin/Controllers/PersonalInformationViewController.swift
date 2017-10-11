@@ -88,11 +88,11 @@ class PersonalInformationViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "goToProfileView"
+        if segue.identifier == "goToPhoneConfirmation"
         {
-            if let profileViewControllerSegue = segue.destination as? ProfileViewController
+            if let phoneConfirmationControllerSegue = segue.destination as? PhoneConfirmationViewController
             {
-                profileViewControllerSegue.navigationController?.setNavigationBarHidden(true, animated: true)
+                phoneConfirmationControllerSegue.navigationController?.setNavigationBarHidden(false, animated: true)
                 self.title = ""
                 self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
                 self.navigationController?.view.tintColor = UIColor.white

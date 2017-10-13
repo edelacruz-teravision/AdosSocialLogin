@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountTypeCell: UITableViewCell
+class TypeCell: UITableViewCell
 {
     // MARK: - Outlets
     
@@ -25,10 +25,5 @@ class AccountTypeCell: UITableViewCell
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
-        
-        /*let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 36.0/255.0, green: 37.0/255.0, blue: 89.0/255.0, alpha: 1)
-        self.selectedBackgroundView = backgroundView*/
-        
     }
 }

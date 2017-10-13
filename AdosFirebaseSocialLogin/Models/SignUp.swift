@@ -30,3 +30,14 @@ class ResidenceStatus: NSObject
         self.name = name
     }
 }
+
+class AnnualIncome: NSObject
+{
+    var name : String!
+    var image : UIImage!
+    
+    init(name: String)
+    {
+        self.name = name
+    }
+}

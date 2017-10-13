@@ -12,7 +12,7 @@ class AccountViewController: UIViewController
 {
     // MARK: - Outlets
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var accountTypeTableView: UITableView!
     
     // MARK: - AccountViewController Load
     
@@ -20,8 +20,8 @@ class AccountViewController: UIViewController
     {
         super.viewDidLoad()
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.accountTypeTableView.dataSource = self
+        self.accountTypeTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -29,12 +29,32 @@ class AccountViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Continue Button Action
+    
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
+        let indexPath : IndexPath = accountTypeTableView.indexPathForSelectedRow!
+        let cell : TypeCell = accountTypeTableView.cellForRow(at: indexPath) as! TypeCell
         
+        print(cell.cellLabel.text ?? "")
+        //self.performSegue(withIdentifier: "goToResidenceStatus", sender: nil)
     }
     
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToResidenceStatus"
+        {
+            if let residenceStatusControllerSegue = segue.destination as? ResidenceStatusViewController
+            {
+                self.title = ""
+            }
+        }
+    }
 }
+
+//MARK: - Table Data Sourse Extension
 
 extension AccountViewController: UITableViewDataSource, UITableViewDelegate
 {
@@ -53,23 +73,22 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate
         let cellId = "AccountTypeCell"
         let accountType = AccountTypeArray.accountTypeArray[indexPath.row]
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! AccountTypeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         
         cell.cellLabel.text = accountType.name
-        cell.setSelected(false, animated: true)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let cell = tableView.cellForRow(at: indexPath) as! AccountTypeCell
+        let cell = tableView.cellForRow(at: indexPath) as! TypeCell
         cell.cellImge.image = #imageLiteral(resourceName: "selected")
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     {
-        let cell = tableView.cellForRow(at: indexPath) as! AccountTypeCell
+        let cell = tableView.cellForRow(at: indexPath) as! TypeCell
         cell.cellImge.image = nil
     }
 }

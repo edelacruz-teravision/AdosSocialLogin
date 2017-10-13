@@ -16,7 +16,7 @@
 		A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDD911F829FFB002EA62F /* SignUpViewController.swift */; };
 		A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
-		A37D46BB1F8E6E8E005534F2 /* AccountTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */; };
+		A37D46BB1F8E6E8E005534F2 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BA1F8E6E8E005534F2 /* TypeCell.swift */; };
 		A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */; };
 		A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */; };
 		A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457381F8CFE6100191D90 /* AdressViewController.swift */; };
@@ -25,6 +25,8 @@
 		A38457451F8D16CA00191D90 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457441F8D16CA00191D90 /* SignUp.swift */; };
 		A38457481F8D197E00191D90 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E27A1F6DA429001D015E /* Info.plist */; };
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
+		A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */; };
+		A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
 		A3DEF10A1F7588190080B396 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF1091F7588190080B396 /* Constant.swift */; };
@@ -45,7 +47,7 @@
 		A32BDD911F829FFB002EA62F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/Controllers/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeCell.swift; sourceTree = "<group>"; };
+		A37D46BA1F8E6E8E005534F2 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidenceStatusViewController.swift; sourceTree = "<group>"; };
 		A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationViewController.swift; sourceTree = "<group>"; };
 		A38457381F8CFE6100191D90 /* AdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		A38457411F8D159D00191D90 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A38457441F8D16CA00191D90 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualIncomeViewController.swift; sourceTree = "<group>"; };
+		A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploymentStatusViewController.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A3DEF1091F7588190080B396 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -152,10 +156,12 @@
 		A384573D1F8D143100191D90 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A37D46BA1F8E6E8E005534F2 /* AccountTypeCell.swift */,
+				A37D46BA1F8E6E8E005534F2 /* TypeCell.swift */,
 				A384573A1F8D06BE00191D90 /* AccountViewController.swift */,
 				A38457381F8CFE6100191D90 /* AdressViewController.swift */,
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
+				A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */,
+				A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */,
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
 				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
 				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
@@ -376,7 +382,8 @@
 			files = (
 				A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */,
 				A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */,
-				A37D46BB1F8E6E8E005534F2 /* AccountTypeCell.swift in Sources */,
+				A37D46BB1F8E6E8E005534F2 /* TypeCell.swift in Sources */,
+				A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */,
 				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,
@@ -385,6 +392,7 @@
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
 				A38457421F8D159D00191D90 /* Extensions.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
+				A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
 				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
 				A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */,

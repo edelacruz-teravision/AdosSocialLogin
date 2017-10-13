@@ -55,8 +55,16 @@ struct AccountTypeArray
 
 struct ResidenceStatusArray
 {
-    static var residenceStatusArray : [ResidenceStatus] = [ResidenceStatus(name: "Individual"),
-                                                         ResidenceStatus(name: "Joint"),
-                                                         ResidenceStatus(name: "IRA"),
-                                                         ResidenceStatus(name: "401k")]
+    static var residenceStatusArray : [ResidenceStatus] = [ResidenceStatus(name: "US Citizen"),
+                                                         ResidenceStatus(name: "Green Card holder"),
+                                                         ResidenceStatus(name: "Visa holder"),
+                                                         ResidenceStatus(name: "Other")]
+}
+
+struct AnnualIncomeArray
+{
+    static var annualIncomeArray : [AnnualIncome] = [AnnualIncome(name: "Under $50k"),
+                                                      AnnualIncome(name: "$50k - $100k"),
+                                                      AnnualIncome(name: "$100K - $200k"),
+                                                      AnnualIncome(name: "Over $200k")]
 }

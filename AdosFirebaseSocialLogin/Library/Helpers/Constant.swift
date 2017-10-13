@@ -64,7 +64,23 @@ struct ResidenceStatusArray
 struct AnnualIncomeArray
 {
     static var annualIncomeArray : [AnnualIncome] = [AnnualIncome(name: "Under $50k"),
-                                                      AnnualIncome(name: "$50k - $100k"),
-                                                      AnnualIncome(name: "$100K - $200k"),
-                                                      AnnualIncome(name: "Over $200k")]
+                                                   AnnualIncome(name: "$50k - $100k"),
+                                                   AnnualIncome(name: "$100K - $200k"),
+                                                   AnnualIncome(name: "Over $200k")]
+}
+
+struct EmploymentStatusArray
+{
+    static var employmentStatusArray : [EmploymentStatus] = [EmploymentStatus(name: "Employed"),
+                                                           EmploymentStatus(name: "Student"),
+                                                           EmploymentStatus(name: "Retired"),
+                                                           EmploymentStatus(name: "Unemployed")]
+}
+
+struct InvestmentArray
+{
+    static var investmentArray : [Investment] = [Investment(name: "Under $50k"),
+                                               Investment(name: "$50k - $100k"),
+                                               Investment(name: "$100K - $200k"),
+                                               Investment(name: "Over $200k")]
 }

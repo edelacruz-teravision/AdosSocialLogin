@@ -41,10 +41,10 @@ class PhoneConfirmationViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        if allTextFieldsFilled(textFields: [codeTextField])
-        {
+       // if allTextFieldsFilled(textFields: [codeTextField])
+       // {
             self.performSegue(withIdentifier: "goToAdress", sender: nil)
-        }
+       // }
     }
     
     //MARK: - Navigation

@@ -15,6 +15,8 @@
 		2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E2771F6DA429001D015E /* LaunchScreen.storyboard */; };
 		A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDD911F829FFB002EA62F /* SignUpViewController.swift */; };
 		A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */; };
+		A36194B11F91405E005754A4 /* InvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36194B01F91405E005754A4 /* InvestmentViewController.swift */; };
+		A36194B31F9148F0005754A4 /* RegulatoryQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36194B21F9148F0005754A4 /* RegulatoryQuestionsViewController.swift */; };
 		A363BCF21F74005200FFCBC2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363BCF11F74005200FFCBC2 /* SafariServices.framework */; };
 		A37D46BB1F8E6E8E005534F2 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BA1F8E6E8E005534F2 /* TypeCell.swift */; };
 		A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */; };
@@ -46,6 +48,8 @@
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BDD911F829FFB002EA62F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/Controllers/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
+		A36194B01F91405E005754A4 /* InvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewController.swift; sourceTree = "<group>"; };
+		A36194B21F9148F0005754A4 /* RegulatoryQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulatoryQuestionsViewController.swift; sourceTree = "<group>"; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A37D46BA1F8E6E8E005534F2 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidenceStatusViewController.swift; sourceTree = "<group>"; };
@@ -163,9 +167,11 @@
 				A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */,
 				A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */,
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
+				A36194B01F91405E005754A4 /* InvestmentViewController.swift */,
 				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
 				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
+				A36194B21F9148F0005754A4 /* RegulatoryQuestionsViewController.swift */,
 				A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */,
 				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
 			);
@@ -382,6 +388,7 @@
 			files = (
 				A32BDD921F829FFB002EA62F /* SignUpViewController.swift in Sources */,
 				A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */,
+				A36194B31F9148F0005754A4 /* RegulatoryQuestionsViewController.swift in Sources */,
 				A37D46BB1F8E6E8E005534F2 /* TypeCell.swift in Sources */,
 				A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */,
 				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
@@ -394,6 +401,7 @@
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
 				A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
+				A36194B11F91405E005754A4 /* InvestmentViewController.swift in Sources */,
 				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
 				A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */,
 			);

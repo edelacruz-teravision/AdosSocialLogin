@@ -37,7 +37,9 @@ class AccountViewController: UIViewController
         let cell : TypeCell = accountTypeTableView.cellForRow(at: indexPath) as! TypeCell
         
         print(cell.cellLabel.text ?? "")
-        //self.performSegue(withIdentifier: "goToResidenceStatus", sender: nil)
+        
+        performSegue(withIdentifier: "goToResidenceStatus", sender: nil)
+        
     }
     
     //MARK: - Navigation

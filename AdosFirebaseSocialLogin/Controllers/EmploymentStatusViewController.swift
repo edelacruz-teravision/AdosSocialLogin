@@ -19,6 +19,9 @@ class EmploymentStatusViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.employmentStatusTableView.dataSource = self
+        self.employmentStatusTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -30,16 +33,64 @@ class EmploymentStatusViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
+        let indexPath : IndexPath = self.employmentStatusTableView.indexPathForSelectedRow!
+        let cell : TypeCell = self.employmentStatusTableView.cellForRow(at: indexPath) as! TypeCell
         
+        print(cell.cellLabel.text ?? "")
+        
+        self.performSegue(withIdentifier: "goToInvestment", sender: nil)
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToInvestment"
+        {
+            if let investmentControllerSegue = segue.destination as? InvestmentViewController
+            {
+                self.title = ""
+            }
+        }
     }
-    */
 }
+
+//MARK: - Table Data Sourse Extension
+
+extension EmploymentStatusViewController: UITableViewDataSource, UITableViewDelegate
+{
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return EmploymentStatusArray.employmentStatusArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cellId = "EmploymentStatusCell"
+        let annualIncome =  EmploymentStatusArray.employmentStatusArray[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
+        
+        cell.cellLabel.text = annualIncome.name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let cell = tableView.cellForRow(at: indexPath) as! TypeCell
+        cell.cellImge.image = #imageLiteral(resourceName: "selected")
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    {
+        let cell = tableView.cellForRow(at: indexPath) as! TypeCell
+        cell.cellImge.image = nil
+    }
+}
+

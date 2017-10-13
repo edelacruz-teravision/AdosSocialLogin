@@ -41,3 +41,25 @@ class AnnualIncome: NSObject
         self.name = name
     }
 }
+
+class EmploymentStatus: NSObject
+{
+    var name : String!
+    var image : UIImage!
+    
+    init(name: String)
+    {
+        self.name = name
+    }
+}
+
+class Investment: NSObject
+{
+    var name : String!
+    var image : UIImage!
+    
+    init(name: String)
+    {
+        self.name = name
+    }
+}

@@ -1,27 +1,27 @@
 //
-//  ResidenceStatusViewController.swift
+//  InvestmentViewController.swift
 //  AdosFirebaseSocialLogin
 //
-//  Created by Eduardo de la Cruz on 11/10/17.
+//  Created by Eduardo de la Cruz on 13/10/17.
 //  Copyright © 2017 Eduardo De La Cruz. All rights reserved.
 //
 
 import UIKit
 
-class ResidenceStatusViewController: UIViewController
+class InvestmentViewController: UIViewController
 {
     // MARK: - Outlets
     
-    @IBOutlet var residenceStatusTableView: UITableView!
+    @IBOutlet var investmentTableView: UITableView!
     
-    // MARK: - ResidenceStatusViewController Load
+    // MARK: - EmploymentStatusViewController Load
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        self.residenceStatusTableView.dataSource = self
-        self.residenceStatusTableView.delegate = self
+        investmentTableView.dataSource = self
+        investmentTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -29,26 +29,25 @@ class ResidenceStatusViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: - Continue Button Action
+    // MARK: - Continue Button Pressed
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = residenceStatusTableView.indexPathForSelectedRow!
-        let cell : TypeCell = residenceStatusTableView.cellForRow(at: indexPath) as! TypeCell
+        let indexPath : IndexPath = self.investmentTableView.indexPathForSelectedRow!
+        let cell : TypeCell = self.investmentTableView.cellForRow(at: indexPath) as! TypeCell
         
         print(cell.cellLabel.text ?? "")
         
-        self.performSegue(withIdentifier: "goToAnnualIncome", sender: nil)
-        
+        //self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
     }
     
-    //MARK: - Navigation
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "goToAnnualIncome"
+        if segue.identifier == "goToEmploymentStatus"
         {
-            if let annualIncomeControllerSegue = segue.destination as? AnnualIncomeViewController
+            if let employmentStatusControllerSegue = segue.destination as? EmploymentStatusViewController
             {
                 self.title = ""
             }
@@ -56,9 +55,7 @@ class ResidenceStatusViewController: UIViewController
     }
 }
 
-//MARK: - Table Data Sourse Extension
-
-extension ResidenceStatusViewController: UITableViewDataSource, UITableViewDelegate
+extension InvestmentViewController: UITableViewDataSource, UITableViewDelegate
 {
     func numberOfSections(in tableView: UITableView) -> Int
     {
@@ -67,17 +64,17 @@ extension ResidenceStatusViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return ResidenceStatusArray.residenceStatusArray.count
+        return InvestmentArray.investmentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cellId = "ResidenceStatusCell"
-        let residenceStatus = ResidenceStatusArray.residenceStatusArray[indexPath.row]
+        let cellId = "InvestmentCell"
+        let annualIncome =  InvestmentArray.investmentArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         
-        cell.cellLabel.text = residenceStatus.name
+        cell.cellLabel.text = annualIncome.name
         
         return cell
     }

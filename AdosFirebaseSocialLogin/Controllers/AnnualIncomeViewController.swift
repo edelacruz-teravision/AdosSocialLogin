@@ -19,6 +19,9 @@ class AnnualIncomeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.annualIncomeTableView.dataSource = self
+        self.annualIncomeTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -30,12 +33,12 @@ class AnnualIncomeViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = annualIncomeTableView.indexPathForSelectedRow!
-        let cell : TypeCell = annualIncomeTableView.cellForRow(at: indexPath) as! TypeCell
+        let indexPath : IndexPath = self.annualIncomeTableView.indexPathForSelectedRow!
+        let cell : TypeCell = self.annualIncomeTableView.cellForRow(at: indexPath) as! TypeCell
         
         print(cell.cellLabel.text ?? "")
         
-        //self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
+        self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
     }
     
     // MARK: - Navigation
@@ -68,8 +71,11 @@ extension AnnualIncomeViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cellId = "AnualIncomeCell"
+        
+        let cellId = "AnnualIncomeCell"
+        
         let annualIncome =  AnnualIncomeArray.annualIncomeArray[indexPath.row]
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         

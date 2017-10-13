@@ -44,10 +44,10 @@ class AdressViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        if allTextFieldsFilled(textFields: [streetTextField, apartmentTextField, stateTextField, cityTextField, zipTextField])
-        {
+        //if allTextFieldsFilled(textFields: [streetTextField, apartmentTextField, stateTextField, cityTextField, zipTextField])
+        //{
             self.performSegue(withIdentifier: "goToAccount", sender: nil)
-        }
+        //}
     }
     
     //MARK: - Navigation

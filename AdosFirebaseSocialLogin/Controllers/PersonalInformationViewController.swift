@@ -103,14 +103,14 @@ class PersonalInformationViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        /*if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
         }
         else
-        {
+        {*/
             self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
-        }
+        //}
     }
 }

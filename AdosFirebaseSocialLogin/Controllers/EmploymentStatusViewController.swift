@@ -33,12 +33,18 @@ class EmploymentStatusViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = self.employmentStatusTableView.indexPathForSelectedRow!
-        let cell : TypeCell = self.employmentStatusTableView.cellForRow(at: indexPath) as! TypeCell
-        
-        print(cell.cellLabel.text ?? "")
-        
-        self.performSegue(withIdentifier: "goToInvestment", sender: nil)
+        if let indexPath = self.employmentStatusTableView.indexPathForSelectedRow
+        {
+            let cell : TypeCell = self.employmentStatusTableView.cellForRow(at: indexPath) as! TypeCell
+            
+            print(cell.cellLabel.text ?? "")
+            
+            self.performSegue(withIdentifier: "goToInvestment", sender: nil)
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Plase select one emplyment status", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
     }
     
     // MARK: - Navigation

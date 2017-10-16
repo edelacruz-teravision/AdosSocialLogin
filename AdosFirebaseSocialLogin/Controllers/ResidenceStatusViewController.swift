@@ -33,13 +33,18 @@ class ResidenceStatusViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = residenceStatusTableView.indexPathForSelectedRow!
-        let cell : TypeCell = residenceStatusTableView.cellForRow(at: indexPath) as! TypeCell
-        
-        print(cell.cellLabel.text ?? "")
-        
-        self.performSegue(withIdentifier: "goToAnnualIncome", sender: nil)
-        
+        if let indexPath = residenceStatusTableView.indexPathForSelectedRow
+        {
+            let cell : TypeCell = residenceStatusTableView.cellForRow(at: indexPath) as! TypeCell
+            
+            print(cell.cellLabel.text ?? "")
+            
+            self.performSegue(withIdentifier: "goToAnnualIncome", sender: nil)
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Plase select one residence status", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
     }
     
     //MARK: - Navigation

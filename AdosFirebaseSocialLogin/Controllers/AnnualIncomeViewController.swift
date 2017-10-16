@@ -33,12 +33,18 @@ class AnnualIncomeViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = self.annualIncomeTableView.indexPathForSelectedRow!
-        let cell : TypeCell = self.annualIncomeTableView.cellForRow(at: indexPath) as! TypeCell
-        
-        print(cell.cellLabel.text ?? "")
-        
-        self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
+        if let indexPath = self.annualIncomeTableView.indexPathForSelectedRow
+        {
+            let cell : TypeCell = self.annualIncomeTableView.cellForRow(at: indexPath) as! TypeCell
+            
+            print(cell.cellLabel.text ?? "")
+            
+            self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Plase select one annual income", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
     }
     
     // MARK: - Navigation

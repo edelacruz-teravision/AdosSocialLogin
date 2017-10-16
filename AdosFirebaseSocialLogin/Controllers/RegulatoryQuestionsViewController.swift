@@ -22,9 +22,14 @@ class RegulatoryQuestionsViewController: UIViewController
     @IBOutlet var politicalOrganizationSwitch: UISwitch!
     @IBOutlet var politicalOrganizationTextField: UITextField!
     
+    // MARK: - RegulatoryQuestionsViewController Load
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.nameOfTheFirmSwitch.setOn(false, animated: true)
+        self.companySymbolsSwitch.setOn(false, animated: true)
+        self.politicalOrganizationSwitch.setOn(false, animated: true)
     }
 
     override func didReceiveMemoryWarning()
@@ -32,19 +37,73 @@ class RegulatoryQuestionsViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        self.nameOfTheFirmTextField.setupTextFields()
+        self.companySymbolsTextField.setupTextFields()
+        self.politicalOrganizationTextField.setupTextFields()
+    }
+    
+    //MARK: - Name Of The Firm Switch Change
+
+    @IBAction func nameOfTheFirmSwitchChanged(_ sender: UISwitch)
+    {
+        if sender.isOn
+        {
+            self.nameOfTheFirmStackView.isHidden = false
+        }
+        else
+        {
+            self.nameOfTheFirmStackView.isHidden = true
+        }
+    }
+    
+    //MARK: - Company Symbols Switch Change
+    
+    @IBAction func companySymbolsSwitchChanged(_ sender: UISwitch)
+    {
+        if sender.isOn
+        {
+            self.companySymbolsStackView.isHidden = false
+        }
+        else
+        {
+            self.companySymbolsStackView.isHidden = true
+        }
+    }
+    
+    //MARK: - Political Organization Switch Change
+    
+    @IBAction func politicalOrganizationSwitchChanged(_ sender: UISwitch)
+    {
+        if sender.isOn
+        {
+            self.politicalOrganizationStackView.isHidden = false
+        }
+        else
+        {
+            self.politicalOrganizationStackView.isHidden = true
+        }
+    }
+    
     //MARK: - Continue Button Action
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        
+        self.performSegue(withIdentifier: "goToTermsOfUse", sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goToTermsOfUse"
+        {
+            if let termsOfUseControllerSegue = segue.destination as? TermsOfUseViewController
+            {
+                self.title = ""
+            }
+        }
     }
-    */
 }

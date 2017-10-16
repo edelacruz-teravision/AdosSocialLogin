@@ -33,13 +33,18 @@ class AccountViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = accountTypeTableView.indexPathForSelectedRow!
-        let cell : TypeCell = accountTypeTableView.cellForRow(at: indexPath) as! TypeCell
-        
-        print(cell.cellLabel.text ?? "")
-        
-        performSegue(withIdentifier: "goToResidenceStatus", sender: nil)
-        
+        if let indexPath = accountTypeTableView.indexPathForSelectedRow
+        {
+            let cell : TypeCell = accountTypeTableView.cellForRow(at: indexPath) as! TypeCell
+            
+            print(cell.cellLabel.text ?? "")
+            
+            performSegue(withIdentifier: "goToResidenceStatus", sender: nil)
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Plase select one account type", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
     }
     
     //MARK: - Navigation

@@ -33,21 +33,27 @@ class InvestmentViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        let indexPath : IndexPath = self.investmentTableView.indexPathForSelectedRow!
-        let cell : TypeCell = self.investmentTableView.cellForRow(at: indexPath) as! TypeCell
-        
-        print(cell.cellLabel.text ?? "")
-        
-        //self.performSegue(withIdentifier: "goToEmploymentStatus", sender: nil)
+        if let indexPath = self.investmentTableView.indexPathForSelectedRow
+        {
+            let cell : TypeCell = self.investmentTableView.cellForRow(at: indexPath) as! TypeCell
+            
+            print(cell.cellLabel.text ?? "")
+            
+            self.performSegue(withIdentifier: "goToRegulatoryQuestios", sender: nil)
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "", alertControllerMessage: "Plase select one amount of investment", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+        }
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "goToEmploymentStatus"
+        if segue.identifier == "goToRegulatoryQuestios"
         {
-            if let employmentStatusControllerSegue = segue.destination as? EmploymentStatusViewController
+            if let regulatoryQuestionsControllerSegue = segue.destination as? RegulatoryQuestionsViewController
             {
                 self.title = ""
             }

@@ -32,6 +32,7 @@
 		A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */; };
 		A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FE1F952D6100BB051E /* FundingViewController.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
+		A3D08B351F954BA700D0CB6C /* InvestmentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08B341F954BA700D0CB6C /* InvestmentSelectionViewController.swift */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
 		A3DEF10A1F7588190080B396 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEF1091F7588190080B396 /* Constant.swift */; };
 		B48B5B9A9F79E15A3B52D3E4 /* Pods_AdosFirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */; };
@@ -66,6 +67,7 @@
 		A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDebitCardViewController.swift; sourceTree = "<group>"; };
 		A3B075FE1F952D6100BB051E /* FundingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundingViewController.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3D08B341F954BA700D0CB6C /* InvestmentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentSelectionViewController.swift; sourceTree = "<group>"; };
 		A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A3DEF1091F7588190080B396 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AF38E9CB4A22F9EB28B288A9 /* Pods-AdosFirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
 				A3B075FE1F952D6100BB051E /* FundingViewController.swift */,
 				A36194B01F91405E005754A4 /* InvestmentViewController.swift */,
+				A3D08B341F954BA700D0CB6C /* InvestmentSelectionViewController.swift */,
 				A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */,
 				A37DEE7A1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
@@ -401,6 +404,7 @@
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,
 				A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */,
+				A3D08B351F954BA700D0CB6C /* InvestmentSelectionViewController.swift in Sources */,
 				A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */,
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,

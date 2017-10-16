@@ -47,15 +47,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-zv-HTp">
-                                <rect key="frame" x="93.5" y="193" width="133.5" height="17"/>
+                                <rect key="frame" x="88.5" y="193" width="144" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSY-Ff-dzi" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
@@ -410,15 +410,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-CW-mhW">
-                                <rect key="frame" x="70.5" y="195" width="179.5" height="17"/>
+                                <rect key="frame" x="64" y="195" width="192.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-lh-tXd">
@@ -592,15 +592,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-2T-dv7">
-                                <rect key="frame" x="95" y="194" width="130" height="17"/>
+                                <rect key="frame" x="89.5" y="194" width="141" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ2-N0-qae" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
@@ -862,15 +862,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-uw-BeA">
-                                <rect key="frame" x="133.5" y="202" width="53" height="17"/>
+                                <rect key="frame" x="131.5" y="202" width="57.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yq8-eB-OOt">
@@ -1038,15 +1038,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Residence status " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-Us-l7Q">
-                                <rect key="frame" x="102.5" y="193" width="115" height="17"/>
+                                <rect key="frame" x="99" y="193" width="122" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQz-cR-9Au">
@@ -1232,15 +1232,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hip-LA-gsG">
-                                <rect key="frame" x="112.5" y="189" width="95" height="17"/>
+                                <rect key="frame" x="109" y="189" width="102" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icN-BF-PrW">
@@ -1368,8 +1368,8 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="zDw-mK-vUE" firstAttribute="centerX" secondItem="rXv-bk-X0B" secondAttribute="centerX" id="kpi-Yt-aC0"/>
-                            <constraint firstItem="hip-LA-gsG" firstAttribute="centerX" secondItem="rXv-bk-X0B" secondAttribute="centerX" id="nev-hB-0GJ"/>
                             <constraint firstItem="5qU-hC-HFs" firstAttribute="centerX" secondItem="rXv-bk-X0B" secondAttribute="centerX" id="pQ2-nT-PlV"/>
+                            <constraint firstItem="hip-LA-gsG" firstAttribute="centerX" secondItem="rXv-bk-X0B" secondAttribute="centerX" id="tEs-hi-BO3"/>
                             <constraint firstItem="5qU-hC-HFs" firstAttribute="leading" secondItem="rXv-bk-X0B" secondAttribute="leading" constant="90" id="uFK-xb-qyA">
                                 <variation key="heightClass=regular-widthClass=compact" constant="90"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="275"/>
@@ -1422,15 +1422,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employment status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPk-BH-7T5">
-                                <rect key="frame" x="98" y="182" width="124" height="17"/>
+                                <rect key="frame" x="93.5" y="182" width="133.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-RB-ifh">
@@ -1612,15 +1612,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZG-bI-ebs">
-                                <rect key="frame" x="124.5" y="174" width="71" height="17"/>
+                                <rect key="frame" x="121.5" y="174" width="77.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPp-kx-S1z">
@@ -1802,15 +1802,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regulatory questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiP-Sh-emj">
-                                <rect key="frame" x="92" y="184" width="136.5" height="17"/>
+                                <rect key="frame" x="86.5" y="184" width="147.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRZ-W2-HPr" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
@@ -2170,15 +2170,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWM-PW-Vg0">
-                                <rect key="frame" x="117.5" y="195" width="86" height="17"/>
+                                <rect key="frame" x="115.5" y="195" width="90.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-8V-16j">
@@ -2314,15 +2314,15 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z4-fI-g1A">
-                                <rect key="frame" x="97" y="194" width="126" height="17"/>
+                                <rect key="frame" x="93" y="194" width="134" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request and send to this Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SH-Hx-WoA">
@@ -2632,15 +2632,15 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HL-t9-fBZ">
-                                <rect key="frame" x="134" y="184" width="52.5" height="17"/>
+                                <rect key="frame" x="132.5" y="184" width="56" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVO-W9-hut" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
@@ -2716,14 +2716,14 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                                                 <state key="normal" backgroundImage="pass_view"/>
                                                                 <variation key="heightClass=regular-widthClass=compact">
                                                                     <mask key="constraints">
-                                                                        <exclude reference="MlP-QR-W1N"/>
                                                                         <exclude reference="0wI-Uy-rpb"/>
+                                                                        <exclude reference="MlP-QR-W1N"/>
                                                                     </mask>
                                                                 </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <mask key="constraints">
-                                                                        <include reference="MlP-QR-W1N"/>
                                                                         <include reference="0wI-Uy-rpb"/>
+                                                                        <include reference="MlP-QR-W1N"/>
                                                                     </mask>
                                                                 </variation>
                                                                 <connections>
@@ -2900,16 +2900,17 @@ as Invesment account owner</string>
                         <outlet property="benefitiaryTextField" destination="tzY-Aq-pjJ" id="LHp-jz-t5x"/>
                         <outlet property="depositAmountTextField" destination="lVN-Ae-TKG" id="DTH-rq-zBN"/>
                         <outlet property="passwordTextField" destination="9xB-zN-7QB" id="qeL-DS-G8g"/>
+                        <segue destination="aFj-KR-BFY" kind="show" identifier="goToPercentageInvestment" id="Heu-LR-q9q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVG-Br-KV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12829" y="113"/>
         </scene>
-        <!--Terms Of Use View Controller-->
+        <!--Investment Selection View Controller-->
         <scene sceneID="d9Z-he-0Nc">
             <objects>
-                <viewController id="aFj-KR-BFY" customClass="TermsOfUseViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aFj-KR-BFY" customClass="InvestmentSelectionViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRc-L2-IlT"/>
                         <viewControllerLayoutGuide type="bottom" id="jy7-tY-Abs"/>
@@ -2927,36 +2928,92 @@ as Invesment account owner</string>
                                     <constraint firstAttribute="width" secondItem="Smg-oe-j8b" secondAttribute="height" multiplier="41:10" id="byF-SG-JJl"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terms" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-v9-bOX">
-                                <rect key="frame" x="139" y="129" width="42" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="investment" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-v9-bOX">
+                                <rect key="frame" x="141" y="129" width="38" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="cxV-zB-1Qb">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="38"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="50" id="vtY-PX-heH">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="51"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="145"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="52"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="164"/>
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxQ-lC-zPy">
-                                <rect key="frame" x="117.5" y="195" width="86" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage of investment " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxQ-lC-zPy">
+                                <rect key="frame" x="69.5" y="196" width="181" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request and send to this Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-yT-UzE">
+                                <rect key="frame" x="65" y="248" width="190" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38x-pi-i3x">
+                                <rect key="frame" x="112" y="297.5" width="97" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="NSU-Yf-DQ9">
+                                <rect key="frame" x="43" y="371" width="234" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="percentageSliderChanged:" destination="aFj-KR-BFY" eventType="valueChanged" id="bWb-uq-iGS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLq-rm-3sg">
+                                <rect key="frame" x="25.5" y="380.5" width="14.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61D-MC-H9Z">
+                                <rect key="frame" x="280" y="380.5" width="26" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ft-Hf-4N4">
                                 <rect key="frame" x="0.0" y="522.5" width="320" height="45.5"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <state key="normal" title="Accept terms and continue">
+                                <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2965,30 +3022,64 @@ as Invesment account owner</string>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 </variation>
-                                <connections>
-                                    <action selector="continueButtonPressed:" destination="aFj-KR-BFY" eventType="touchUpInside" id="F2g-Zn-aDI"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-tl-xya">
+                                <rect key="frame" x="150.5" y="406" width="20" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="38x-pi-i3x" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="1Dj-qv-wNe"/>
+                            <constraint firstItem="gdi-tl-xya" firstAttribute="top" secondItem="NSU-Yf-DQ9" secondAttribute="bottom" constant="5" id="2T8-iY-lLj"/>
+                            <constraint firstItem="9KQ-yT-UzE" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="4wd-aO-k83"/>
                             <constraint firstAttribute="bottom" secondItem="hBY-bM-3Kk" secondAttribute="bottom" id="5DZ-iW-ChR"/>
                             <constraint firstItem="Smg-oe-j8b" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="6SN-mf-kv6"/>
+                            <constraint firstItem="NSU-Yf-DQ9" firstAttribute="leading" secondItem="NLq-rm-3sg" secondAttribute="trailing" constant="5" id="9FY-GY-G8Y"/>
                             <constraint firstItem="6Ft-Hf-4N4" firstAttribute="height" secondItem="zVn-U9-lvt" secondAttribute="height" multiplier="0.078" constant="1" id="9NY-5W-XBI"/>
+                            <constraint firstItem="NSU-Yf-DQ9" firstAttribute="top" secondItem="38x-pi-i3x" secondAttribute="bottom" constant="30.5" id="BEK-Dz-5ey">
+                                <variation key="heightClass=regular-widthClass=compact" constant="31"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="30.5"/>
+                            </constraint>
                             <constraint firstItem="N4H-v9-bOX" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="CR1-k5-2oT"/>
+                            <constraint firstItem="NLq-rm-3sg" firstAttribute="centerY" secondItem="NSU-Yf-DQ9" secondAttribute="centerY" id="EDX-6J-YMk"/>
+                            <constraint firstAttribute="trailing" secondItem="NSU-Yf-DQ9" secondAttribute="trailing" constant="103" id="GX2-0M-MgJ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="45"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="103"/>
+                            </constraint>
                             <constraint firstItem="Smg-oe-j8b" firstAttribute="top" secondItem="zVn-U9-lvt" secondAttribute="top" constant="80" id="JFO-jM-JkU">
                                 <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
+                            <constraint firstItem="NSU-Yf-DQ9" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="Jeo-jW-4WH"/>
                             <constraint firstItem="Smg-oe-j8b" firstAttribute="leading" secondItem="zVn-U9-lvt" secondAttribute="leading" constant="90" id="LMg-45-lct">
                                 <variation key="heightClass=regular-widthClass=compact" constant="90"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                            </constraint>
+                            <constraint firstItem="61D-MC-H9Z" firstAttribute="centerY" secondItem="NSU-Yf-DQ9" secondAttribute="centerY" id="dzn-Y5-hLh"/>
+                            <constraint firstItem="NSU-Yf-DQ9" firstAttribute="leading" secondItem="zVn-U9-lvt" secondAttribute="leading" constant="103" id="emR-Xq-EMT">
+                                <variation key="heightClass=regular-widthClass=compact" constant="45"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="103"/>
                             </constraint>
                             <constraint firstItem="jy7-tY-Abs" firstAttribute="top" secondItem="6Ft-Hf-4N4" secondAttribute="bottom" id="hVF-ZB-jEK"/>
                             <constraint firstItem="6Ft-Hf-4N4" firstAttribute="leading" secondItem="zVn-U9-lvt" secondAttribute="leading" id="iiZ-s1-xfl"/>
                             <constraint firstItem="cxQ-lC-zPy" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="jiR-P0-weq"/>
                             <constraint firstAttribute="trailing" secondItem="hBY-bM-3Kk" secondAttribute="trailing" id="mxx-H4-VXW"/>
+                            <constraint firstItem="61D-MC-H9Z" firstAttribute="leading" secondItem="NSU-Yf-DQ9" secondAttribute="trailing" constant="5" id="oFA-0V-PCE"/>
                             <constraint firstItem="hBY-bM-3Kk" firstAttribute="leading" secondItem="zVn-U9-lvt" secondAttribute="leading" id="sZY-8K-Iss"/>
+                            <constraint firstItem="9KQ-yT-UzE" firstAttribute="top" secondItem="cxQ-lC-zPy" secondAttribute="bottom" constant="63" id="saj-jk-Ptd">
+                                <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="63"/>
+                            </constraint>
+                            <constraint firstItem="gdi-tl-xya" firstAttribute="centerX" secondItem="zVn-U9-lvt" secondAttribute="centerX" id="sgb-gF-6Xl"/>
                             <constraint firstItem="N4H-v9-bOX" firstAttribute="top" secondItem="Smg-oe-j8b" secondAttribute="bottom" constant="15" id="vaC-ho-HGr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
@@ -2997,11 +3088,18 @@ as Invesment account owner</string>
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                             </constraint>
+                            <constraint firstItem="38x-pi-i3x" firstAttribute="top" secondItem="9KQ-yT-UzE" secondAttribute="bottom" constant="29.5" id="xuH-pA-a7V">
+                                <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="29.5"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="6Ft-Hf-4N4" secondAttribute="trailing" id="yoS-DQ-XEx"/>
                             <constraint firstItem="hBY-bM-3Kk" firstAttribute="top" secondItem="zVn-U9-lvt" secondAttribute="top" id="zoN-Lt-kFB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DKZ-6E-aFU"/>
+                    <connections>
+                        <outlet property="percentageLabel" destination="gdi-tl-xya" id="hpI-7O-wmp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cst-7F-9zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3015,6 +3113,7 @@ as Invesment account owner</string>
         <image name="dollar" width="50" height="29"/>
         <image name="flag" width="36" height="49"/>
         <image name="fondo" width="320" height="568"/>
+        <image name="investment" width="38" height="51"/>
         <image name="page1" width="206" height="49"/>
         <image name="pass_view" width="28" height="28"/>
         <image name="personal_info" width="30" height="49"/>

@@ -13,7 +13,9 @@ class InvestmentSelectionViewController: UIViewController
     // MARK: - Outlets
     
     @IBOutlet var percentageLabel: UILabel!
-    
+    @IBOutlet var investmentAmountTextField: UITextField!    
+    @IBOutlet var availableAmountTextField: UITextField!
+    @IBOutlet var alwaysSaveSwitch: UISwitch!
     // MARK: - InvestmentSelectionViewController Load
     
     override func viewDidLoad()

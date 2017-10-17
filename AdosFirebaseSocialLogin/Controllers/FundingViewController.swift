@@ -63,7 +63,7 @@ class FundingViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "goToPercentageInvestment "
+        if segue.identifier == "goToPercentageInvestment"
         {
             if let InvestmentSelectionControllerSegue = segue.destination as? InvestmentSelectionViewController
             {

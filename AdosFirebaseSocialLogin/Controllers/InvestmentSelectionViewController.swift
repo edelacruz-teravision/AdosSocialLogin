@@ -16,6 +16,7 @@ class InvestmentSelectionViewController: UIViewController
     @IBOutlet var investmentAmountTextField: UITextField!    
     @IBOutlet var availableAmountTextField: UITextField!
     @IBOutlet var alwaysSaveSwitch: UISwitch!
+    @IBOutlet var investmentSlider: UISlider!
     
     // MARK: - InvestmentSelectionViewController Load
     
@@ -29,11 +30,33 @@ class InvestmentSelectionViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        labelSliderPosition(value: self.investmentSlider.value)
+    }
+    
     // MARK: - Slider Action
     
     @IBAction func percentageSliderChanged(_ sender: UISlider)
     {
         percentageLabel.text = String(Int(sender.value))+"%"
+    }
+    
+    // MARK: - Percentage Label Position Relative to Slider
+    
+    func labelSliderPosition(value: Float)
+    {
+        self.percentageLabel.text = String(Int(value)) + "%"
+        let labelXMin = investmentSlider.frame.origin.x + 16
+        let labelXMax = investmentSlider.frame.origin.x + investmentSlider.frame.width - 14
+        let labelXOffset: CGFloat = labelXMax - labelXMin
+        let valueOffset: CGFloat = CGFloat(investmentSlider.maximumValue - investmentSlider.minimumValue)
+        let valueDifference: CGFloat = CGFloat(value - investmentSlider.minimumValue)
+        let valueRatio: CGFloat = CGFloat(valueDifference/valueOffset)
+        let labelXPos = CGFloat(labelXOffset*valueRatio + labelXMin)
+        
+        self.percentageLabel.frame.origin.x = labelXPos - self.percentageLabel.frame.width/2
     }
     /*
     // MARK: - Navigation

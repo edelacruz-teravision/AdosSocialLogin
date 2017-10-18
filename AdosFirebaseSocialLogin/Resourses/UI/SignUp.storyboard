@@ -2300,21 +2300,21 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                     <constraint firstAttribute="width" secondItem="aUK-E0-KaZ" secondAttribute="height" multiplier="41:10" id="Oxa-xJ-kCY"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adress" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-z0-FCM">
-                                <rect key="frame" x="139" y="129" width="42" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debitCard" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-z0-FCM">
+                                <rect key="frame" x="131.5" y="129" width="57" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="2WZ-KH-DUI">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="84"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="57"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="50" id="Ouf-p0-DMn">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="88"/>
                                     </constraint>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z4-fI-g1A">
-                                <rect key="frame" x="93" y="194" width="134" height="17"/>
+                                <rect key="frame" x="93" y="186" width="134" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2326,7 +2326,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request and send to this Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SH-Hx-WoA">
-                                <rect key="frame" x="65" y="237" width="190" height="14.5"/>
+                                <rect key="frame" x="65" y="229" width="190" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3203,18 +3203,203 @@ on my account</string>
                         <outlet property="alwaysSaveSwitch" destination="k1x-gS-70Y" id="8xB-tb-wWt"/>
                         <outlet property="availableAmountTextField" destination="75J-LN-Io2" id="lpN-dv-3Cj"/>
                         <outlet property="investmentAmountTextField" destination="CDJ-HC-rDo" id="PUC-Jt-eue"/>
+                        <outlet property="investmentSlider" destination="NSU-Yf-DQ9" id="gx2-jx-2du"/>
                         <outlet property="percentageLabel" destination="gdi-tl-xya" id="hpI-7O-wmp"/>
+                        <segue destination="p97-wB-o2E" kind="show" identifier="goToRiskLevel" id="vJb-LC-RR6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cst-7F-9zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13644" y="112"/>
         </scene>
+        <!--Risk Level View Controller-->
+        <scene sceneID="8YV-0I-rzv">
+            <objects>
+                <viewController id="p97-wB-o2E" customClass="RiskLevelViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Squ-h5-ZqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iju-7l-QS4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ssh-xP-iMC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-tw-3cp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="IWA-hD-w0R">
+                                <rect key="frame" x="100" y="80" width="120" height="29.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IWA-hD-w0R" secondAttribute="height" multiplier="41:10" id="IvA-h7-zAx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riskInvestment" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-cY-ZJi">
+                                <rect key="frame" x="137" y="124.5" width="46" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="tPe-jB-CRn">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="46"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="y8X-Hs-GX1">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="44"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                                    </constraint>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk level investment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqa-rB-zHI">
+                                <rect key="frame" x="88" y="183.5" width="145.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to select your expected return" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDT-g8-9gH">
+                                <rect key="frame" x="53.5" y="215.5" width="213.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-5s-uHR">
+                                <rect key="frame" x="0.0" y="270" width="320" height="59"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="GW8-CB-gnp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IQq-tV-9tt">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="expectedReturnCell" id="ZTj-Bn-qdr" customClass="ExpectedReturnCell" customModule="AdosFirebaseSocialLogin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6en-eC-hVi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV5-Xb-qn0">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="6en-eC-hVi" secondAttribute="bottom" id="08B-G0-Nj1"/>
+                                            <constraint firstItem="6en-eC-hVi" firstAttribute="top" secondItem="ZTj-Bn-qdr" secondAttribute="top" id="CNC-DJ-C4c"/>
+                                            <constraint firstItem="6en-eC-hVi" firstAttribute="leading" secondItem="ZTj-Bn-qdr" secondAttribute="leading" id="PfC-2v-wpA"/>
+                                            <constraint firstAttribute="trailing" secondItem="6en-eC-hVi" secondAttribute="trailing" id="bjC-wS-DrT"/>
+                                        </constraints>
+                                        <size key="customSize" width="50" height="50"/>
+                                        <connections>
+                                            <outlet property="percentageLabel" destination="gV5-Xb-qn0" id="Ere-HB-yBQ"/>
+                                            <outlet property="strategyImageView" destination="6en-eC-hVi" id="vhj-GM-Dsq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This strategy has a moderate risk level of investment, securing a good ROI." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGP-XD-lGO">
+                                <rect key="frame" x="24" y="361" width="271" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="owZ-YH-6Da"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjP-rB-MH6">
+                                <rect key="frame" x="0.0" y="522" width="320" height="46"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <state key="normal" title="Yes, I want to invest in this Strategy">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JbO-5s-uHR" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="0cr-Mq-dwg"/>
+                            <constraint firstItem="IWA-hD-w0R" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" constant="90" id="1U8-vd-yrA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                            </constraint>
+                            <constraint firstItem="gf8-tw-3cp" firstAttribute="top" secondItem="Ssh-xP-iMC" secondAttribute="top" id="2qD-07-4Pl"/>
+                            <constraint firstItem="bg6-cY-ZJi" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="54V-7q-lXu"/>
+                            <constraint firstItem="gf8-tw-3cp" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="7TW-JX-yh4"/>
+                            <constraint firstItem="nqa-rB-zHI" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="Ghr-6K-w4C"/>
+                            <constraint firstItem="bg6-cY-ZJi" firstAttribute="top" secondItem="IWA-hD-w0R" secondAttribute="bottom" constant="15" id="LdB-Q9-gmw">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                            </constraint>
+                            <constraint firstItem="nqa-rB-zHI" firstAttribute="top" secondItem="bg6-cY-ZJi" secondAttribute="bottom" constant="15" id="MG0-da-noy">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                            </constraint>
+                            <constraint firstItem="JbO-5s-uHR" firstAttribute="top" secondItem="cDT-g8-9gH" secondAttribute="bottom" constant="40" id="MOK-1N-p26"/>
+                            <constraint firstAttribute="trailing" secondItem="JbO-5s-uHR" secondAttribute="trailing" id="Ozn-My-Ung"/>
+                            <constraint firstItem="qjP-rB-MH6" firstAttribute="height" secondItem="Ssh-xP-iMC" secondAttribute="height" multiplier="0.078" constant="1" id="RTo-eG-KzH"/>
+                            <constraint firstItem="IWA-hD-w0R" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="TNk-BN-0B3"/>
+                            <constraint firstItem="hGP-XD-lGO" firstAttribute="top" secondItem="JbO-5s-uHR" secondAttribute="bottom" constant="32" id="Th2-eu-ckd"/>
+                            <constraint firstItem="IWA-hD-w0R" firstAttribute="top" secondItem="Ssh-xP-iMC" secondAttribute="top" constant="80" id="a8Y-GY-P8r">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="qjP-rB-MH6" secondAttribute="trailing" id="aI4-PP-dd6"/>
+                            <constraint firstItem="qjP-rB-MH6" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="jLG-dq-Z56"/>
+                            <constraint firstItem="cDT-g8-9gH" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="js6-vI-fZg"/>
+                            <constraint firstItem="cDT-g8-9gH" firstAttribute="top" secondItem="nqa-rB-zHI" secondAttribute="bottom" constant="63" id="kWg-hW-hoY">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="63"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="gf8-tw-3cp" secondAttribute="bottom" id="pBp-X4-biF"/>
+                            <constraint firstItem="hGP-XD-lGO" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" constant="24" id="rAO-mp-dRP"/>
+                            <constraint firstItem="hGP-XD-lGO" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="vzP-hu-1F3"/>
+                            <constraint firstItem="Iju-7l-QS4" firstAttribute="top" secondItem="qjP-rB-MH6" secondAttribute="bottom" id="x0x-RL-ezw"/>
+                            <constraint firstAttribute="trailing" secondItem="gf8-tw-3cp" secondAttribute="trailing" id="z2m-L7-qsy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0yq-fA-mlC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjO-u5-9ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14445" y="111.97183098591549"/>
+        </scene>
     </scenes>
     <resources>
         <image name="adress" width="42" height="49"/>
         <image name="bank" width="40" height="35"/>
         <image name="cell_phone" width="31" height="50"/>
+        <image name="debitCard" width="57" height="43"/>
         <image name="dollar" width="50" height="29"/>
         <image name="flag" width="36" height="49"/>
         <image name="fondo" width="320" height="568"/>
@@ -3226,6 +3411,7 @@ on my account</string>
         <image name="portfolio" width="45" height="38"/>
         <image name="question" width="28" height="28"/>
         <image name="question_title" width="40" height="40"/>
+        <image name="riskInvestment" width="46" height="44"/>
         <image name="terms" width="42" height="50"/>
         <image name="wallet" width="42" height="44"/>
     </resources>

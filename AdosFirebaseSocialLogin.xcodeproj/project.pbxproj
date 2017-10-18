@@ -31,6 +31,8 @@
 		A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */; };
 		A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */; };
 		A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FE1F952D6100BB051E /* FundingViewController.swift */; };
+		A3C14BCA1F97C2D000144EA9 /* RiskLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C14BC91F97C2D000144EA9 /* RiskLevelViewController.swift */; };
+		A3C14BCC1F97E4D200144EA9 /* ExpectedReturnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
 		A3D08B351F954BA700D0CB6C /* InvestmentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08B341F954BA700D0CB6C /* InvestmentSelectionViewController.swift */; };
 		A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */; };
@@ -66,6 +68,8 @@
 		A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDebitCardViewController.swift; sourceTree = "<group>"; };
 		A3B075FE1F952D6100BB051E /* FundingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundingViewController.swift; sourceTree = "<group>"; };
+		A3C14BC91F97C2D000144EA9 /* RiskLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskLevelViewController.swift; sourceTree = "<group>"; };
+		A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedReturnCell.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3D08B341F954BA700D0CB6C /* InvestmentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentSelectionViewController.swift; sourceTree = "<group>"; };
 		A3DC2AB81F87FBBA00FA2EB5 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				A384573C1F8D13F800191D90 /* Models */,
 				A38457471F8D176500191D90 /* Supporting Files */,
 				A33DEE6D1F72A5E700FB0B3E /* Resourses */,
+				A3C14BCD1F97E55C00144EA9 /* Views */,
 				2D66E26C1F6DA429001D015E /* Products */,
 			);
 			path = AdosFirebaseSocialLogin;
@@ -183,6 +188,7 @@
 				A37D46BC1F8EA91F005534F2 /* ResidenceStatusViewController.swift */,
 				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
 				A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */,
+				A3C14BC91F97C2D000144EA9 /* RiskLevelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +241,14 @@
 				A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3C14BCD1F97E55C00144EA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,9 +419,11 @@
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,
 				A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */,
 				A3D08B351F954BA700D0CB6C /* InvestmentSelectionViewController.swift in Sources */,
+				A3C14BCA1F97C2D000144EA9 /* RiskLevelViewController.swift in Sources */,
 				A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */,
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
+				A3C14BCC1F97E4D200144EA9 /* ExpectedReturnCell.swift in Sources */,
 				A38457421F8D159D00191D90 /* Extensions.swift in Sources */,
 				A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,

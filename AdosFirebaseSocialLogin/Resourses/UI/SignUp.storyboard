@@ -3104,6 +3104,9 @@ on my account</string>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 </variation>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="aFj-KR-BFY" eventType="touchUpInside" id="8da-uz-gnL"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uaK-74-CNa">
                                 <rect key="frame" x="101" y="440" width="119.5" height="29"/>
@@ -3272,7 +3275,7 @@ on my account</string>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-5s-uHR">
                                 <rect key="frame" x="0.0" y="270" width="320" height="59"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.12706318497657776" green="0.12347427755594254" blue="0.30402150750160217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="GW8-CB-gnp"/>
                                 </constraints>
@@ -3284,18 +3287,17 @@ on my account</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="expectedReturnCell" id="ZTj-Bn-qdr" customClass="ExpectedReturnCell" customModule="AdosFirebaseSocialLogin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6en-eC-hVi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strategyButton" translatesAutoresizingMaskIntoConstraints="NO" id="6en-eC-hVi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="59"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV5-Xb-qn0">
-                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV5-Xb-qn0">
+                                                    <rect key="frame" x="14.5" y="19" width="21" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -3304,17 +3306,23 @@ on my account</string>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="6en-eC-hVi" secondAttribute="bottom" id="08B-G0-Nj1"/>
+                                            <constraint firstItem="gV5-Xb-qn0" firstAttribute="centerY" secondItem="ZTj-Bn-qdr" secondAttribute="centerY" id="1aq-a6-7FD"/>
                                             <constraint firstItem="6en-eC-hVi" firstAttribute="top" secondItem="ZTj-Bn-qdr" secondAttribute="top" id="CNC-DJ-C4c"/>
                                             <constraint firstItem="6en-eC-hVi" firstAttribute="leading" secondItem="ZTj-Bn-qdr" secondAttribute="leading" id="PfC-2v-wpA"/>
                                             <constraint firstAttribute="trailing" secondItem="6en-eC-hVi" secondAttribute="trailing" id="bjC-wS-DrT"/>
+                                            <constraint firstItem="gV5-Xb-qn0" firstAttribute="centerX" secondItem="ZTj-Bn-qdr" secondAttribute="centerX" id="tTC-gX-Gfq"/>
                                         </constraints>
-                                        <size key="customSize" width="50" height="50"/>
+                                        <size key="customSize" width="50" height="59"/>
                                         <connections>
                                             <outlet property="percentageLabel" destination="gV5-Xb-qn0" id="Ere-HB-yBQ"/>
                                             <outlet property="strategyImageView" destination="6en-eC-hVi" id="vhj-GM-Dsq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="p97-wB-o2E" id="lEf-pJ-UWK"/>
+                                    <outlet property="delegate" destination="p97-wB-o2E" id="qaq-8d-Zuy"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This strategy has a moderate risk level of investment, securing a good ROI." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGP-XD-lGO">
                                 <rect key="frame" x="24" y="361" width="271" height="32"/>
@@ -3345,10 +3353,17 @@ on my account</string>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 </variation>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="pi2-DX-usp">
+                                <rect key="frame" x="0.0" y="329" width="320" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="ic2-Bs-bRG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JbO-5s-uHR" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="0cr-Mq-dwg"/>
+                            <constraint firstAttribute="trailing" secondItem="pi2-DX-usp" secondAttribute="trailing" id="0wn-eS-sVd"/>
                             <constraint firstItem="IWA-hD-w0R" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" constant="90" id="1U8-vd-yrA">
                                 <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="275"/>
@@ -3361,6 +3376,7 @@ on my account</string>
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                             </constraint>
+                            <constraint firstItem="pi2-DX-usp" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="M2w-ZS-aMY"/>
                             <constraint firstItem="nqa-rB-zHI" firstAttribute="top" secondItem="bg6-cY-ZJi" secondAttribute="bottom" constant="15" id="MG0-da-noy">
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
@@ -3375,6 +3391,7 @@ on my account</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="qjP-rB-MH6" secondAttribute="trailing" id="aI4-PP-dd6"/>
+                            <constraint firstItem="pi2-DX-usp" firstAttribute="top" secondItem="JbO-5s-uHR" secondAttribute="bottom" id="iO8-Cv-k9a"/>
                             <constraint firstItem="qjP-rB-MH6" firstAttribute="leading" secondItem="Ssh-xP-iMC" secondAttribute="leading" id="jLG-dq-Z56"/>
                             <constraint firstItem="cDT-g8-9gH" firstAttribute="centerX" secondItem="Ssh-xP-iMC" secondAttribute="centerX" id="js6-vI-fZg"/>
                             <constraint firstItem="cDT-g8-9gH" firstAttribute="top" secondItem="nqa-rB-zHI" secondAttribute="bottom" constant="63" id="kWg-hW-hoY">
@@ -3389,6 +3406,9 @@ on my account</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0yq-fA-mlC"/>
+                    <connections>
+                        <outlet property="expectedReturnCollectionView" destination="JbO-5s-uHR" id="12Y-nF-2Fs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjO-u5-9ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3412,6 +3432,8 @@ on my account</string>
         <image name="question" width="28" height="28"/>
         <image name="question_title" width="40" height="40"/>
         <image name="riskInvestment" width="46" height="44"/>
+        <image name="shadow" width="320" height="28"/>
+        <image name="strategyButton" width="106" height="59"/>
         <image name="terms" width="42" height="50"/>
         <image name="wallet" width="42" height="44"/>
     </resources>

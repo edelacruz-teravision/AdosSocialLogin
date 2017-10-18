@@ -21,10 +21,11 @@ class ExpectedReturnCell: UICollectionViewCell
         self.percentageLabel.textColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.40)
         
         let percent = "%"
-        let attrs = [NSFontAttributeName : UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)]
-        let percentAttributedString = NSMutableAttributedString(string:percent, attributes:attrs)
+        let percentAtributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)]
+        let percentAttributedString = NSMutableAttributedString(string:percent, attributes:percentAtributes)
         
-        let percentNumberAttributedString = NSMutableAttributedString(string:percentNumber, attributes:nil)
+        let percentNumberAtributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 30, weight: UIFontWeightLight)]
+        let percentNumberAttributedString = NSMutableAttributedString(string:percentNumber, attributes:percentNumberAtributes)
         
         
         let percentageString = NSMutableAttributedString()
@@ -32,25 +33,11 @@ class ExpectedReturnCell: UICollectionViewCell
         percentageString.append(percentAttributedString)
         
         self.percentageLabel.attributedText = percentageString
-        
-        //        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.21).cgColor
-        //        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        //        self.layer.shadowRadius = 10.0
-        //        self.layer.shadowOpacity = 1.0
-        //        self.layer.masksToBounds = false
-        //        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
-    func taped(){
-        
-        
-        //  if self.strategyImageView != UIImageView(image:UIImage(named:"strategyButton.png")){
-        
-        self.strategyImageView.image = UIImage(named:"strategyButtonSelected.png")
+    
+    func cellTaped()
+    {
+        self.strategyImageView.image = #imageLiteral(resourceName: "strategyButtonSelected")
         self.percentageLabel.textColor = UIColor(red: 245.0/255.0, green: 166.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-        /*}else{
-         self.strategyImageView = UIImageView(image:UIImage(named:"strategyButton.png"))
-         self.percentageLabel.textColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.40)
-         
-         }*/
     }
 }

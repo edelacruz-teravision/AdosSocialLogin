@@ -16,6 +16,7 @@ class InvestmentSelectionViewController: UIViewController
     @IBOutlet var investmentAmountTextField: UITextField!    
     @IBOutlet var availableAmountTextField: UITextField!
     @IBOutlet var alwaysSaveSwitch: UISwitch!
+    
     // MARK: - InvestmentSelectionViewController Load
     
     override func viewDidLoad()

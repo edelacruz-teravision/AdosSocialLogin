@@ -28,6 +28,8 @@
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
 		A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */; };
 		A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */; };
+		A3A447CC1F98F800001BA0F7 /* InvestmentStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */; };
+		A3A447CE1F98F8A0001BA0F7 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */; };
 		A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */; };
 		A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */; };
 		A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FE1F952D6100BB051E /* FundingViewController.swift */; };
@@ -65,6 +67,8 @@
 		A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualIncomeViewController.swift; sourceTree = "<group>"; };
 		A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploymentStatusViewController.swift; sourceTree = "<group>"; };
+		A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentStrategyCell.swift; sourceTree = "<group>"; };
+		A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDebitCardViewController.swift; sourceTree = "<group>"; };
 		A3B075FE1F952D6100BB051E /* FundingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundingViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */,
+				A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */,
+				A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */,
 				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,
+				A3A447CC1F98F800001BA0F7 /* InvestmentStrategyCell.swift in Sources */,
 				A38457391F8CFE6100191D90 /* AdressViewController.swift in Sources */,
 				A3480A721F83EE4D009CCEBE /* PersonalInformationViewController.swift in Sources */,
 				A3D08B351F954BA700D0CB6C /* InvestmentSelectionViewController.swift in Sources */,
@@ -429,6 +436,7 @@
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
 				A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
+				A3A447CE1F98F8A0001BA0F7 /* TypeCell.swift in Sources */,
 				A36194B11F91405E005754A4 /* InvestmentViewController.swift in Sources */,
 				A3DEF10A1F7588190080B396 /* Constant.swift in Sources */,
 				A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */,

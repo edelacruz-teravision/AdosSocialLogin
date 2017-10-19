@@ -9,26 +9,6 @@
 import Foundation
 import UIKit
 
-class TypeCell: UITableViewCell
-{
-    // MARK: - Outlets
-    
-    @IBOutlet var cellImge: UIImageView!
-    @IBOutlet var cellLabel: UILabel!
-    
-    // MARK: - AccountViewController Load
-    
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool)
-    {
-        super.setSelected(selected, animated: animated)
-    }
-}
-
 class AccountType: NSObject
 {
     var name : String!

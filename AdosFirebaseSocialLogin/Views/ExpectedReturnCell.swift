@@ -10,10 +10,16 @@ import UIKit
 
 class ExpectedReturnCell: UICollectionViewCell
 {
+    // MARK: - Global Variables
+    
     var percentNumber = ""
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var strategyImageView: UIImageView!
+    
+    // MARK: - Custom Methods
     
     func cellSetup()
     {
@@ -39,5 +45,10 @@ class ExpectedReturnCell: UICollectionViewCell
     {
         self.strategyImageView.image = #imageLiteral(resourceName: "strategyButtonSelected")
         self.percentageLabel.textColor = UIColor(red: 245.0/255.0, green: 166.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+    }
+    func cellUtapped()
+    {
+        self.strategyImageView.image = #imageLiteral(resourceName: "strategyButton")
+        self.percentageLabel.textColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.40)
     }
 }

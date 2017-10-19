@@ -84,3 +84,11 @@ struct InvestmentArray
                                                Investment(name: "$100K - $200k"),
                                                Investment(name: "Over $200k")]
 }
+
+struct MaritalStatusArray
+{
+    static var maritalStatusArray : [String] = ["Single",
+                                               "Married",
+                                               "Divorced",
+                                               "Widow(er)"]
+}

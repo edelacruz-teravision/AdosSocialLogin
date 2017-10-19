@@ -112,7 +112,7 @@ extension UIViewController : UITextFieldDelegate
     
     // MARK: - Date Picker Toolbar
     
-    func dateToolbarBuilder(sender: UIViewController) -> UIToolbar
+    func pickerToolbarBuilder(sender: UIViewController, labelText: String) -> UIToolbar
     {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 40))
         
@@ -132,7 +132,7 @@ extension UIViewController : UITextFieldDelegate
         
         label.textAlignment = NSTextAlignment.center
         
-        label.text = "Select a Date"
+        label.text = labelText
         
         let labelButton = UIBarButtonItem(customView: label)
         

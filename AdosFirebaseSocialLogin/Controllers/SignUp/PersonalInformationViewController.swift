@@ -16,8 +16,8 @@ class PersonalInformationViewController: UIViewController
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var nationalityTextField: UITextField!
-    @IBOutlet var sSNTextField: UITextField!
-    @IBOutlet var phoneTextField: UITextField!
+    @IBOutlet var sSNTextField: VSTextField!
+    @IBOutlet var phoneTextField: VSTextField!
     @IBOutlet var maritalTextField: UITextField!
     
     //MARK: - PersonalInformationViewController Load
@@ -26,6 +26,8 @@ class PersonalInformationViewController: UIViewController
     {
         super.viewDidLoad()
         dateTextfield.delegate = self
+        nationalityTextField.delegate = self
+        maritalTextField.delegate = self
     }
     
     override func viewDidLayoutSubviews()
@@ -36,7 +38,9 @@ class PersonalInformationViewController: UIViewController
         lastNameTextField.setupTextFields()
         nationalityTextField.setupTextFields()
         sSNTextField.setupTextFields()
+        sSNTextField.formatting = .socialSecurityNumber
         phoneTextField.setupTextFields()
+        phoneTextField.formatting = .phoneNumber
         maritalTextField.setupTextFields()
     }
     
@@ -62,7 +66,7 @@ class PersonalInformationViewController: UIViewController
         dateTextfield.inputView = datePicker
         datePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
         
-        let toolBar = dateToolbarBuilder(sender: self)
+        let toolBar = pickerToolbarBuilder(sender: self, labelText: "Select a Date")
         
         dateTextfield.inputAccessoryView = toolBar
     }
@@ -70,13 +74,57 @@ class PersonalInformationViewController: UIViewController
     func datePickerChanged(sender: UIDatePicker)
     {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.dateFormat = "yyyy-dd-MM"
         dateTextfield.text = formatter.string(from: sender.date)
     }
     
+    // MARK: - Marital Status TextField Picker
+    
+    @IBAction func maritalTextFieldEditin(_ sender: UITextField)
+    {
+        /*pickerNumberOfRows = MaritalStatusArray.maritalStatusArray.count
+        pickerData = MaritalStatusArray.maritalStatusArray*/
+        let maritalPicker = UIPickerView()
+        
+        func numberOfComponents(in pickerView: UIPickerView) -> Int
+        {
+            return 1
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+        {
+            return MaritalStatusArray.maritalStatusArray.count
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+        {
+            return MaritalStatusArray.maritalStatusArray[row]
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+        {
+            
+        }
+        
+        maritalTextField.inputView = pickerView
+        
+        let toolBar = pickerToolbarBuilder(sender: self, labelText: "Select a Marital Status")
+        
+        maritalTextField.inputAccessoryView = toolBar
+    }
+    
+    // MARK: - Picker Textfield Done Editing
+    
     override func donePressed(sender: UIBarButtonItem)
     {
-        dateTextfield.resignFirstResponder()
+        if dateTextfield.isEditing
+        {
+            dateTextfield.resignFirstResponder()
+        }
+        else if maritalTextField.isEditing
+        {
+            maritalTextField.resignFirstResponder()
+        }
     }
     
     // MARK: - Status Bar Config
@@ -114,3 +162,28 @@ class PersonalInformationViewController: UIViewController
         //}
     }
 }
+
+/*extension PersonalInformationViewController: UIPickerViewDataSource,UIPickerViewDelegate
+{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        print(pickerNumberOfRows)
+        return pickerNumberOfRows
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        print(pickerData[row])
+        return pickerData[row]
+    }
+    
+    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        maritalStatusString = pickerData[row]
+    }*/
+}*/

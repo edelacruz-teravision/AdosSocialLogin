@@ -28,6 +28,7 @@
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
 		A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */; };
 		A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */; };
+		A399179E1F9930650024B4E6 /* VSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399179D1F9930650024B4E6 /* VSTextField.swift */; };
 		A3A447CC1F98F800001BA0F7 /* InvestmentStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */; };
 		A3A447CE1F98F8A0001BA0F7 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */; };
 		A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */; };
@@ -54,7 +55,7 @@
 		3389FB0C4A4B23A1A15CDACB /* Pods-AdosFirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdosFirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdosFirebaseSocialLogin/Pods-AdosFirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		71057C8930CE5F2E058B8CC2 /* Pods_AdosFirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdosFirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BDD911F829FFB002EA62F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = "AdosFirebaseSocialLogin/Controllers/New Group/PersonalInformationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A3480A711F83EE4D009CCEBE /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonalInformationViewController.swift; path = AdosFirebaseSocialLogin/Controllers/SignUp/PersonalInformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		A36194B01F91405E005754A4 /* InvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewController.swift; sourceTree = "<group>"; };
 		A36194B21F9148F0005754A4 /* RegulatoryQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulatoryQuestionsViewController.swift; sourceTree = "<group>"; };
 		A363BCF11F74005200FFCBC2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -67,6 +68,7 @@
 		A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualIncomeViewController.swift; sourceTree = "<group>"; };
 		A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploymentStatusViewController.swift; sourceTree = "<group>"; };
+		A399179D1F9930650024B4E6 /* VSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSTextField.swift; sourceTree = "<group>"; };
 		A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentStrategyCell.swift; sourceTree = "<group>"; };
 		A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */,
 				A3A447CB1F98F800001BA0F7 /* InvestmentStrategyCell.swift */,
 				A3A447CD1F98F8A0001BA0F7 /* TypeCell.swift */,
+				A399179D1F9930650024B4E6 /* VSTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				A37D46BD1F8EA91F005534F2 /* ResidenceStatusViewController.swift in Sources */,
 				A36194B31F9148F0005754A4 /* RegulatoryQuestionsViewController.swift in Sources */,
 				A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */,
+				A399179E1F9930650024B4E6 /* VSTextField.swift in Sources */,
 				A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */,
 				A38457451F8D16CA00191D90 /* SignUp.swift in Sources */,
 				A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */,

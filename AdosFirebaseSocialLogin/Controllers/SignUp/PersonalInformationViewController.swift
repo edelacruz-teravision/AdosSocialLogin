@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalInformationViewController: UIViewController
+class PersonalInformationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
     //MARK: - Outlets
     
@@ -20,6 +20,14 @@ class PersonalInformationViewController: UIViewController
     @IBOutlet var phoneTextField: VSTextField!
     @IBOutlet var maritalTextField: UITextField!
     
+    // MARK: - Global Variables
+    
+    var pickerNumberOfRows : Int = 0
+    var pickerData : [String] = []
+    var pickerString : String = ""
+    var picker = UIPickerView()
+    
+    
     //MARK: - PersonalInformationViewController Load
     
     override func viewDidLoad()
@@ -28,6 +36,8 @@ class PersonalInformationViewController: UIViewController
         dateTextfield.delegate = self
         nationalityTextField.delegate = self
         maritalTextField.delegate = self
+        picker.delegate = self
+        picker.dataSource = self
     }
     
     override func viewDidLayoutSubviews()
@@ -82,35 +92,10 @@ class PersonalInformationViewController: UIViewController
     
     @IBAction func maritalTextFieldEditin(_ sender: UITextField)
     {
-        /*pickerNumberOfRows = MaritalStatusArray.maritalStatusArray.count
-        pickerData = MaritalStatusArray.maritalStatusArray*/
-        let maritalPicker = UIPickerView()
+        pickerNumberOfRows = MaritalStatusArray.maritalStatusArray.count
+        pickerData = MaritalStatusArray.maritalStatusArray
         
-        func numberOfComponents(in pickerView: UIPickerView) -> Int
-        {
-            return 1
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-        {
-            return MaritalStatusArray.maritalStatusArray.count
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-        {
-            return MaritalStatusArray.maritalStatusArray[row]
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-        {
-            
-        }
-        
-        maritalTextField.inputView = pickerView
-        
-        let toolBar = pickerToolbarBuilder(sender: self, labelText: "Select a Marital Status")
-        
-        maritalTextField.inputAccessoryView = toolBar
+        maritalTextField.inputView = picker
     }
     
     // MARK: - Picker Textfield Done Editing
@@ -120,10 +105,6 @@ class PersonalInformationViewController: UIViewController
         if dateTextfield.isEditing
         {
             dateTextfield.resignFirstResponder()
-        }
-        else if maritalTextField.isEditing
-        {
-            maritalTextField.resignFirstResponder()
         }
     }
     
@@ -161,10 +142,9 @@ class PersonalInformationViewController: UIViewController
             self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
         //}
     }
-}
-
-/*extension PersonalInformationViewController: UIPickerViewDataSource,UIPickerViewDelegate
-{
+    
+    // MARK: - Nationality / Marital Status Picker Data Source
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -172,18 +152,25 @@ class PersonalInformationViewController: UIViewController
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        print(pickerNumberOfRows)
         return pickerNumberOfRows
     }
     
+    // MARK: - Nationality / Marital Status Picker Delegate
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        print(pickerData[row])
         return pickerData[row]
     }
     
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        maritalStatusString = pickerData[row]
-    }*/
-}*/
+        if maritalTextField.isEditing
+        {
+            maritalTextField.text = pickerData[row]
+        }
+        else
+        {
+            nationalityTextField.text = pickerData[row]
+        }
+    }
+}

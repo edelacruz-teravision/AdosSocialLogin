@@ -6,8 +6,9 @@
 //  Copyright © 2017 Eduardo De La Cruz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import KVNProgress
+import Alamofire
 
 // MARK: - UITextField Extensions
 

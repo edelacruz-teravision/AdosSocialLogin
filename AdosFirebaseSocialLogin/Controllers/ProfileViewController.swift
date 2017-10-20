@@ -21,7 +21,6 @@ class ProfileViewController: UIViewController
     
     var name : String = ""
     var email : String = ""
-    var token : String = ""
     var imageUrl : String = ""
     
     // MARK: - ProfileViewController Load
@@ -56,9 +55,7 @@ class ProfileViewController: UIViewController
         }
         self.profileNameLabel.text = self.name
         self.emailProfileLabel.text = self.email
-        self.tokenProfileLabel.text = self.token
-        
-        print(self.token)
+        self.tokenProfileLabel.text = ServerData.currentToken
     }
     
     // MARK: - Status Bar Config

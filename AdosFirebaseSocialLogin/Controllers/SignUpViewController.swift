@@ -33,6 +33,7 @@ class SignUpViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
+    
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
@@ -64,10 +65,10 @@ class SignUpViewController: UIViewController
             alertBuilder(alertControllerTitle: "Invalid email", alertControllerMessage: "Please introduce a valid email", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
         }
         else
-        {*/
+        {
             KVNProgress.show(withStatus: "Loading, Please wait")
             
-            /*let parameters: Parameters = [
+            let parameters: Parameters = [
                 "client_id" : ServerData.clientId,
                 "client_secret": ServerData.clientSecret,
                 "email": emailTextField.text ?? "",
@@ -84,24 +85,25 @@ class SignUpViewController: UIViewController
                         
                         let code = response.response!.statusCode
                         
+                        guard let json = response.result.value as? [String: Any] else
+                        {
+                            print("didn't get todo object as JSON from API")
+                            print("Error: \(String(describing: response.result.error))")
+                            return
+                        }
+                        
                         if code != 200
                         {
-                            guard let json = response.result.value as? [String: Any] else
-                            {
-                                print("didn't get todo object as JSON from API")
-                                print("Error: \(String(describing: response.result.error))")
-                                return
-                            }
-                            
                             self.alertBuilder(alertControllerTitle: "Sign In Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                             
                             KVNProgress.showError()
                         }
                         else
-                        {*/
-                            KVNProgress.showSuccess()
+                        {
+                            KVNProgress.showSuccess()*/
                             self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
-                       /* }
+                            /*
+                        }
                     
                     case .failure( _):
                         

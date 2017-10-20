@@ -21,7 +21,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     var dict : NSDictionary!
     var email : String = ""
     var name : String = ""
-    var token : String = ""
     var imageUrl : String = ""
     var loginButtonHeight : CGFloat = 0
     
@@ -139,7 +138,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             
             if let token =  FBSDKAccessToken.current()
             {
-                self.token = "Access Token: " + token.tokenString
+                ServerData.currentToken = "Access Token: " + token.tokenString
             }
             
             if let name = self.dict["name"]
@@ -194,7 +193,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         self.name = GIDSignIn.sharedInstance().currentUser.profile.name
         self.imageUrl = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 600).absoluteString
         guard let idToken = GIDSignIn.sharedInstance().currentUser.authentication.idToken else { return }
-        self.token = idToken
+        ServerData.currentToken = idToken
         
         self.performSegue(withIdentifier: "goToProfileView", sender: nil)
     }
@@ -288,7 +287,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                 print("Successfully created a Firebase-Twitter user: ", user?.uid ?? "")
             })
             
-            self.token = (session?.authToken)!
+            ServerData.currentToken = (session?.authToken)!
             self.name = (session?.userName)!
             self.email = "Not Provided"
             self.imageUrl = "Twitter"
@@ -309,14 +308,12 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         
         KVNProgress.show(withStatus: "Loading, Please wait")
         
-        let parameters: Parameters = [
-            "client_id" : ServerData.clientId,
-            "client_secret": ServerData.clientSecret,
-            "grant_type" : ServerData.grantType,
-            "username": emailTextField.text ?? "",
-            "password" : passwordTextField.text ?? "",
-            "device_token" : ServerData.deviceToken
-        ]
+        let parameters: Parameters = ["client_id" : ServerData.clientId,
+                                     "client_secret": ServerData.clientSecret,
+                                     "grant_type" : ServerData.grantType,
+                                     "username": emailTextField.text ?? "",
+                                     "password" : passwordTextField.text ?? "",
+                                     "device_token" : ServerData.deviceToken]
         
         Alamofire.request(ServerData.adosUrl + ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             
@@ -339,7 +336,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     self.email = email["email"]!
                     self.imageUrl = "Login Image"
                     self.name = "Not Provided"
-                    self.token = result!["access_token"] as! String
+                    ServerData.currentToken = result!["access_token"] as! String
                     
                     KVNProgress.showSuccess()
                 
@@ -365,7 +362,6 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             {
                 profileViewControllerSegue.email = self.email
                 profileViewControllerSegue.name = self.name
-                profileViewControllerSegue.token = self.token
                 profileViewControllerSegue.imageUrl = self.imageUrl
             }
         }

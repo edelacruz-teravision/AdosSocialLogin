@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KVNProgress
+import Alamofire
 
 class PersonalInformationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
@@ -24,7 +26,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     var pickerNumberOfRows : Int = 0
     var pickerData : [String] = []
-    var pickerString : String = ""
+    var pickerNationalityData : [String] = []
     var picker = UIPickerView()
     
     
@@ -38,6 +40,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         maritalTextField.delegate = self
         picker.delegate = self
         picker.dataSource = self
+        loadNationalityOptions()
     }
     
     override func viewDidLayoutSubviews()
@@ -90,12 +93,22 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     // MARK: - Marital Status TextField Picker
     
-    @IBAction func maritalTextFieldEditin(_ sender: UITextField)
+    @IBAction func maritalTextFieldEditing(_ sender: UITextField)
     {
-        pickerNumberOfRows = MaritalStatusArray.maritalStatusArray.count
         pickerData = MaritalStatusArray.maritalStatusArray
+        pickerNumberOfRows = pickerData.count
         
         maritalTextField.inputView = picker
+    }
+    
+    // MARK: - Nationality Status TextField Picker
+    
+    @IBAction func nationalityTextFieldEditing(_ sender: UITextField)
+    {
+        pickerData = pickerNationalityData
+        pickerNumberOfRows = pickerData.count
+        
+        nationalityTextField.inputView = picker
     }
     
     // MARK: - Picker Textfield Done Editing
@@ -171,6 +184,57 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         else
         {
             nationalityTextField.text = pickerData[row]
+        }
+    }
+    
+    // MARK: - Api Request For Nationaliy Picker
+    
+    func loadNationalityOptions()
+    {
+        KVNProgress.show(withStatus: "Loading, Please wait")
+        
+        let headers : HTTPHeaders = ["Authorization":"Bearer \(ServerData.currentToken)"]
+        
+        Alamofire.request(ServerData.adosUrl + ServerData.countries, headers: headers).validate(statusCode: 200..<500).responseJSON { response in
+            
+            switch response.result
+            {
+            case .success:
+                
+                let code = response.response!.statusCode
+                
+                guard let json = response.result.value as? [String: Any] else
+                {
+                    print("didn't get todo object as JSON from API")
+                    print("Error: \(String(describing: response.result.error))")
+                    return
+                }
+                
+                if code == 201
+                {
+                    KVNProgress.showSuccess()
+                
+                    let result = json["result"] as? [[String: Any]]
+                    self.pickerData = []
+                    
+                    for i in 0..<((result?.count)!)
+                    {
+                        let countrieDictionary : [String : Any] = result![i]
+                        self.pickerNationalityData.append(countrieDictionary["full_name"] as! String)
+                    }
+                }
+                else
+                {
+                    debugPrint("Error code: \(code)")
+                    //KVNProgress.showError()
+                }
+                
+            case .failure( _):
+                
+                self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                
+                KVNProgress.showError()
+            }
         }
     }
 }

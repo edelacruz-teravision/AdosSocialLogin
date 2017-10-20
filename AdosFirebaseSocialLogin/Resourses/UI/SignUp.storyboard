@@ -160,6 +160,9 @@
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="nationalityTextFieldEditing:" destination="6hk-mf-xmE" eventType="editingDidBegin" id="I9T-hl-Gr3"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hP1-Kc-Lvn">
                                                         <rect key="frame" x="0.0" y="19" width="280" height="1"/>
@@ -275,7 +278,7 @@
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="maritalTextFieldEditin:" destination="6hk-mf-xmE" eventType="editingDidBegin" id="A9r-Je-20X"/>
+                                                            <action selector="maritalTextFieldEditing:" destination="6hk-mf-xmE" eventType="editingDidBegin" id="I2h-wq-2cT"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1if-vU-8N8">

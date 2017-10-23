@@ -30,6 +30,9 @@ class RegulatoryQuestionsViewController: UIViewController
         self.nameOfTheFirmSwitch.setOn(false, animated: true)
         self.companySymbolsSwitch.setOn(false, animated: true)
         self.politicalOrganizationSwitch.setOn(false, animated: true)
+        self.nameOfTheFirmTextField.isUserInteractionEnabled = false
+        self.companySymbolsTextField.isUserInteractionEnabled = false
+        self.politicalOrganizationTextField.isUserInteractionEnabled = false
     }
 
     override func didReceiveMemoryWarning()
@@ -52,10 +55,12 @@ class RegulatoryQuestionsViewController: UIViewController
         if sender.isOn
         {
             self.nameOfTheFirmStackView.isHidden = false
+            self.nameOfTheFirmTextField.isUserInteractionEnabled = true
         }
         else
         {
             self.nameOfTheFirmStackView.isHidden = true
+            self.nameOfTheFirmTextField.isUserInteractionEnabled = false
         }
     }
     
@@ -66,10 +71,12 @@ class RegulatoryQuestionsViewController: UIViewController
         if sender.isOn
         {
             self.companySymbolsStackView.isHidden = false
+            self.companySymbolsTextField.isUserInteractionEnabled = true
         }
         else
         {
             self.companySymbolsStackView.isHidden = true
+            self.companySymbolsTextField.isUserInteractionEnabled = false
         }
     }
     
@@ -80,10 +87,12 @@ class RegulatoryQuestionsViewController: UIViewController
         if sender.isOn
         {
             self.politicalOrganizationStackView.isHidden = false
+            self.politicalOrganizationTextField.isUserInteractionEnabled = true
         }
         else
         {
             self.politicalOrganizationStackView.isHidden = true
+            self.politicalOrganizationTextField.isUserInteractionEnabled = false
         }
     }
     

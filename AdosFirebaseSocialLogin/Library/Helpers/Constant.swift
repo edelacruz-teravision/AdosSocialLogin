@@ -29,6 +29,8 @@ struct ServerData
     static let countries : String = "/api/v1/countries"
     
     static var currentToken : String = ""
+    
+    static var personalInformation : String = "/api/v1/personal_information"
 }
 
 struct AlertImages

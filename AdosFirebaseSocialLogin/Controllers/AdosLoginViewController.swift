@@ -330,10 +330,18 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     let result = json["result"] as? [String: Any]
                     let sigupStatus = result!["signup_status"] as! [String : Any]
                     let data = sigupStatus["data"] as! [[String : Any]]
-                    let dataDict = data[0] as [String : Any]
-                    let email = dataDict["data"] as! [String : String]
                     
-                    self.email = email["email"]!
+                    for i in 0..<(data.count)
+                    {
+                        let dataDict = data[i] as [String : Any]
+                        let step = dataDict["step"] as! Int
+                        if step == 1
+                        {
+                            let email = dataDict["data"] as! [String : String]
+                            self.email = email["email"]!
+                        }
+                    }
+                    
                     self.imageUrl = "Login Image"
                     self.name = "Not Provided"
                     ServerData.currentToken = result!["access_token"] as! String

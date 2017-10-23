@@ -9,6 +9,7 @@
 import UIKit
 import KVNProgress
 import Alamofire
+import VMaskTextField
 
 class PersonalInformationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
@@ -18,8 +19,8 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var nationalityTextField: UITextField!
-    @IBOutlet var sSNTextField: VSTextField!
-    @IBOutlet var phoneTextField: VSTextField!
+    @IBOutlet var sSNTextField: VMaskTextField!
+    @IBOutlet var phoneTextField: VMaskTextField!
     @IBOutlet var maritalTextField: UITextField!
     
     // MARK: - Global Variables
@@ -28,7 +29,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     var pickerData : [String] = []
     var pickerNationalityData : [String] = []
     var picker = UIPickerView()
-    
+    var countriesResult : [[String : Any]] = [[:]]
     
     //MARK: - PersonalInformationViewController Load
     
@@ -41,6 +42,10 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         picker.delegate = self
         picker.dataSource = self
         loadNationalityOptions()
+        phoneTextField.delegate = self
+        sSNTextField.delegate = self
+        sSNTextField.mask = "###-##-####"
+        phoneTextField.mask = "###-###-####"
     }
     
     override func viewDidLayoutSubviews()
@@ -51,9 +56,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         lastNameTextField.setupTextFields()
         nationalityTextField.setupTextFields()
         sSNTextField.setupTextFields()
-        sSNTextField.formatting = .socialSecurityNumber
         phoneTextField.setupTextFields()
-        phoneTextField.formatting = .phoneNumber
         maritalTextField.setupTextFields()
     }
     
@@ -61,6 +64,20 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // MARK: - Ssn / Telephone Textfields masking
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if sSNTextField.isEditing
+        {
+            return sSNTextField.shouldChangeCharacters(in: range, replacementString: string)
+        }
+        else
+        {
+            return phoneTextField.shouldChangeCharacters(in: range, replacementString: string)
+        }
     }
     
     // MARK: - Social Security Number Button Action
@@ -87,7 +104,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     func datePickerChanged(sender: UIDatePicker)
     {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-dd-MM"
+        formatter.dateFormat = "yyyy-MM-dd"
         dateTextfield.text = formatter.string(from: sender.date)
     }
     
@@ -143,17 +160,85 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         }
     }
     
+    //MARK: - Continue Button Action
+    
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        /*if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
         }
         else
-        {*/
-            self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
-        //}
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+            
+            var countryId : Int = 0
+            
+            for i in 0..<((self.countriesResult.count))
+            {
+                let countriesDictionary : [String : Any] = self.countriesResult[i]
+                
+                if countriesDictionary["full_name"] as? String == nationalityTextField.text
+                {
+                    countryId = countriesDictionary["id"] as! Int
+                }
+            }
+            
+            let parameters: Parameters = ["first_name" : self.firstNameTextField.text,
+                                          "last_name" : self.lastNameTextField.text,
+                                          "birthday" : self.dateTextfield.text,
+                                          "phone_number" : self.phoneTextField.text,
+                                          "social_security_number" : self.sSNTextField.text,
+                                          "country_id" : countryId]
+            
+            let headers : HTTPHeaders = ["Content-Type" : "application/json",
+                                         "Authorization" : "Bearer " + ServerData.currentToken]
+            
+            print(parameters["first_name"])
+            print(parameters["last_name"])
+            print(parameters["birthday"])
+            print(parameters["phone_number"])
+            print(parameters["social_security_number"])
+            print(parameters["country_id"])
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.personalInformation, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200..<500).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 || code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        print(json["message"] ?? "")
+                        print(json)
+                        KVNProgress.showSuccess()
+                        self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
+                    }
+                    
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }
+        }
     }
     
     // MARK: - Nationality / Marital Status Picker Data Source
@@ -187,7 +272,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         }
     }
     
-    // MARK: - Api Request For Nationaliy Picker
+    // MARK: - Api Request For Nationality Picker
     
     func loadNationalityOptions()
     {
@@ -214,19 +299,19 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                 {
                     KVNProgress.showSuccess()
                 
-                    let result = json["result"] as? [[String: Any]]
+                    self.countriesResult = (json["result"] as? [[String: Any]])!
                     self.pickerData = []
                     
-                    for i in 0..<((result?.count)!)
+                    for i in 0..<((self.countriesResult.count))
                     {
-                        let countrieDictionary : [String : Any] = result![i]
-                        self.pickerNationalityData.append(countrieDictionary["full_name"] as! String)
+                        let countriesDictionary : [String : Any] = self.countriesResult[i]
+                        self.pickerNationalityData.append(countriesDictionary["full_name"] as! String)
                     }
                 }
                 else
                 {
                     debugPrint("Error code: \(code)")
-                    //KVNProgress.showError()
+                    KVNProgress.showError()
                 }
                 
             case .failure( _):

@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController
     
     @IBAction func createButtonPressed(_ sender: UIButton)
     {
-        /*if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField, confirmPasswordTextField])
+        if !allTextFieldsFilled(textFields: [emailTextField, passwordTextField, confirmPasswordTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
@@ -100,9 +100,8 @@ class SignUpViewController: UIViewController
                         }
                         else
                         {
-                            KVNProgress.showSuccess()*/
+                            KVNProgress.showSuccess()
                             self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
-                            /*
                         }
                     
                     case .failure( _):
@@ -112,7 +111,7 @@ class SignUpViewController: UIViewController
                         KVNProgress.showError()
                 }
             }
-        }*/
+        }
     }
     
     // MARK: - Question Button Action

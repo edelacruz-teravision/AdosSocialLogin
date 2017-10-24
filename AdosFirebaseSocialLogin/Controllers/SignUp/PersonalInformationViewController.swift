@@ -132,7 +132,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        /*if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
@@ -209,10 +209,10 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                                 
                                 self.alertBuilder(alertControllerTitle: "Sms Error", alertControllerMessage: "We had a problem sending your sms for phone confirmation", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                             }
-                        }*/
+                        }
                         
                         self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
-                    /*}
+                    }
                     
                 case .failure( _):
                     
@@ -221,7 +221,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                     KVNProgress.showError()
                 }
             }
-        }*/
+        }
     }
     
     // MARK: - Picker Textfield Done Editing

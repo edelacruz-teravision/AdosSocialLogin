@@ -66,7 +66,7 @@ class PhoneConfirmationViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        /*if allTextFieldsFilled(textFields: [codeTextField])
+        if allTextFieldsFilled(textFields: [codeTextField])
         {
             let smsCodeVerificationParameters: Parameters = ["code" : codeTextField.text as AnyObject]
             
@@ -96,10 +96,10 @@ class PhoneConfirmationViewController: UIViewController
                     }
                     else
                     {
-                        KVNProgress.showSuccess()*/
+                        KVNProgress.showSuccess()
                         
                         self.performSegue(withIdentifier: "goToAdress", sender: nil)
-                    /*}
+                    }
                     
                 case .failure( _):
                     
@@ -108,7 +108,7 @@ class PhoneConfirmationViewController: UIViewController
                     KVNProgress.showError()
                 }
             }            
-        }*/
+        }
     }
     
     //MARK: - Navigation

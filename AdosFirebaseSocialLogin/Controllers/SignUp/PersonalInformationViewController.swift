@@ -45,7 +45,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         phoneTextField.delegate = self
         sSNTextField.delegate = self
         sSNTextField.mask = "###-##-####"
-        phoneTextField.mask = "###-###-####"
+        phoneTextField.mask = "+############"
     }
     
     override func viewDidLayoutSubviews()
@@ -132,7 +132,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        /*if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
@@ -187,32 +187,9 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                     else
                     {
                         KVNProgress.showSuccess()
-                        
-                        // MARK: - SMS phone comfirmation first send
-                        
-                        let smsSendHeaders : HTTPHeaders = ["Authorization" : "Bearer \(ServerData.currentToken)"]
-                        
-                        Alamofire.request(ServerData.adosUrl + ServerData.resendSms, headers: smsSendHeaders).validate(statusCode: 200..<501).responseJSON { response in
-                            
-                            switch response.result
-                            {
-                            case .success:
-                                
-                                let code = response.response!.statusCode
-                                
-                                if code != 201 && code != 200
-                                {
-                                    print("Error sending SMS, code: \(code)")
-                                }
-                                
-                            case .failure( _):
-                                
-                                self.alertBuilder(alertControllerTitle: "Sms Error", alertControllerMessage: "We had a problem sending your sms for phone confirmation", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
-                            }
-                        }*/
-                        
+        
                         self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
-                    /*}
+                    }
                     
                 case .failure( _):
                     
@@ -221,7 +198,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                     KVNProgress.showError()
                 }
             }
-        }*/
+        }
     }
     
     // MARK: - Picker Textfield Done Editing

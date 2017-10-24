@@ -40,6 +40,8 @@ struct ServerData
     static var statesLoader : String =  "/api/v1/states"
     
     static var personalAdress : String = "/api/v1/contact_information"
+    
+    static var smsVerification : String = "/api/v1/sms_verification"
 }
 
 struct AlertImages

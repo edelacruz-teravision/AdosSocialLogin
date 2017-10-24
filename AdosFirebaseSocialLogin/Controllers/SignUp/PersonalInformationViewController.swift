@@ -45,7 +45,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         phoneTextField.delegate = self
         sSNTextField.delegate = self
         sSNTextField.mask = "###-##-####"
-        phoneTextField.mask = "#############"
+        phoneTextField.mask = "+############"
     }
     
     override func viewDidLayoutSubviews()
@@ -187,7 +187,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                     else
                     {
                         KVNProgress.showSuccess()
-                        
+        
                         self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
                     }
                     

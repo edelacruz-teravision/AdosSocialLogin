@@ -73,7 +73,7 @@ class PhoneConfirmationViewController: UIViewController
             let smsCodeVErificationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                             "Authorization" : "Bearer \(ServerData.currentToken)"]
             
-            Alamofire.request(ServerData.adosUrl + ServerData.personalInformation, method: .post, parameters: smsCodeVerificationParameters, encoding: JSONEncoding.default, headers: smsCodeVErificationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+            Alamofire.request(ServerData.adosUrl + ServerData.smsVerification, method: .post, parameters: smsCodeVerificationParameters, encoding: JSONEncoding.default, headers: smsCodeVErificationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
                 
                 switch response.result
                 {
@@ -108,6 +108,11 @@ class PhoneConfirmationViewController: UIViewController
                     KVNProgress.showError()
                 }
             }            
+        }
+        else
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
         }
     }
     

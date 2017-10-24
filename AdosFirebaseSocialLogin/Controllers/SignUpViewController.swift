@@ -102,6 +102,7 @@ class SignUpViewController: UIViewController
                         {
                             KVNProgress.showSuccess()
                             self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
+                            
                         }
                     
                     case .failure( _):

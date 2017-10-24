@@ -38,6 +38,8 @@ struct ServerData
     static var citiesLoader : String = "/api/v1/cities?state_id="
     
     static var statesLoader : String =  "/api/v1/states"
+    
+    static var personalAdress : String = "/api/v1/contact_information"
 }
 
 struct AlertImages

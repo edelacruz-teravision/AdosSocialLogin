@@ -87,10 +87,52 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        //if allTextFieldsFilled(textFields: [streetTextField, apartmentTextField, stateTextField, cityTextField, zipTextField])
-        //{
-            self.performSegue(withIdentifier: "goToAccount", sender: nil)
-        //}
+        if allTextFieldsFilled(textFields: [streetTextField, apartmentTextField, stateTextField, cityTextField, zipTextField])
+        {
+            let personalInformationParameters: Parameters = ["street_address" : self.streetTextField.text as AnyObject,
+                                                             "suite_or_apt" : self.apartmentTextField.text as  AnyObject,
+                                                             "city_name" : self.cityTextField.text as AnyObject,
+                                                             "state_id" : self.selectedStateId,
+                                                             "zip_code" : self.zipTextField.text as AnyObject]
+            
+            let personalInformationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                                            "Authorization" : "Bearer \(ServerData.currentToken)"]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.personalAdress, method: .put, parameters: personalInformationParameters, encoding: JSONEncoding.default, headers: personalInformationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 && code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        KVNProgress.showSuccess()
+                        self.performSegue(withIdentifier: "goToAccount", sender: nil)
+                    }
+ 
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }
+        }
     }
     
     // MARK: - Zip Code Textfields Masking

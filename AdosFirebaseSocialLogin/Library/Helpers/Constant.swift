@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct ServerData
 {
@@ -31,6 +32,12 @@ struct ServerData
     static var currentToken : String = ""
     
     static var personalInformation : String = "/api/v1/personal_information"
+    
+    static var resendSms : String  = "/api/v1/resend_sms_code"
+    
+    static var citiesLoader : String = "/api/v1/cities?state_id="
+    
+    static var statesLoader : String =  "/api/v1/states"
 }
 
 struct AlertImages

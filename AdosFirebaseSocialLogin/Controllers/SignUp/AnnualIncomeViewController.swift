@@ -53,7 +53,7 @@ class AnnualIncomeViewController: UIViewController
     {
         if segue.identifier == "goToEmploymentStatus"
         {
-            if let employmentStatusControllerSegue = segue.destination as? EmploymentStatusViewController
+            if let _ = segue.destination as? EmploymentStatusViewController
             {
                 self.title = ""
             }

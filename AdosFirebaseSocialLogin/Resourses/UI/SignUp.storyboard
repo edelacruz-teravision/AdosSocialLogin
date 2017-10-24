@@ -682,6 +682,9 @@
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="stateTextFieldEditingBegin:" destination="JZo-eJ-5N5" eventType="editingDidBegin" id="20c-xb-9eN"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htV-ko-kwv">
                                                         <rect key="frame" x="0.0" y="19" width="335" height="1"/>
@@ -708,6 +711,9 @@
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="cityTextFieldEditingBegin:" destination="JZo-eJ-5N5" eventType="editingDidBegin" id="ZXv-SN-bos"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-Yh-JHL">
                                                         <rect key="frame" x="0.0" y="19" width="335" height="1"/>
@@ -722,12 +728,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l6d-yd-de5">
                                                 <rect key="frame" x="0.0" y="160" width="335" height="20"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="02k-WH-SKN">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="02k-WH-SKN" customClass="VMaskTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                         <variation key="heightClass=regular-widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         </variation>

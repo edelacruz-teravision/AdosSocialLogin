@@ -128,6 +128,102 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         nationalityTextField.inputView = picker
     }
     
+    //MARK: - Continue Button Action
+    
+    @IBAction func continueButtonPressed(_ sender: UIButton)
+    {
+        /*if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
+        else
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+            
+            var countryId : Int = 0
+            
+            for i in 0..<((self.countriesResult.count))
+            {
+                let countriesDictionary : [String : Any] = self.countriesResult[i]
+                
+                if countriesDictionary["full_name"] as? String == nationalityTextField.text
+                {
+                    countryId = countriesDictionary["id"] as! Int
+                }
+            }
+            
+            let personalInformationParameters: Parameters = ["first_name" : self.firstNameTextField.text as AnyObject,
+                                          "last_name" : self.lastNameTextField.text as AnyObject,
+                                          "birthday" : self.dateTextfield.text as AnyObject,
+                                          "phone_number" : self.phoneTextField.text as AnyObject,
+                                          "social_security_number" : self.sSNTextField.text as AnyObject,
+                                          "country_id" : countryId]
+            
+            let personalInformationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                         "Authorization" : "Bearer " + ServerData.currentToken]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.personalInformation, method: .post, parameters: personalInformationParameters, encoding: JSONEncoding.default, headers: personalInformationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 && code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        KVNProgress.showSuccess()
+                        
+                        // MARK: - SMS phone comfirmation first send
+                        
+                        let smsSendHeaders : HTTPHeaders = ["Authorization" : "Bearer \(ServerData.currentToken)"]
+                        
+                        Alamofire.request(ServerData.adosUrl + ServerData.resendSms, headers: smsSendHeaders).validate(statusCode: 200..<501).responseJSON { response in
+                            
+                            switch response.result
+                            {
+                            case .success:
+                                
+                                let code = response.response!.statusCode
+                                
+                                if code != 201 && code != 200
+                                {
+                                    print("Error sending SMS, code: \(code)")
+                                }
+                                
+                            case .failure( _):
+                                
+                                self.alertBuilder(alertControllerTitle: "Sms Error", alertControllerMessage: "We had a problem sending your sms for phone confirmation", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                            }
+                        }*/
+                        
+                        self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
+                    /*}
+                    
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }
+        }*/
+    }
+    
     // MARK: - Picker Textfield Done Editing
     
     override func donePressed(sender: UIBarButtonItem)
@@ -156,87 +252,6 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                 self.navigationController?.navigationBar.barTintColor = UIColor(red: 24.0 / 255.0, green: 24.0 / 255.0, blue: 56.0 / 255.0, alpha: 0.1)
                 self.navigationController?.view.tintColor = UIColor.white
                 self.navigationController?.navigationBar.isTranslucent = true
-            }
-        }
-    }
-    
-    //MARK: - Continue Button Action
-    
-    @IBAction func continueButtonPressed(_ sender: UIButton)
-    {
-        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
-        {
-            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
-            return
-        }
-        else
-        {
-            KVNProgress.show(withStatus: "Loading, Please wait")
-            
-            var countryId : Int = 0
-            
-            for i in 0..<((self.countriesResult.count))
-            {
-                let countriesDictionary : [String : Any] = self.countriesResult[i]
-                
-                if countriesDictionary["full_name"] as? String == nationalityTextField.text
-                {
-                    countryId = countriesDictionary["id"] as! Int
-                }
-            }
-            
-            let parameters: Parameters = ["first_name" : self.firstNameTextField.text,
-                                          "last_name" : self.lastNameTextField.text,
-                                          "birthday" : self.dateTextfield.text,
-                                          "phone_number" : self.phoneTextField.text,
-                                          "social_security_number" : self.sSNTextField.text,
-                                          "country_id" : countryId]
-            
-            let headers : HTTPHeaders = ["Content-Type" : "application/json",
-                                         "Authorization" : "Bearer " + ServerData.currentToken]
-            
-            print(parameters["first_name"])
-            print(parameters["last_name"])
-            print(parameters["birthday"])
-            print(parameters["phone_number"])
-            print(parameters["social_security_number"])
-            print(parameters["country_id"])
-            
-            Alamofire.request(ServerData.adosUrl + ServerData.personalInformation, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200..<500).responseJSON{ (response) in
-                
-                switch response.result
-                {
-                case .success:
-                    
-                    let code = response.response!.statusCode
-                    
-                    guard let json = response.result.value as? [String: Any] else
-                    {
-                        print("didn't get todo object as JSON from API")
-                        print("Error: \(String(describing: response.result.error))")
-                        return
-                    }
-                    
-                    if code != 200 || code != 201
-                    {
-                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
-                        
-                        KVNProgress.showError()
-                    }
-                    else
-                    {
-                        print(json["message"] ?? "")
-                        print(json)
-                        KVNProgress.showSuccess()
-                        self.performSegue(withIdentifier: "goToPhoneConfirmation", sender: nil)
-                    }
-                    
-                case .failure( _):
-                    
-                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
-                    
-                    KVNProgress.showError()
-                }
             }
         }
     }
@@ -280,7 +295,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         
         let headers : HTTPHeaders = ["Authorization":"Bearer \(ServerData.currentToken)"]
         
-        Alamofire.request(ServerData.adosUrl + ServerData.countries, headers: headers).validate(statusCode: 200..<500).responseJSON { response in
+        Alamofire.request(ServerData.adosUrl + ServerData.countries, headers: headers).validate(statusCode: 200..<501).responseJSON { response in
             
             switch response.result
             {
@@ -310,7 +325,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                 }
                 else
                 {
-                    debugPrint("Error code: \(code)")
+                    print("Error code: \(code)")
                     KVNProgress.showError()
                 }
                 

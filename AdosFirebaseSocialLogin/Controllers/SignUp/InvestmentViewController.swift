@@ -53,7 +53,7 @@ class InvestmentViewController: UIViewController
     {
         if segue.identifier == "goToRegulatoryQuestios"
         {
-            if let regulatoryQuestionsControllerSegue = segue.destination as? RegulatoryQuestionsViewController
+            if let _ = segue.destination as? RegulatoryQuestionsViewController
             {
                 self.title = ""
             }

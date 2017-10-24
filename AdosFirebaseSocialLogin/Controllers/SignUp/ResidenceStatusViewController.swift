@@ -53,7 +53,7 @@ class ResidenceStatusViewController: UIViewController
     {
         if segue.identifier == "goToAnnualIncome"
         {
-            if let annualIncomeControllerSegue = segue.destination as? AnnualIncomeViewController
+            if let _ = segue.destination as? AnnualIncomeViewController
             {
                 self.title = ""
             }

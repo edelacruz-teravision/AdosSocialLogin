@@ -53,7 +53,7 @@ class EmploymentStatusViewController: UIViewController
     {
         if segue.identifier == "goToInvestment"
         {
-            if let investmentControllerSegue = segue.destination as? InvestmentViewController
+            if let _ = segue.destination as? InvestmentViewController
             {
                 self.title = ""
             }

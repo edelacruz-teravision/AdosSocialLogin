@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController
                 "device_token" : ServerData.deviceToken
             ]
             
-            Alamofire.request(ServerData.adosUrl + ServerData.signUpUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate(statusCode: 200..<500).responseJSON{ (response) in
+            Alamofire.request(ServerData.adosUrl + ServerData.signUpUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate(statusCode: 200..<501).responseJSON{ (response) in
                 
                 switch response.result
                 {

@@ -53,7 +53,7 @@ class AccountViewController: UIViewController
     {
         if segue.identifier == "goToResidenceStatus"
         {
-            if let residenceStatusControllerSegue = segue.destination as? ResidenceStatusViewController
+            if let _ = segue.destination as? ResidenceStatusViewController
             {
                 self.title = ""
             }

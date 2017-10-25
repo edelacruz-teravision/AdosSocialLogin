@@ -89,16 +89,21 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     {
         if allTextFieldsFilled(textFields: [streetTextField, apartmentTextField, stateTextField, cityTextField, zipTextField])
         {
-            let personalInformationParameters: Parameters = ["street_address" : self.streetTextField.text as AnyObject,
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            }
+            
+            let adressParameters: Parameters = ["street_address" : self.streetTextField.text as AnyObject,
                                                              "suite_or_apt" : self.apartmentTextField.text as  AnyObject,
                                                              "city_name" : self.cityTextField.text as AnyObject,
                                                              "state_id" : self.selectedStateId,
                                                              "zip_code" : self.zipTextField.text as AnyObject]
             
-            let personalInformationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+            let adressHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                             "Authorization" : "Bearer \(ServerData.currentToken)"]
             
-            Alamofire.request(ServerData.adosUrl + ServerData.personalAdress, method: .put, parameters: personalInformationParameters, encoding: JSONEncoding.default, headers: personalInformationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+            Alamofire.request(ServerData.adosUrl + ServerData.personalAdress, method: .put, parameters: adressParameters, encoding: JSONEncoding.default, headers: adressHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
                 
                 switch response.result
                 {
@@ -146,7 +151,10 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func loadStates()
     {
-        KVNProgress.show(withStatus: "Loading, Please wait")
+        if !KVNProgress.isVisible()
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+        }
         
         let statesLoaderHeaders : HTTPHeaders = ["Authorization" : "Bearer \(ServerData.currentToken)"]
         
@@ -180,14 +188,14 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 else
                 {
                     print("Error code: \(code)")
-                    KVNProgress.showError()
+                    KVNProgress.dismiss()
                 }
                 
             case .failure( _):
                 
                 self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                 
-                KVNProgress.showError()
+                KVNProgress.dismiss()
             }
         }
     }

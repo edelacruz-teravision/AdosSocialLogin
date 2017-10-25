@@ -45,7 +45,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         phoneTextField.delegate = self
         sSNTextField.delegate = self
         sSNTextField.mask = "###-##-####"
-        phoneTextField.mask = "+############"
+        phoneTextField.mask = "###-###-####"
     }
     
     override func viewDidLayoutSubviews()
@@ -139,7 +139,10 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
         }
         else
         {
-            KVNProgress.show(withStatus: "Loading, Please wait")
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            }            
             
             var countryId : Int = 0
             
@@ -268,7 +271,10 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     func loadNationalityOptions()
     {
-        KVNProgress.show(withStatus: "Loading, Please wait")
+        if !KVNProgress.isVisible()
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+        }
         
         let headers : HTTPHeaders = ["Authorization":"Bearer \(ServerData.currentToken)"]
         
@@ -289,7 +295,7 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                 
                 if code == 201
                 {
-                    KVNProgress.showSuccess()
+                    KVNProgress.dismiss()
                 
                     self.countriesResult = (json["result"] as? [[String: Any]])!
                     self.pickerData = []
@@ -303,14 +309,14 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
                 else
                 {
                     print("Error code: \(code)")
-                    KVNProgress.showError()
+                    KVNProgress.dismiss()
                 }
                 
             case .failure( _):
                 
                 self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
                 
-                KVNProgress.showError()
+                KVNProgress.dismiss()
             }
         }
     }

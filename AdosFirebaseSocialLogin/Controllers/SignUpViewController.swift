@@ -101,8 +101,11 @@ class SignUpViewController: UIViewController
                         else
                         {
                             KVNProgress.showSuccess()
-                            self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)
                             
+                            let result = json["result"] as? [String: Any]
+                            ServerData.currentToken = result!["access_token"] as! String
+                            
+                            self.performSegue(withIdentifier: "goToPersonalInformation", sender: nil)                            
                         }
                     
                     case .failure( _):

@@ -330,6 +330,7 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     let result = json["result"] as? [String: Any]
                     let sigupStatus = result!["signup_status"] as! [String : Any]
                     let data = sigupStatus["data"] as! [[String : Any]]
+                    ServerData.actualStep = sigupStatus["actual_step"] as! Int
                     
                     for i in 0..<(data.count)
                     {
@@ -347,8 +348,15 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     ServerData.currentToken = result!["access_token"] as! String
                     
                     KVNProgress.showSuccess()
-                
-                    self.performSegue(withIdentifier: "goToProfileView", sender: nil)
+                    
+                    if ServerData.actualStep > 1
+                    {
+                        self.performSegue(withIdentifier: "goToIncompleteSignUp", sender: nil)
+                    }
+                    else
+                    {
+                        self.performSegue(withIdentifier: "goToProfileView", sender: nil)
+                    }            
                 
                 case .failure( _):
                     

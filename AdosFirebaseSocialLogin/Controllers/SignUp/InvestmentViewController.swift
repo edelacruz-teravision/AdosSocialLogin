@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import KVNProgress
 
 class InvestmentViewController: UIViewController
 {
@@ -37,9 +39,50 @@ class InvestmentViewController: UIViewController
         {
             let cell : TypeCell = self.investmentTableView.cellForRow(at: indexPath) as! TypeCell
             
-            print(cell.cellLabel.text ?? "")
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            }
             
-            self.performSegue(withIdentifier: "goToRegulatoryQuestios", sender: nil)
+            let investmentParameters: Parameters = ["investment_id" : cell.tag]
+            
+            let investmentHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                                         "Authorization" : "Bearer \(ServerData.currentToken)"]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.investmentApi, method: .put, parameters: investmentParameters, encoding: JSONEncoding.default, headers: investmentHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 && code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        KVNProgress.showSuccess()
+                        self.performSegue(withIdentifier: "goToRegulatoryQuestios", sender: nil)
+                    }
+                    
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }         
         }
         else
         {
@@ -81,6 +124,7 @@ extension InvestmentViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         
         cell.cellLabel.text = annualIncome.name
+        cell.tag = (indexPath.row + 1)
         
         return cell
     }

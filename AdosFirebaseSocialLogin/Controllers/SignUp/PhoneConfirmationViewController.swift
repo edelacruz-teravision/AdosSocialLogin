@@ -36,6 +36,11 @@ class PhoneConfirmationViewController: UIViewController
     
     @IBAction func resendCodeButtonPressed(_ sender: UIButton)
     {
+        if !KVNProgress.isVisible()
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+        }
+        
         let smsResendHeaders : HTTPHeaders = ["Authorization" : "Bearer \(ServerData.currentToken)"]
         
         Alamofire.request(ServerData.adosUrl + ServerData.resendSms, headers: smsResendHeaders).validate(statusCode: 200..<501).responseJSON { response in
@@ -52,10 +57,13 @@ class PhoneConfirmationViewController: UIViewController
                 }
                 else
                 {
+                    KVNProgress.dismiss()
                     self.alertBuilder(alertControllerTitle: "", alertControllerMessage: "A new code have been sent to your phone", alertActionTitle: "Ok", identifier: "", image: AlertImages.success)
                 }
                 
             case .failure( _):
+                
+                KVNProgress.dismiss()
                 
                 self.alertBuilder(alertControllerTitle: "Sms Error", alertControllerMessage: "We had a problem sending your sms for phone confirmation", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             }
@@ -68,6 +76,11 @@ class PhoneConfirmationViewController: UIViewController
     {
         if allTextFieldsFilled(textFields: [codeTextField])
         {
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            }
+            
             let smsCodeVerificationParameters: Parameters = ["code" : codeTextField.text as AnyObject]
             
             let smsCodeVErificationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
@@ -96,7 +109,6 @@ class PhoneConfirmationViewController: UIViewController
                     }
                     else
                     {
-                        KVNProgress.showSuccess()
                         
                         self.performSegue(withIdentifier: "goToAdress", sender: nil)
                     }

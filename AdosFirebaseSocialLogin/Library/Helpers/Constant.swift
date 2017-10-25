@@ -29,19 +29,31 @@ struct ServerData
     
     static let countries : String = "/api/v1/countries"
     
+    static let personalInformation : String = "/api/v1/personal_information"
+    
+    static let resendSms : String  = "/api/v1/resend_sms_code"
+    
+    static let citiesLoader : String = "/api/v1/cities?state_id="
+    
+    static let statesLoader : String =  "/api/v1/states"
+    
+    static let personalAdress : String = "/api/v1/contact_information"
+    
+    static let smsVerification : String = "/api/v1/sms_verification"
+    
+    static let accountType : String = "/api/v1/account_type"
+    
+    static let residencialStatus : String = "/api/v1/residential_status"
+    
+    static let annualIncome : String = "/api/v1/annual_income"
+    
+    static let employmentStatus : String = "/api/v1/employment_status"
+    
+    static let investmentApi : String = "/api/v1/investment"
+    
     static var currentToken : String = ""
     
-    static var personalInformation : String = "/api/v1/personal_information"
-    
-    static var resendSms : String  = "/api/v1/resend_sms_code"
-    
-    static var citiesLoader : String = "/api/v1/cities?state_id="
-    
-    static var statesLoader : String =  "/api/v1/states"
-    
-    static var personalAdress : String = "/api/v1/contact_information"
-    
-    static var smsVerification : String = "/api/v1/sms_verification"
+    static var actualStep : Int = Int()
 }
 
 struct AlertImages

@@ -15,7 +15,7 @@
         <!--Personal Information View Controller-->
         <scene sceneID="vWp-Md-VrD">
             <objects>
-                <viewController id="6hk-mf-xmE" customClass="PersonalInformationViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonalInformation" id="6hk-mf-xmE" customClass="PersonalInformationViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CaZ-fB-Cpz"/>
                         <viewControllerLayoutGuide type="bottom" id="2dt-cr-8eu"/>
@@ -384,7 +384,7 @@
         <!--Phone Confirmation View Controller-->
         <scene sceneID="FtT-O1-myE">
             <objects>
-                <viewController id="iZf-uD-Q3r" customClass="PhoneConfirmationViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneConfirmation" id="iZf-uD-Q3r" customClass="PhoneConfirmationViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Vs-9X-kAX"/>
                         <viewControllerLayoutGuide type="bottom" id="XDM-mb-oYm"/>
@@ -566,7 +566,7 @@
         <!--Adress View Controller-->
         <scene sceneID="sXy-Wq-hXb">
             <objects>
-                <viewController id="JZo-eJ-5N5" customClass="AdressViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Adress" id="JZo-eJ-5N5" customClass="AdressViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AF9-Cm-e0D"/>
                         <viewControllerLayoutGuide type="bottom" id="9dO-bt-tiw"/>
@@ -842,7 +842,7 @@
         <!--Account View Controller-->
         <scene sceneID="naB-9H-cjQ">
             <objects>
-                <viewController id="xY6-zP-VHy" customClass="AccountViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Account" id="xY6-zP-VHy" customClass="AccountViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVG-yT-vRL"/>
                         <viewControllerLayoutGuide type="bottom" id="I0N-re-vel"/>
@@ -1018,7 +1018,7 @@
         <!--Residence Status View Controller-->
         <scene sceneID="C6R-Au-hYT">
             <objects>
-                <viewController id="3VB-pJ-4xK" customClass="ResidenceStatusViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResidenceStatus" id="3VB-pJ-4xK" customClass="ResidenceStatusViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Xc-qG-tyt"/>
                         <viewControllerLayoutGuide type="bottom" id="3JG-hO-fso"/>
@@ -1212,7 +1212,7 @@
         <!--Annual Income View Controller-->
         <scene sceneID="a5H-Qh-PaF">
             <objects>
-                <viewController id="ywR-eW-ecn" customClass="AnnualIncomeViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnnualIncome" id="ywR-eW-ecn" customClass="AnnualIncomeViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yU7-ud-f4K"/>
                         <viewControllerLayoutGuide type="bottom" id="wqB-8z-g8p"/>
@@ -1405,7 +1405,7 @@
         <!--Employment Status View Controller-->
         <scene sceneID="q5N-kH-0Xb">
             <objects>
-                <viewController id="nLs-kg-Hwq" customClass="EmploymentStatusViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmploymentStatus" id="nLs-kg-Hwq" customClass="EmploymentStatusViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="owB-cX-Ufh"/>
                         <viewControllerLayoutGuide type="bottom" id="vSe-zM-zK6"/>
@@ -1598,7 +1598,7 @@
         <!--Investment View Controller-->
         <scene sceneID="8yf-IP-oNi">
             <objects>
-                <viewController id="chM-Gc-77W" customClass="InvestmentViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Investment" id="chM-Gc-77W" customClass="InvestmentViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5ZN-O2-EWe"/>
                         <viewControllerLayoutGuide type="bottom" id="G5L-Ue-3Zg"/>
@@ -1791,7 +1791,7 @@
         <!--Regulatory Questions View Controller-->
         <scene sceneID="6c0-4W-8t5">
             <objects>
-                <viewController id="xOg-7R-Tnf" customClass="RegulatoryQuestionsViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegulatoryQuestions" id="xOg-7R-Tnf" customClass="RegulatoryQuestionsViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1eW-LT-DI0"/>
                         <viewControllerLayoutGuide type="bottom" id="n7v-eN-Hbs"/>
@@ -2177,7 +2177,7 @@
         <!--Terms Of Use View Controller-->
         <scene sceneID="64B-et-gE0">
             <objects>
-                <viewController id="wjL-it-Iyf" customClass="TermsOfUseViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsOfUse" id="wjL-it-Iyf" customClass="TermsOfUseViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5V-JI-L3Y"/>
                         <viewControllerLayoutGuide type="bottom" id="pBZ-i9-fNz"/>
@@ -2628,7 +2628,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
         <!--Funding View Controller-->
         <scene sceneID="lWS-7R-yNQ">
             <objects>
-                <viewController id="ksU-sX-cao" customClass="FundingViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Funding" id="ksU-sX-cao" customClass="FundingViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ygn-10-tFY"/>
                         <viewControllerLayoutGuide type="bottom" id="bPt-vM-rwq"/>
@@ -2942,7 +2942,7 @@ as Invesment account owner</string>
         <!--Investment Selection View Controller-->
         <scene sceneID="d9Z-he-0Nc">
             <objects>
-                <viewController id="aFj-KR-BFY" customClass="InvestmentSelectionViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InvestmentSelection" id="aFj-KR-BFY" customClass="InvestmentSelectionViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRc-L2-IlT"/>
                         <viewControllerLayoutGuide type="bottom" id="jy7-tY-Abs"/>
@@ -3269,7 +3269,7 @@ on my account</string>
         <!--Risk Level View Controller-->
         <scene sceneID="8YV-0I-rzv">
             <objects>
-                <viewController id="p97-wB-o2E" customClass="RiskLevelViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RiskLevel" id="p97-wB-o2E" customClass="RiskLevelViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Squ-h5-ZqL"/>
                         <viewControllerLayoutGuide type="bottom" id="Iju-7l-QS4"/>

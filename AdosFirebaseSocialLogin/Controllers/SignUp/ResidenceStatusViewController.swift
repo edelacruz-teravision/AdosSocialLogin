@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import KVNProgress
 
 class ResidenceStatusViewController: UIViewController
 {
@@ -33,13 +35,54 @@ class ResidenceStatusViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        if let indexPath = residenceStatusTableView.indexPathForSelectedRow
+        if let indexPath = self.residenceStatusTableView.indexPathForSelectedRow
         {
-            let cell : TypeCell = residenceStatusTableView.cellForRow(at: indexPath) as! TypeCell
+            let cell : TypeCell = self.residenceStatusTableView.cellForRow(at: indexPath) as! TypeCell
             
-            print(cell.cellLabel.text ?? "")
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            } 
             
-            self.performSegue(withIdentifier: "goToAnnualIncome", sender: nil)
+            let residenceStatusParameters: Parameters = ["residential_status_id" : cell.tag]
+            
+            let residenceStatusHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                                            "Authorization" : "Bearer \(ServerData.currentToken)"]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.residencialStatus, method: .put, parameters: residenceStatusParameters, encoding: JSONEncoding.default, headers: residenceStatusHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 && code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        KVNProgress.showSuccess()
+                        self.performSegue(withIdentifier: "goToAnnualIncome", sender: nil)
+                    }
+                    
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }
         }
         else
         {
@@ -82,6 +125,7 @@ extension ResidenceStatusViewController: UITableViewDataSource, UITableViewDeleg
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         
+        cell.tag = (indexPath.row + 1)
         cell.cellLabel.text = residenceStatus.name
         
         return cell

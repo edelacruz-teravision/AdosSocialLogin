@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KVNProgress
+import Alamofire
 
 class EmploymentStatusViewController: UIViewController
 {
@@ -37,9 +39,50 @@ class EmploymentStatusViewController: UIViewController
         {
             let cell : TypeCell = self.employmentStatusTableView.cellForRow(at: indexPath) as! TypeCell
             
-            print(cell.cellLabel.text ?? "")
+            if !KVNProgress.isVisible()
+            {
+                KVNProgress.show(withStatus: "Loading, Please wait")
+            }
             
-            self.performSegue(withIdentifier: "goToInvestment", sender: nil)
+            let employmentStatusParameters: Parameters = ["employment_status_id" : cell.tag]
+            
+            let employmentStatusHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                                     "Authorization" : "Bearer \(ServerData.currentToken)"]
+            
+            Alamofire.request(ServerData.adosUrl + ServerData.employmentStatus, method: .put, parameters: employmentStatusParameters, encoding: JSONEncoding.default, headers: employmentStatusHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+                
+                switch response.result
+                {
+                case .success:
+                    
+                    let code = response.response!.statusCode
+                    
+                    guard let json = response.result.value as? [String: Any] else
+                    {
+                        print("didn't get todo object as JSON from API")
+                        print("Error: \(String(describing: response.result.error))")
+                        return
+                    }
+                    
+                    if code != 200 && code != 201
+                    {
+                        self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                        
+                        KVNProgress.showError()
+                    }
+                    else
+                    {
+                        KVNProgress.showSuccess()
+                        self.performSegue(withIdentifier: "goToInvestment", sender: nil)
+                    }
+                    
+                case .failure( _):
+                    
+                    self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+            }         
         }
         else
         {
@@ -83,6 +126,7 @@ extension EmploymentStatusViewController: UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TypeCell
         
         cell.cellLabel.text = annualIncome.name
+        cell.tag = (indexPath.row + 1)
         
         return cell
     }

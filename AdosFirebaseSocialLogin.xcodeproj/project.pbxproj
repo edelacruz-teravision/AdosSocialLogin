@@ -33,6 +33,8 @@
 		A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */; };
 		A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */; };
 		A3B075FF1F952D6100BB051E /* FundingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B075FE1F952D6100BB051E /* FundingViewController.swift */; };
+		A3BB8C3C1FA1067D0057AEAC /* IncompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB8C3B1FA1067D0057AEAC /* IncompleteSignUpViewController.swift */; };
+		A3BB8C3E1FA10F460057AEAC /* SignUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB8C3D1FA10F460057AEAC /* SignUpHelper.swift */; };
 		A3C14BCA1F97C2D000144EA9 /* RiskLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C14BC91F97C2D000144EA9 /* RiskLevelViewController.swift */; };
 		A3C14BCC1F97E4D200144EA9 /* ExpectedReturnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */; };
 		A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */; };
@@ -72,6 +74,8 @@
 		A3B075FA1F94F2DE00BB051E /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		A3B075FC1F95018D00BB051E /* RequestDebitCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDebitCardViewController.swift; sourceTree = "<group>"; };
 		A3B075FE1F952D6100BB051E /* FundingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundingViewController.swift; sourceTree = "<group>"; };
+		A3BB8C3B1FA1067D0057AEAC /* IncompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncompleteSignUpViewController.swift; sourceTree = "<group>"; };
+		A3BB8C3D1FA10F460057AEAC /* SignUpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHelper.swift; sourceTree = "<group>"; };
 		A3C14BC91F97C2D000144EA9 /* RiskLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskLevelViewController.swift; sourceTree = "<group>"; };
 		A3C14BCB1F97E4D200144EA9 /* ExpectedReturnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedReturnCell.swift; sourceTree = "<group>"; };
 		A3C7C5821F71440700ABEB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				A3F061581F991D1C00018A76 /* SignUp */,
 				2D66E2701F6DA429001D015E /* AdosLoginViewController.swift */,
 				A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */,
+				A3BB8C3B1FA1067D0057AEAC /* IncompleteSignUpViewController.swift */,
 				2D09EB211F6F0D850028632B /* ProfileViewController.swift */,
 				A32BDD911F829FFB002EA62F /* SignUpViewController.swift */,
 			);
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A3DEF1091F7588190080B396 /* Constant.swift */,
+				A3BB8C3D1FA10F460057AEAC /* SignUpHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -440,11 +446,13 @@
 				A3B075FB1F94F2DE00BB051E /* TermsOfUseViewController.swift in Sources */,
 				2D09EB221F6F0D850028632B /* ProfileViewController.swift in Sources */,
 				2D66E2711F6DA429001D015E /* AdosLoginViewController.swift in Sources */,
+				A3BB8C3E1FA10F460057AEAC /* SignUpHelper.swift in Sources */,
 				A3C14BCC1F97E4D200144EA9 /* ExpectedReturnCell.swift in Sources */,
 				A38457421F8D159D00191D90 /* Extensions.swift in Sources */,
 				A3B075FD1F95018D00BB051E /* RequestDebitCardViewController.swift in Sources */,
 				2D66E26F1F6DA429001D015E /* AppDelegate.swift in Sources */,
 				A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */,
+				A3BB8C3C1FA1067D0057AEAC /* IncompleteSignUpViewController.swift in Sources */,
 				A37DEE7B1F86BBCA004E53D9 /* PhoneConfirmationViewController.swift in Sources */,
 				A3A447CE1F98F8A0001BA0F7 /* TypeCell.swift in Sources */,
 				A36194B11F91405E005754A4 /* InvestmentViewController.swift in Sources */,

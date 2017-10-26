@@ -83,10 +83,10 @@ class PhoneConfirmationViewController: UIViewController
             
             let smsCodeVerificationParameters: Parameters = ["code" : codeTextField.text as AnyObject]
             
-            let smsCodeVErificationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+            let smsCodeVerificationHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                             "Authorization" : "Bearer \(ServerData.currentToken)"]
             
-            Alamofire.request(ServerData.adosUrl + ServerData.smsVerification, method: .post, parameters: smsCodeVerificationParameters, encoding: JSONEncoding.default, headers: smsCodeVErificationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+            Alamofire.request(ServerData.adosUrl + ServerData.smsVerification, method: .post, parameters: smsCodeVerificationParameters, encoding: JSONEncoding.default, headers: smsCodeVerificationHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
                 
                 switch response.result
                 {

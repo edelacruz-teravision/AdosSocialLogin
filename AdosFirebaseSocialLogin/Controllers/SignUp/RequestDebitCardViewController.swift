@@ -37,15 +37,15 @@ class RequestDebitCardViewController: UIViewController, UIPickerViewDataSource, 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        stateTextField.delegate = self
-        cityTextField.delegate = self
-        statePicker.delegate = self
-        statePicker.dataSource = self
-        cityPicker.delegate = self
-        cityPicker.dataSource = self
-        cityTextField.isEnabled = false
-        zipTextField.delegate = self
-        zipTextField.mask = "#####"
+        self.stateTextField.delegate = self
+        self.cityTextField.delegate = self
+        self.statePicker.delegate = self
+        self.statePicker.dataSource = self
+        self.cityPicker.delegate = self
+        self.cityPicker.dataSource = self
+        self.cityTextField.isEnabled = false
+        self.zipTextField.delegate = self
+        self.zipTextField.mask = "#####"
         loadStates()
     }
 
@@ -73,7 +73,6 @@ class RequestDebitCardViewController: UIViewController, UIPickerViewDataSource, 
         
         stateTextField.inputView = statePicker
     }
-    // MARK: - City Textfield Picker
     
     @IBAction func cityTextFieldEditingBegin(_ sender: UITextField)
     {
@@ -109,7 +108,7 @@ class RequestDebitCardViewController: UIViewController, UIPickerViewDataSource, 
                                                          "zip" : self.zipTextField.text as AnyObject,
                                                          "street_address" : self.streetAdressTextField.text as AnyObject,
                                                          "suit_or_apt" : self.apartmentTextField.text as AnyObject]
-            
+                     
             let requestDebitCardHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                         "Authorization" : "Bearer \(ServerData.currentToken)"]
             
@@ -159,18 +158,18 @@ class RequestDebitCardViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBAction func editBarButtonPressed(_ sender: UIBarButtonItem)
     {
-        streetAdressTextField.isUserInteractionEnabled = true
-        apartmentTextField.isUserInteractionEnabled = true
-        stateTextField.isUserInteractionEnabled = true
-        cityTextField.isUserInteractionEnabled = true
-        zipTextField.isUserInteractionEnabled = true
+        self.streetAdressTextField.isUserInteractionEnabled = true
+        self.apartmentTextField.isUserInteractionEnabled = true
+        self.stateTextField.isUserInteractionEnabled = true
+        self.cityTextField.isUserInteractionEnabled = true
+        self.zipTextField.isUserInteractionEnabled = true
     }
     
     // MARK: - Zip Code Textfields Masking
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-        return zipTextField.shouldChangeCharacters(in: range, replacementString: string)
+        return self.zipTextField.shouldChangeCharacters(in: range, replacementString: string)
     }
     
     // MARK: - Api Request For States Picker
@@ -201,14 +200,74 @@ class RequestDebitCardViewController: UIViewController, UIPickerViewDataSource, 
                 
                 if code == 201
                 {
-                    KVNProgress.showSuccess()
-                    
                     self.statesResult = (json["result"] as? [[String: Any]])!
                     
                     for i in 0..<(self.statesResult.count)
                     {
                         let statesDictionary : [String : Any] = self.statesResult[i]
                         self.pickerStatesData.append((statesDictionary["state_name"] as! String) + " (" + (statesDictionary["state_code"] as! String) + ")")
+                    }
+                    
+                    self.loadShippingAdress()
+                }
+                else
+                {
+                    print("Error code: \(code)")
+                }
+                
+            case .failure( _):
+                
+                self.alertBuilder(alertControllerTitle: "Wrong log in credentials", alertControllerMessage: "Invalid email or password", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            }
+        }
+    }
+    
+    // MARK: - Api Request For Shipping Adress
+    
+    func loadShippingAdress()
+    {
+        if !KVNProgress.isVisible()
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+        }
+        
+        let statesLoaderHeaders : HTTPHeaders = ["Authorization" : "Bearer \(ServerData.currentToken)"]
+        
+        Alamofire.request(ServerData.adosUrl + ServerData.shippingAdress, headers: statesLoaderHeaders).validate(statusCode: 200..<501).responseJSON { response in
+            
+            switch response.result
+            {
+            case .success:
+                
+                let code = response.response!.statusCode
+                
+                guard let json = response.result.value as? [String: Any] else
+                {
+                    print("didn't get todo object as JSON from API")
+                    print("Error: \(String(describing: response.result.error))")
+                    return
+                }
+                
+                if code == 201
+                {
+                    KVNProgress.showSuccess()
+                    
+                    let shippingAdress = (json["result"] as? [String: Any])!
+                    
+                    self.streetAdressTextField.text = shippingAdress["street_address"] as? String
+                    self.apartmentTextField.text = shippingAdress["suite_or_apt"] as? String
+                    self.cityTextField.text = shippingAdress["city_name"] as? String
+                    self.zipTextField.text = shippingAdress["zip"] as? String
+                    
+                    for i in 0..<(self.statesResult.count)
+                    {
+                        let statesDictionary : [String : Any] = self.statesResult[i]
+                        
+                        if (statesDictionary["id"] as? Int) == (shippingAdress["state_id"] as? Int)
+                        {
+                            self.stateTextField.text = statesDictionary["state_name"] as? String
+                            self.selectedStateId = (statesDictionary["id"] as? Int)!
+                        }
                     }
                 }
                 else

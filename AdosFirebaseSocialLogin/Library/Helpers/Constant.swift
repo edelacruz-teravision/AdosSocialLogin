@@ -57,7 +57,13 @@ struct ServerData
     
     static let requestDebitCard : String = "/api/v1/debit_card"
     
+    static let shippingAdress : String  = "/api/v1/user_shipping_address"
+    
+    static let founding : String = "/api/v1/ach_signup_funding"
+    
     static var currentToken : String = ""
+    
+    static var userFullName : String = ""
     
     static var actualStep : Int = Int()
 }

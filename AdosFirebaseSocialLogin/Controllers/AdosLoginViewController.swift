@@ -336,10 +336,16 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                     {
                         let dataDict = data[i] as [String : Any]
                         let step = dataDict["step"] as! Int
+                        
                         if step == 1
                         {
                             let email = dataDict["data"] as! [String : String]
                             self.email = email["email"]!
+                        }
+                        else if step == 2
+                        {
+                            let userFullInfoDict = dataDict["data"] as! [String : Any]
+                            ServerData.userFullName = "\(userFullInfoDict["first_name"] as! String) \(userFullInfoDict["last_name"] as! String)"
                         }
                     }
                     

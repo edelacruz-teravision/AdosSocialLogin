@@ -132,13 +132,21 @@ class PersonalInformationViewController: UIViewController, UIPickerViewDataSourc
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        if !allTextFieldsFilled(textFields: [dateTextfield, firstNameTextField, lastNameTextField, nationalityTextField, sSNTextField, phoneTextField, maritalTextField])
+        if !allTextFieldsFilled(textFields: [dateTextfield,
+                                             firstNameTextField,
+                                             lastNameTextField,
+                                             nationalityTextField,
+                                             sSNTextField,
+                                             phoneTextField,
+                                             maritalTextField])
         {
             alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
             return
         }
         else
         {
+            ServerData.userFullName = (firstNameTextField.text)! + " " + (lastNameTextField.text)!
+            
             if !KVNProgress.isVisible()
             {
                 KVNProgress.show(withStatus: "Loading, Please wait")

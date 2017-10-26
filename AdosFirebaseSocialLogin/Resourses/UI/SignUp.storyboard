@@ -2355,7 +2355,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
         <!--Request Debit Card View Controller-->
         <scene sceneID="m0J-Vm-CI8">
             <objects>
-                <viewController id="0BI-hS-GYm" customClass="RequestDebitCardViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestDebitCard" id="0BI-hS-GYm" customClass="RequestDebitCardViewController" customModule="AdosFirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3j9-JY-Rbb"/>
                         <viewControllerLayoutGuide type="bottom" id="Vdw-SQ-kRA"/>
@@ -2484,7 +2484,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="stateTextFieldEditingBegin:" destination="0BI-hS-GYm" eventType="editingDidBegin" id="NH3-nT-gv6"/>
+                                                            <action selector="stateTextFieldEditingBegin:" destination="0BI-hS-GYm" eventType="editingDidBegin" id="tLq-eK-ZtN"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0K-59-CPo">
@@ -2513,7 +2513,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="cityTextFieldEditingBegin:" destination="0BI-hS-GYm" eventType="editingDidBegin" id="jFi-bo-Car"/>
+                                                            <action selector="cityTextFieldEditingBegin:" destination="0BI-hS-GYm" eventType="editingDidBegin" id="Y94-ol-k2d"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pC0-pe-ATE">
@@ -2731,7 +2731,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mlc-h7-G08">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bank ABA" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aYB-Pa-l1G">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bank ABA" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aYB-Pa-l1G" customClass="VMaskTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2766,7 +2766,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DVP-C6-W8w">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="***********" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9xB-zN-7QB">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bank Account" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9xB-zN-7QB" customClass="VMaskTextField">
                                                                 <rect key="frame" x="0.0" y="7.5" width="246" height="19"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2819,7 +2819,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KXi-MS-BR6">
                                                 <rect key="frame" x="0.0" y="104" width="280" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Benefitiary" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tzY-Aq-pjJ">
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Benefitiary" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tzY-Aq-pjJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2851,12 +2851,12 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFa-be-EeL">
                                                 <rect key="frame" x="0.0" y="156" width="280" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Deposit amount" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lVN-Ae-TKG">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Deposit amount" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lVN-Ae-TKG" customClass="VMaskTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                         <variation key="heightClass=regular-widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         </variation>

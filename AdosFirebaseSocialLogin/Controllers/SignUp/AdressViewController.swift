@@ -37,15 +37,15 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        stateTextField.delegate = self
-        cityTextField.delegate = self
-        statePicker.delegate = self
-        statePicker.dataSource = self
-        cityPicker.delegate = self
-        cityPicker.dataSource = self
-        cityTextField.isEnabled = false
-        zipTextField.delegate = self
-        zipTextField.mask = "#####"
+        self.stateTextField.delegate = self
+        self.cityTextField.delegate = self
+        self.statePicker.delegate = self
+        self.statePicker.dataSource = self
+        self.cityPicker.delegate = self
+        self.cityPicker.dataSource = self
+        self.cityTextField.isEnabled = false
+        self.zipTextField.delegate = self
+        self.zipTextField.mask = "#####"
         loadStates()
     }
 
@@ -97,7 +97,7 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             let adressParameters: Parameters = ["street_address" : self.streetTextField.text as AnyObject,
                                                              "suite_or_apt" : self.apartmentTextField.text as  AnyObject,
                                                              "city_name" : self.cityTextField.text as AnyObject,
-                                                             "state_id" : self.selectedStateId,
+                                                             "state_id" : self.selectedStateId as AnyObject,
                                                              "zip_code" : self.zipTextField.text as AnyObject]
             
             let adressHeaders : HTTPHeaders = ["Content-Type" : "application/json",
@@ -138,13 +138,18 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 }
             }
         }
+        else
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
     }
     
     // MARK: - Zip Code Textfields Masking
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-        return zipTextField.shouldChangeCharacters(in: range, replacementString: string)        
+        return self.zipTextField.shouldChangeCharacters(in: range, replacementString: string)        
     }
     
     // MARK: - Api Request For States Picker
@@ -252,7 +257,7 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    // MARK: - Nationality / Marital Status Picker Data Source
+    // MARK: - Nationality / Marital Status / States / Cities Picker Data Source
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {

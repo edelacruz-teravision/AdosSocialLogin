@@ -24,7 +24,6 @@
 		A384573B1F8D06BE00191D90 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A384573A1F8D06BE00191D90 /* AccountViewController.swift */; };
 		A38457421F8D159D00191D90 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457411F8D159D00191D90 /* Extensions.swift */; };
 		A38457451F8D16CA00191D90 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38457441F8D16CA00191D90 /* SignUp.swift */; };
-		A38457481F8D197E00191D90 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D66E27A1F6DA429001D015E /* Info.plist */; };
 		A391CA1C1F7BFA5400C855FB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391CA1B1F7BFA5400C855FB /* ForgotPassViewController.swift */; };
 		A39635981F9106C100BF4FE5 /* AnnualIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635971F9106C100BF4FE5 /* AnnualIncomeViewController.swift */; };
 		A396359A1F91100900BF4FE5 /* EmploymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39635991F91100900BF4FE5 /* EmploymentStatusViewController.swift */; };
@@ -336,7 +335,6 @@
 			files = (
 				2D66E2791F6DA429001D015E /* LaunchScreen.storyboard in Resources */,
 				A3C7C5831F71440700ABEB0D /* GoogleService-Info.plist in Resources */,
-				A38457481F8D197E00191D90 /* Info.plist in Resources */,
 				2D09EB201F6EBC1F0028632B /* Assets.xcassets in Resources */,
 				2D66E2741F6DA429001D015E /* Main.storyboard in Resources */,
 				A3DC2AB91F87FBBA00FA2EB5 /* SignUp.storyboard in Resources */,

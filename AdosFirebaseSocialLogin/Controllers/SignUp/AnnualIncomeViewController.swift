@@ -44,7 +44,7 @@ class AnnualIncomeViewController: UIViewController
                 KVNProgress.show(withStatus: "Loading, Please wait")
             }
             
-            let annualIncomeParameters: Parameters = ["annual_income_id" : cell.tag]
+            let annualIncomeParameters: Parameters = ["annual_income_id" : cell.tag as AnyObject]
             
             let annualIncomeHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                         "Authorization" : "Bearer \(ServerData.currentToken)"]

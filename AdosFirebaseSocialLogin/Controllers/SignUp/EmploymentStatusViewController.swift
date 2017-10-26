@@ -44,7 +44,7 @@ class EmploymentStatusViewController: UIViewController
                 KVNProgress.show(withStatus: "Loading, Please wait")
             }
             
-            let employmentStatusParameters: Parameters = ["employment_status_id" : cell.tag]
+            let employmentStatusParameters: Parameters = ["employment_status_id" : cell.tag as AnyObject]
             
             let employmentStatusHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                      "Authorization" : "Bearer \(ServerData.currentToken)"]

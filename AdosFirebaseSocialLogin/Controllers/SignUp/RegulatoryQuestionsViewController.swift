@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import KVNProgress
 
 class RegulatoryQuestionsViewController: UIViewController
 {
@@ -100,7 +102,56 @@ class RegulatoryQuestionsViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
-        self.performSegue(withIdentifier: "goToTermsOfUse", sender: nil)
+        if !KVNProgress.isVisible()
+        {
+            KVNProgress.show(withStatus: "Loading, Please wait")
+        }
+        
+        let regulatoryQuestionsParameters: Parameters = ["regulatory_question_1": nameOfTheFirmSwitch.switchState() as AnyObject,
+                                                         "firm_name" : nameOfTheFirmTextField.text as AnyObject,
+                                                         "regulatory_question_2": companySymbolsSwitch.switchState() as AnyObject,
+                                                         "company_symbols" : companySymbolsTextField.text as AnyObject,
+                                                         "regulatory_question_3": politicalOrganizationSwitch.switchState() as AnyObject,
+                                                         "is_politically_exposed": politicalOrganizationTextField.text as AnyObject]
+        
+        let regulatoryQuestionsHeaders : HTTPHeaders = ["Content-Type" : "application/json",
+                                                        "Authorization" : "Bearer " + ServerData.currentToken]
+        
+        Alamofire.request(ServerData.adosUrl + ServerData.regulatoryQuestions, method: .post, parameters: regulatoryQuestionsParameters, encoding: JSONEncoding.default, headers: regulatoryQuestionsHeaders).validate(statusCode: 200..<501).responseJSON{ (response) in
+            
+            switch response.result
+            {
+            case .success:
+                
+                let code = response.response!.statusCode
+                
+                guard let json = response.result.value as? [String: Any] else
+                {
+                    print("didn't get todo object as JSON from API")
+                    print("Error: \(String(describing: response.result.error))")
+                    return
+                }
+                
+                if code != 200 && code != 201
+                {
+                    self.alertBuilder(alertControllerTitle: "Error", alertControllerMessage: json["message"] as! String, alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                    
+                    KVNProgress.showError()
+                }
+                else
+                {
+                    KVNProgress.showSuccess()
+                    
+                    self.performSegue(withIdentifier: "goToRequestDebitCard", sender: nil)
+                }
+                
+            case .failure( _):
+                
+                self.alertBuilder(alertControllerTitle: "Something went wrong", alertControllerMessage: "Server down, Try later", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+                
+                KVNProgress.showError()
+            }
+        }        
     }
     
     //MARK: - Navigation
@@ -109,7 +160,7 @@ class RegulatoryQuestionsViewController: UIViewController
     {
         if segue.identifier == "goToTermsOfUse"
         {
-            if let termsOfUseControllerSegue = segue.destination as? TermsOfUseViewController
+            if let _ = segue.destination as? TermsOfUseViewController
             {
                 self.title = ""
             }

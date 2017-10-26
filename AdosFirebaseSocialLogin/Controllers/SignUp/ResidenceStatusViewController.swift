@@ -44,7 +44,7 @@ class ResidenceStatusViewController: UIViewController
                 KVNProgress.show(withStatus: "Loading, Please wait")
             } 
             
-            let residenceStatusParameters: Parameters = ["residential_status_id" : cell.tag]
+            let residenceStatusParameters: Parameters = ["residential_status_id" : cell.tag as AnyObject]
             
             let residenceStatusHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                             "Authorization" : "Bearer \(ServerData.currentToken)"]

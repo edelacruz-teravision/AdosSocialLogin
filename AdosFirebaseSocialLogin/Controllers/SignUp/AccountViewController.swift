@@ -44,7 +44,7 @@ class AccountViewController: UIViewController
                 KVNProgress.show(withStatus: "Loading, Please wait")
             }
             
-            let accountParameters: Parameters = ["account_type_id" : cell.tag]
+            let accountParameters: Parameters = ["account_type_id" : cell.tag as AnyObject]
             
             let accountHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                             "Authorization" : "Bearer \(ServerData.currentToken)"]

@@ -69,12 +69,12 @@ class SignUpViewController: UIViewController
             KVNProgress.show(withStatus: "Loading, Please wait")
             
             let parameters: Parameters = [
-                "client_id" : ServerData.clientId,
-                "client_secret": ServerData.clientSecret,
-                "email": emailTextField.text ?? "",
-                "password" : passwordTextField.text ?? "",
-                "password_confirmation" : confirmPasswordTextField.text ?? "",
-                "device_token" : ServerData.deviceToken
+                "client_id" : ServerData.clientId as AnyObject,
+                "client_secret": ServerData.clientSecret as AnyObject,
+                "email": emailTextField.text as AnyObject,
+                "password" : passwordTextField.text as AnyObject,
+                "password_confirmation" : confirmPasswordTextField.text as AnyObject,
+                "device_token" : ServerData.deviceToken as AnyObject
             ]
             
             Alamofire.request(ServerData.adosUrl + ServerData.signUpUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate(statusCode: 200..<501).responseJSON{ (response) in

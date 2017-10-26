@@ -37,9 +37,9 @@ class SignUpHelper
             case 10:
                 identifier = "RegulatoryQuestions"
             case 11:
-                identifier = "TermsOfUse"
-            case 12:
                 identifier = "RequestDebitCard"
+            case 12:
+                identifier = "TermsOfUse"
             case 13:
                 identifier = "Funding"
             case 14:
@@ -47,6 +47,51 @@ class SignUpHelper
             case 15:
                 identifier = "RiskLevel"
             default: break            
+        }
+        
+        controller = storyboard.instantiateViewController(withIdentifier: identifier)
+        controller.navigationItem.leftBarButtonItem = nil
+        controller.navigationItem.hidesBackButton = true
+        navigation.show(controller, sender: nil)
+    }
+    
+    static func goToMyStep(step : Int, navigation: UINavigationController)
+    {
+        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+        var controller = UIViewController()
+        var identifier = ""
+        
+        switch step
+        {
+        case 2:
+            identifier = "PersonalInformation"
+        case 3:
+            identifier = "PhoneConfirmation"
+        case 4:
+            identifier = "Adress"
+        case 5:
+            identifier = "Account"
+        case 6:
+            identifier = "ResidenceStatus"
+        case 7:
+            identifier = "AnnualIncome"
+        case 8:
+            identifier = "EmploymentStatus"
+        case 9:
+            identifier = "Investment"
+        case 10:
+            identifier = "RegulatoryQuestions"
+        case 11:
+            identifier = "RequestDebitCard"
+        case 12:
+            identifier = "TermsOfUse"
+        case 13:
+            identifier = "Funding"
+        case 14:
+            identifier = "InvestmentSelection"
+        case 15:
+            identifier = "RiskLevel"
+        default: break
         }
         
         controller = storyboard.instantiateViewController(withIdentifier: identifier)

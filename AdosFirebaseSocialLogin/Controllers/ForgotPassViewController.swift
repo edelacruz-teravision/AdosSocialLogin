@@ -36,9 +36,9 @@ class ForgotPassViewController: UIViewController
         KVNProgress.show(withStatus: "Loading, Please wait")
         
         let parameters: Parameters = [
-                                    "client_id" : ServerData.clientId,
-                                    "client_secret": ServerData.clientSecret,
-                                    "email": self.emailTextField.text ?? ""
+                                    "client_id" : ServerData.clientId as AnyObject,
+                                    "client_secret": ServerData.clientSecret as AnyObject,
+                                    "email": self.emailTextField.text as AnyObject
                                     ]
         
         Alamofire.request(ServerData.adosUrl + ServerData.ForgotPasswordUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in

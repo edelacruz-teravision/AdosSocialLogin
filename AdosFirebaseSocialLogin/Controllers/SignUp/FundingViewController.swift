@@ -65,7 +65,7 @@ class FundingViewController: UIViewController
     {
         if segue.identifier == "goToPercentageInvestment"
         {
-            if let InvestmentSelectionControllerSegue = segue.destination as? InvestmentSelectionViewController
+            if let _ = segue.destination as? InvestmentSelectionViewController
             {
                 self.title = ""
             }

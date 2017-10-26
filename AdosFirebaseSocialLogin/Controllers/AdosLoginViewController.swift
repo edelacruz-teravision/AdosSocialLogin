@@ -308,12 +308,12 @@ class AdosLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         
         KVNProgress.show(withStatus: "Loading, Please wait")
         
-        let parameters: Parameters = ["client_id" : ServerData.clientId,
-                                     "client_secret": ServerData.clientSecret,
-                                     "grant_type" : ServerData.grantType,
-                                     "username": emailTextField.text ?? "",
-                                     "password" : passwordTextField.text ?? "",
-                                     "device_token" : ServerData.deviceToken]
+        let parameters: Parameters = ["client_id" : ServerData.clientId as AnyObject,
+                                     "client_secret": ServerData.clientSecret as AnyObject,
+                                     "grant_type" : ServerData.grantType as AnyObject,
+                                     "username": emailTextField.text as AnyObject,
+                                     "password" : passwordTextField.text as AnyObject,
+                                     "device_token" : ServerData.deviceToken as AnyObject]
         
         Alamofire.request(ServerData.adosUrl + ServerData.loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON{ (response) in
             

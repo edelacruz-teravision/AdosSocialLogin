@@ -138,6 +138,11 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 }
             }
         }
+        else
+        {
+            alertBuilder(alertControllerTitle: "Empty field", alertControllerMessage: "Please fill all the fields", alertActionTitle: "Ok", identifier: "", image: AlertImages.fail)
+            return
+        }
     }
     
     // MARK: - Zip Code Textfields Masking
@@ -252,7 +257,7 @@ class AdressViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    // MARK: - Nationality / Marital Status Picker Data Source
+    // MARK: - Nationality / Marital Status / States / Cities Picker Data Source
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {

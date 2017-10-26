@@ -44,7 +44,7 @@ class InvestmentViewController: UIViewController
                 KVNProgress.show(withStatus: "Loading, Please wait")
             }
             
-            let investmentParameters: Parameters = ["investment_id" : cell.tag]
+            let investmentParameters: Parameters = ["investment_id" : cell.tag as AnyObject]
             
             let investmentHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                          "Authorization" : "Bearer \(ServerData.currentToken)"]

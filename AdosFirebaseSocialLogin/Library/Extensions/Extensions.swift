@@ -12,6 +12,21 @@ import Alamofire
 
 // MARK: - UITextField Extensions
 
+extension UISwitch
+{
+    func switchState() -> String
+    {
+        if self.isOn
+        {
+            return "Yes"
+        }
+        else
+        {
+            return "No"
+        }
+    }
+}
+
 extension UITextField
 {
     // MARK: - Texfield Setup

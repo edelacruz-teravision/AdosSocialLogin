@@ -70,7 +70,7 @@ class InvestmentSelectionViewController: UIViewController
     {
         if segue.identifier == "goToRiskLevel"
         {
-            if let riskLevelControllerSegue = segue.destination as? RiskLevelViewController
+            if let _ = segue.destination as? RiskLevelViewController
             {
                 self.title = ""
             }

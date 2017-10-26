@@ -51,6 +51,12 @@ struct ServerData
     
     static let investmentApi : String = "/api/v1/investment"
     
+    static let regulatoryQuestions : String = "/api/v1/regulatory_questions"
+    
+    static let termsOfUse : String = "/api/v1/agreements"
+    
+    static let requestDebitCard : String = "/api/v1/debit_card"
+    
     static var currentToken : String = ""
     
     static var actualStep : Int = Int()

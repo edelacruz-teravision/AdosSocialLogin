@@ -45,7 +45,7 @@ class IncompleteSignUpViewController: UIViewController
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        //SignUpHelper.goToMyStep(step: 13, navigation: self.navigationController!)
-        SignUpHelper.goToActualStep(navigation: self.navigationController!)
+        SignUpHelper.goToMyStep(step: 15, navigation: self.navigationController!)
+        //SignUpHelper.goToActualStep(navigation: self.navigationController!)
     }
 }

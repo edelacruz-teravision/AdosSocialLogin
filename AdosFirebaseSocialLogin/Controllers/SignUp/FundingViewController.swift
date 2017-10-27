@@ -18,7 +18,7 @@ class FundingViewController: UIViewController
     @IBOutlet var bankAbaTextField: VMaskTextField!
     @IBOutlet var passwordTextField: VMaskTextField!
     @IBOutlet var benefitiaryTextField: UITextField!
-    @IBOutlet var depositAmountTextField: VMaskTextField!
+    @IBOutlet var depositAmountTextField: UITextField!
     
     // MARK: - FundingViewController Load
     
@@ -86,8 +86,6 @@ class FundingViewController: UIViewController
                                                 "bank_account_number" : passwordTextField.text as AnyObject,
                                                 "amount": ((amount as NSString).doubleValue) as AnyObject
                                                 ]
-            
-            print(((amount as NSString).doubleValue) as AnyObject)
             
             let foundingHeaders : HTTPHeaders = ["Content-Type" : "application/json",
                                                 "Authorization" : "Bearer \(ServerData.currentToken)"]

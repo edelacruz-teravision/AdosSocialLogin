@@ -18,6 +18,9 @@ class RiskLevelViewController: UIViewController
     var expectedReturn = [Int]()
     var expectedReturnDictionary = [[Int : Int]]()
     var strategyDictionary = [[String : Any]]()
+    var strategyTableDictionary = [String : Any]()
+    var collectionViewSelectedCellPercentage = Int()
+    var collectionViewSelectedItemPosition = Int()
     
     //MARK: - Outlets
     
@@ -86,8 +89,6 @@ class RiskLevelViewController: UIViewController
                 {
                     let portfolioResult : [[String : Any]] = (json["result"] as? [[String : Any]])!
                     
-                    print("portfolioResult.count: ", portfolioResult.count)
-                    
                     for i in 0..<portfolioResult.count
                     {
                         let portfolioDetailsAndAssets : [String : Any] = portfolioResult[i] as [String : Any]
@@ -117,10 +118,11 @@ class RiskLevelViewController: UIViewController
                     
                     for i in 0..<self.expectedReturn.count
                     {
-                        self.expectedReturnDictionary[i] = [self.expectedReturn[i] : self.strategies[i]]
+                        self.expectedReturnDictionary.append([self.expectedReturn[i] : self.strategies[i]])
                     }
-                    print(self.expectedReturn)
-                    print(self.strategyDictionary)
+                    
+                    self.expectedReturnCollectionView.reloadData()
+                    
                     KVNProgress.showSuccess()
                 }
                 else
@@ -161,6 +163,8 @@ extension RiskLevelViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        print("StrategyDictionary: ", strategyDictionary)
+        print("ExpectedReturnDictionary", expectedReturnDictionary)
         return expectedReturnDictionary.count
     }
     
@@ -168,9 +172,10 @@ extension RiskLevelViewController: UICollectionViewDataSource, UICollectionViewD
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "expectedReturnCell", for: indexPath) as! ExpectedReturnCell
         
-        let cellDictionary : [Int : Int] = expectedReturnDictionary[indexPath.row]
-        
-        cell.percentNumber = String(describing: cellDictionary[expectedReturn[indexPath.row]])
+        for(key, _) in expectedReturnDictionary[indexPath.row]
+        {
+            cell.percentNumber = String(key)
+        }
         
         cell.cellSetup()
         
@@ -180,6 +185,9 @@ extension RiskLevelViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let cell = collectionView.cellForItem(at: indexPath) as! ExpectedReturnCell
+        self.collectionViewSelectedCellPercentage = Int(cell.percentNumber)!
+        self.collectionViewSelectedItemPosition = indexPath.row
+        self.investmentStrategyTableView.reloadData()
         cell.cellTaped()
     }
     
@@ -204,19 +212,33 @@ extension RiskLevelViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("strategyDictionary count: ", strategyDictionary.count)
-        return strategyDictionary.count
+        if (expectedReturnCollectionView.indexPathsForSelectedItems?.isEmpty)!
+        {
+            return 0
+        }
+        else
+        {
+            print(collectionViewSelectedItemPosition)
+            
+            return expectedReturnDictionary[collectionViewSelectedItemPosition][collectionViewSelectedCellPercentage]!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvestmentStrategyCell", for: indexPath) as! InvestmentStrategyCell
+        var strategyArray = [[String : Any]]()
         
-        print("StrategyDictionary: ", strategyDictionary)
+        for i in 0..<strategyDictionary.count
+        {
+            if ((strategyDictionary[i])["percent"]) as! Int == collectionViewSelectedCellPercentage
+            {
+                strategyArray.append(strategyDictionary[i])
+            }
+        }
         
-        let strategyDict : [String : Any] = strategyDictionary[indexPath.row]
-        cell.strategyNameLabel.text = strategyDict["name"] as? String
-        cell.strategyPercentageLabel.text = String(strategyDict["rate"] as! Int)
+        cell.strategyNameLabel.text = (strategyArray[indexPath.row])["name"] as? String
+        cell.strategyPercentageLabel.text = (String((strategyArray[indexPath.row])["rate"] as! Int) + "%")
         
         return cell
     }

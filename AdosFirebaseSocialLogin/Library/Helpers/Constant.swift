@@ -61,6 +61,10 @@ struct ServerData
     
     static let founding : String = "/api/v1/ach_signup_funding"
     
+    static let currentBalance : String = "/api/v1/home"
+    
+    static let portfolioService : String = "/api/v1/portfolios"
+    
     static var currentToken : String = ""
     
     static var userFullName : String = ""

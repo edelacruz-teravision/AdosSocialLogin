@@ -2851,7 +2851,7 @@ Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFa-be-EeL">
                                                 <rect key="frame" x="0.0" y="156" width="280" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Deposit amount" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lVN-Ae-TKG" customClass="VMaskTextField">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Deposit amount" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lVN-Ae-TKG">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3161,7 +3161,7 @@ as Invesment account owner</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3,000.00" placeholder="_____" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="75J-LN-Io2">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3,000.00" clearsOnBeginEditing="YES" minimumFontSize="26" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="75J-LN-Io2">
                                         <rect key="frame" x="16.5" y="0.0" width="103" height="29"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3576,6 +3576,7 @@ on my account</string>
                     <navigationItem key="navigationItem" id="0yq-fA-mlC"/>
                     <connections>
                         <outlet property="expectedReturnCollectionView" destination="JbO-5s-uHR" id="12Y-nF-2Fs"/>
+                        <outlet property="investmentStrategyTableView" destination="QtX-as-x9R" id="iU7-35-8DZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjO-u5-9ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
